@@ -1,0 +1,207 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Contact PumaPulse — Get a Free Project Quote</title>
+<meta name="description" content="Talk to our blockchain and fintech experts. Get a free quote for your crypto exchange, trading bot, or fintech project.">
+<link rel="icon" href="https://res.cloudinary.com/dtvnifa3t/image/upload/v1775203874/pumapulse/icon.png" type="image/png">
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="../css/style.css">
+<link rel="stylesheet" href="../css/theme.css">
+<link rel="stylesheet" href="../css/animations.css">
+<link rel="stylesheet" href="../css/mobile.css">
+<style>
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
+body{font-family:'Inter',sans-serif;background:#f5f6fa;color:#1a1e2e;overflow-x:hidden;line-height:1.6}
+/* ── HERO ── */
+.con-hero{min-height:60vh;position:relative;display:flex;align-items:center;overflow:hidden;background:#060a14}
+.con-hero-bg{position:absolute;inset:0;background:url('../img/about/contact.jpg') center 5%/cover no-repeat;opacity:.35}
+.con-hero-overlay{position:absolute;inset:0;background:linear-gradient(135deg,rgba(192,32,42,.18) 0%,transparent 55%),linear-gradient(to top,#060a14 0%,transparent 60%)}
+.con-hero-grid{position:absolute;inset:0;background-image:linear-gradient(rgba(255,255,255,.03) 1px,transparent 1px),linear-gradient(90deg,rgba(255,255,255,.03) 1px,transparent 1px);background-size:60px 60px}
+.con-hero-inner{position:relative;z-index:2;max-width:1200px;margin:0 auto;padding:140px 44px 80px}
+.con-eyebrow{display:inline-flex;align-items:center;gap:10px;font-size:11px;font-weight:700;letter-spacing:.18em;text-transform:uppercase;color:rgba(192,32,42,.9);margin-bottom:20px}
+.con-eyebrow::before{content:'';width:24px;height:2px;background:#c0202a;border-radius:2px;flex-shrink:0}
+.con-hero h1{font-size:clamp(38px,5vw,68px);font-weight:900;line-height:1.0;letter-spacing:-.03em;color:#fff;margin-bottom:18px}
+.con-hero h1 em{color:#e0263a;font-style:normal}
+.con-hero-sub{font-size:16px;line-height:1.8;color:rgba(200,215,235,.7);font-weight:300;max-width:500px}
+/* ── SHARED ── */
+.con-section{padding:100px 0}
+.con-container{max-width:1200px;margin:0 auto;padding:0 44px}
+.con-label{display:inline-flex;align-items:center;gap:8px;font-size:11px;font-weight:700;letter-spacing:.18em;text-transform:uppercase;color:#c0202a;margin-bottom:16px}
+.con-label::before{content:'';width:20px;height:2px;background:#c0202a;border-radius:2px;flex-shrink:0}
+.con-h2{font-size:clamp(28px,3.5vw,46px);font-weight:900;line-height:1.05;letter-spacing:-.03em;color:#1a1e2e;margin-bottom:14px}
+.con-h2 em{color:#e0263a;font-style:normal}
+/* ── GRID ── */
+.con-grid{display:grid;grid-template-columns:1fr 1.4fr;gap:60px;align-items:start}
+/* ── INFO CARDS ── */
+.con-info-cards{display:flex;flex-direction:column;gap:0;border:1px solid #e0e4ef;margin-bottom:28px}
+.con-info-card{display:flex;align-items:center;gap:16px;padding:20px 22px;border-bottom:1px solid #e0e4ef;transition:background .2s}
+.con-info-card:last-child{border-bottom:none}
+.con-info-card:hover{background:#fff}
+.con-info-icon{width:44px;height:44px;background:rgba(192,32,42,.08);border-radius:10px;display:flex;align-items:center;justify-content:center;flex-shrink:0}
+.con-info-icon svg{width:18px;height:18px;stroke:#c0202a;fill:none;stroke-width:2;stroke-linecap:round;stroke-linejoin:round}
+.con-info-t{font-size:12px;font-weight:700;letter-spacing:.06em;text-transform:uppercase;color:#8a93b0;margin-bottom:3px}
+.con-info-v{font-size:14px;font-weight:600;color:#1a1e2e;line-height:1.5}
+/* ── WHY US ── */
+.con-why{border:1px solid #e0e4ef;background:#fff;padding:24px}
+.con-why-t{font-size:14px;font-weight:800;color:#1a1e2e;margin-bottom:16px;letter-spacing:-.01em}
+.con-why-list{display:flex;flex-direction:column;gap:10px}
+.con-why-item{display:flex;align-items:center;gap:10px;font-size:13px;color:#4a5470}
+.con-why-item::before{content:'';width:18px;height:18px;background:rgba(192,32,42,.08);border:1px solid rgba(192,32,42,.25);border-radius:50%;display:flex;align-items:center;justify-content:center;flex-shrink:0;background-image:url("data:image/svg+xml,%3Csvg viewBox='0 0 12 12' fill='none' stroke='%23c0202a' stroke-width='2' stroke-linecap='round' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M1 6l3 3 7-7'/%3E%3C/svg%3E");background-repeat:no-repeat;background-position:center;background-size:10px}
+/* ── FORM ── */
+.con-form-box{background:#fff;border:1px solid #e0e4ef;padding:40px}
+.con-form-box h3{font-size:22px;font-weight:900;color:#1a1e2e;margin-bottom:6px;letter-spacing:-.02em}
+.con-form-sub{font-size:13px;color:#8a93b0;margin-bottom:28px}
+.con-form-row{display:grid;grid-template-columns:1fr 1fr;gap:14px}
+.con-fg{margin-bottom:16px}
+.con-fg label{display:block;font-size:11px;font-weight:700;letter-spacing:.08em;text-transform:uppercase;color:#4a5470;margin-bottom:6px}
+.con-fg input,.con-fg select,.con-fg textarea{width:100%;padding:11px 14px;border:1.5px solid #e0e4ef;background:#f5f6fa;font-family:'Inter',sans-serif;font-size:14px;color:#1a1e2e;outline:none;transition:border-color .2s,background .2s;border-radius:0}
+.con-fg input:focus,.con-fg select:focus,.con-fg textarea:focus{border-color:#c0202a;background:#fff}
+.con-fg textarea{height:120px;resize:vertical}
+.con-submit{width:100%;padding:14px;background:#c0202a;color:#fff;border:none;font-family:'Inter',sans-serif;font-size:14px;font-weight:700;cursor:pointer;border-radius:50px;transition:background .2s,box-shadow .2s;margin-top:6px;letter-spacing:.02em}
+.con-submit:hover{background:#e0263a;box-shadow:0 0 28px rgba(192,32,42,.4)}
+/* ── RESPONSIVE ── */
+@media(max-width:1024px){.con-grid{grid-template-columns:1fr;gap:40px}.con-container{padding:0 24px}.con-hero-inner{padding:120px 24px 60px}}
+@media(max-width:768px){.con-section{padding:64px 0}.con-container{padding:0 16px}.con-form-row{grid-template-columns:1fr}.con-form-box{padding:24px}}
+</style>
+</head>
+<body>
+<div id="nav-placeholder"></div>
+
+<!-- ═══ HERO ═══ -->
+<section class="con-hero">
+  <div class="con-hero-bg"></div>
+  <div class="con-hero-overlay"></div>
+  <div class="con-hero-grid"></div>
+  <div class="con-hero-inner">
+    <div class="con-eyebrow">Get In Touch</div>
+    <h1>Let's Build Something<br><em>Extraordinary.</em></h1>
+    <p class="con-hero-sub">Tell us about your project — Full-Stack, Mobile, AI/ML, Blockchain, or Automation — and we'll get back to you within 24 hours with a tailored proposal. No obligation, no pressure.</p>
+  </div>
+</section>
+
+<!-- ═══ CONTACT SECTION ═══ -->
+<section class="con-section" style="background:#f5f6fa">
+  <div class="con-container">
+    <div class="con-grid">
+
+      <!-- Left: Info -->
+      <div>
+        <div class="con-label">Contact Info</div>
+        <h2 class="con-h2">We're <em>Here to Help.</em></h2>
+        <p style="font-size:15px;line-height:1.8;color:#4a5470;font-weight:300;margin-bottom:28px">Reach out and our team will respond within 24 hours on business days.</p>
+
+        <div class="con-info-cards">
+          <div class="con-info-card">
+            <div class="con-info-icon"><svg viewBox="0 0 24 24"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0118 0z"/><circle cx="12" cy="10" r="3"/></svg></div>
+            <div><div class="con-info-t">Headquarters</div><div class="con-info-v">Via Monte Napoleone 8<br>Milan, 20121, Italy</div></div>
+          </div>
+        </div>
+
+        <div class="con-why">
+          <div class="con-why-t">Why teams choose PumaPulse</div>
+          <div class="con-why-list">
+            <div class="con-why-item">Free 30-min strategy consultation</div>
+            <div class="con-why-item">Detailed proposal within 48 hours</div>
+            <div class="con-why-item">NDA signed before any discussion</div>
+            <div class="con-why-item">Fixed-price contracts, no surprises</div>
+            <div class="con-why-item">Full-Stack · Mobile · AI/ML · Blockchain · Bots</div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Right: Form -->
+      <div class="con-form-box">
+        <h3>Send Us a Message</h3>
+        <p class="con-form-sub">Fill in the details below and our team will reach out within 24 hours.</p>
+        <form id="contactForm">
+          <div class="con-form-row">
+            <div class="con-fg"><label>First Name *</label><input type="text" id="conFirstName" placeholder="John" required></div>
+            <div class="con-fg"><label>Last Name *</label><input type="text" id="conLastName" placeholder="Doe" required></div>
+          </div>
+          <div class="con-fg"><label>Email Address *</label><input type="email" id="conEmail" placeholder="john@company.com" required></div>
+          <div class="con-fg"><label>Phone Number</label><input type="tel" id="conPhone" placeholder="+1 (555) 000-0000"></div>
+          <div class="con-fg"><label>Company / Project Name</label><input type="text" id="conCompany" placeholder="Your company or project"></div>
+          <div class="con-fg">
+            <label>Service Interested In *</label>
+            <select id="conService" required>
+              <option value="">Select a service...</option>
+              <option>Full-Stack Web Development</option>
+              <option>Mobile App Development</option>
+              <option>AI / ML Solutions</option>
+              <option>Blockchain &amp; Web3</option>
+              <option>Bots &amp; Automation</option>
+              <option>E-Commerce &amp; CMS</option>
+              <option>Other</option>
+            </select>
+          </div>
+          <div class="con-fg"><label>Tell Us About Your Project *</label><textarea id="conMessage" placeholder="Describe your project, goals, timeline, and any specific requirements..." required></textarea></div>
+          <button type="submit" class="con-submit" id="conSubmitBtn">Send Message &#8594;</button>
+          <div id="conFormMsg" style="margin-top:14px;font-size:13px;text-align:center;display:none"></div>
+        </form>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<div id="footer-placeholder"></div>
+<script src="../js/nav.js"></script>
+<script src="../js/main.js"></script>
+<script src="../js/animations.js"></script>
+<!-- EmailJS -->
+<script src="https://cdn.jsdelivr.net/npm/@emailjs/browser@4/dist/email.min.js"></script>
+<script>
+(function(){ emailjs.init('IbD_xKw-X-D5Dy5Rc'); })();
+
+document.getElementById('contactForm').addEventListener('submit', function(e) {
+  e.preventDefault();
+  var btn = document.getElementById('conSubmitBtn');
+  var msg = document.getElementById('conFormMsg');
+  var firstName = document.getElementById('conFirstName').value.trim();
+  var lastName  = document.getElementById('conLastName').value.trim();
+  var email     = document.getElementById('conEmail').value.trim();
+  var phone     = document.getElementById('conPhone').value.trim();
+  var company   = document.getElementById('conCompany').value.trim();
+  var service   = document.getElementById('conService').value.trim();
+  var message   = document.getElementById('conMessage').value.trim();
+
+  if (!firstName || !email || !service || !message) {
+    showConMsg('Please fill in all required fields.', 'red'); return;
+  }
+
+  btn.disabled = true;
+  btn.textContent = 'Sending...';
+
+  emailjs.send('service_n03hir9', 'template_uhqzlgm', {
+    applicantName: firstName + ' ' + lastName,
+    firstName: firstName,
+    lastName: lastName,
+    email: email,
+    phone: phone || 'Not provided',
+    position: service,
+    experience: message,
+    company: company || 'Not provided',
+    resumeUrl: 'N/A - Contact Form',
+    submissionDate: new Date().toLocaleDateString()
+  }, 'IbD_xKw-X-D5Dy5Rc')
+  .then(function() {
+    showConMsg('Message sent! We will get back to you within 24 hours.', 'green');
+    document.getElementById('contactForm').reset();
+    btn.disabled = false; btn.textContent = 'Send Message →';
+  }, function() {
+    showConMsg('Failed to send. Please email us directly at hr@pumapulse.org', 'red');
+    btn.disabled = false; btn.textContent = 'Send Message →';
+  });
+});
+
+function showConMsg(text, color) {
+  var el = document.getElementById('conFormMsg');
+  el.textContent = text;
+  el.style.color = color === 'green' ? '#0da678' : '#e0263a';
+  el.style.display = 'block';
+}
+</script>
+</body>
+</html>

@@ -1,0 +1,954 @@
+﻿<!DOCTYPE html>
+
+
+
+<html lang="en">
+
+
+
+<head>
+
+
+
+  <meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+
+
+  <title>Full-Stack Web Development — PumaPulse</title>
+
+
+
+  <meta name="description" content="Full-Stack web development by PumaPulse. PHP, Laravel, MERN, Next.js, Angular, Django, FastAPI, WordPress, Shopify, and Odoo — scalable, production-ready applications.">
+
+
+
+  <link rel="icon" href="../../img/icon.png" type="image/png">
+
+
+
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet">
+
+
+
+  <link rel="stylesheet" href="../../css/style.css">
+
+
+
+  <link rel="stylesheet" href="../../css/theme.css">
+
+
+
+  <link rel="stylesheet" href="../../css/animations.css">
+
+
+
+  <style>
+
+
+
+    .exchange-compare{display:grid;grid-template-columns:repeat(3,1fr);gap:20px}
+
+
+
+    .exc-card{background:var(--card);border:1px solid var(--border);border-radius:18px;padding:28px;transition:all 0.3s;position:relative;overflow:hidden}
+
+
+
+    .exc-card.featured{border-color:rgba(16,185,129,0.4);background:linear-gradient(135deg,rgba(16,185,129,0.05),var(--card))}
+
+
+
+    .exc-card.featured::before{content:'Most Popular';position:absolute;top:16px;right:16px;background:var(--accent);color:#fff;font-size:0.68rem;font-weight:700;padding:3px 10px;border-radius:50px;letter-spacing:0.05em}
+
+
+
+    .exc-card:hover{border-color:var(--border2);transform:translateY(-5px)}
+
+
+
+    .exc-card h3{font-size:1.1rem;margin-bottom:10px}
+
+
+
+    .exc-card .price{font-size:0.82rem;color:var(--accent);font-weight:600;margin-bottom:14px}
+
+
+
+    .exc-card ul{display:flex;flex-direction:column;gap:8px}
+
+
+
+    .exc-card ul li{display:flex;gap:8px;align-items:flex-start;font-size:0.84rem;color:var(--muted2)}
+
+
+
+    .exc-card ul li::before{content:'?';color:var(--accent);font-weight:700;flex-shrink:0}
+
+
+
+    .feature-table{width:100%;border-collapse:collapse}
+
+
+
+    .feature-table th{text-align:left;padding:14px 16px;font-size:0.78rem;font-weight:700;letter-spacing:0.1em;text-transform:uppercase;color:var(--muted);border-bottom:1px solid var(--border)}
+
+
+
+    .feature-table td{padding:14px 16px;font-size:0.87rem;border-bottom:1px solid var(--border);color:var(--muted2)}
+
+
+
+    .feature-table tr:last-child td{border-bottom:none}
+
+
+
+    .feature-table tr:hover td{background:rgba(255,255,255,0.02)}
+
+
+
+    .check{color:var(--accent);font-weight:700}.cross{color:var(--muted);opacity:0.4}
+
+
+
+    @media(max-width:1024px){.exchange-compare{grid-template-columns:1fr}}
+
+
+
+  </style>
+
+
+
+</head>
+
+
+
+<body>
+
+
+
+<div id="nav-placeholder"></div>
+
+
+
+
+
+
+
+<section class="page-hero">
+
+
+
+  <div class="page-hero-bg"><img src="https://images.unsplash.com/photo-1555066931-4365d14bab8c?w=1400&q=80" alt="Crypto Full-Stack Development"></div>
+
+
+
+  <div class="container">
+
+
+
+    <div class="page-hero-content">
+
+
+
+      
+
+
+
+      <span class="eyebrow" style="color:rgba(255,255,255,0.6)">Full-Stack Development</span>
+
+
+
+      <h1>Full-Stack Apps Built to <span class="grad-text">Scale &amp; Perform</span></h1>
+
+
+
+      <p>From intuitive front-end interfaces to robust back-end architectures — PumaPulse engineers full-stack web applications with PHP, Laravel, MERN, Next.js, Angular, Django, FastAPI, WordPress, Shopify, and Odoo.</p>
+
+
+
+      <div style="display:flex;gap:14px;flex-wrap:wrap">
+
+
+
+        <a href="../../contact/" class="btn btn-accent btn-lg btn-magnetic">Get a Free Quote</a>
+
+
+
+        <a href="#exchange-types" class="btn btn-ghost btn-lg">Explore Web Frameworks</a>
+
+
+
+      </div>
+
+
+
+    </div>
+
+
+
+  </div>
+
+
+
+</section>
+
+
+
+
+
+
+
+<div class="stats-row counter-section">
+
+
+
+  <div class="stat-cell"><div class="stat-num" data-target="15" data-suffix="+">80+</div><p>Web Apps Launched</p></div>
+
+
+
+  <div class="stat-cell"><div class="stat-num" data-target="1" data-suffix="M+ TPS">99.9%</div><p>Uptime SLA</p></div>
+
+
+
+  <div class="stat-cell"><div class="stat-num" data-target="4" data-suffix=" Weeks">7+</div><p>Years Experience</p></div>
+
+
+
+  <div class="stat-cell"><div class="stat-num" data-target="99.9" data-suffix="%" data-decimals="1">40+</div><p>Countries Served</p></div>
+
+
+
+</div>
+
+
+
+
+
+
+
+<!-- Web Frameworks -->
+
+
+
+<section class="section" id="exchange-types">
+
+
+
+  <div class="container">
+
+
+
+    <div class="text-center reveal">
+
+
+
+      <span class="eyebrow">Web Frameworks</span>
+
+
+
+      <h2>Every Stack, <span class="grad-text">Engineered Right</span></h2>
+
+
+
+      <div class="section-divider"></div>
+
+
+
+      <p class="section-desc" style="margin-top:16px">We build across all major web frameworks and stacks — choose the right technology for your project, or let us recommend the best fit.</p>
+
+
+
+    </div>
+
+
+
+    <div class="svc-grid reveal-stagger">
+
+
+
+      <div class="svc-card tilt-card glow-card">
+
+
+
+        <div class="svc-img"><img src="https://images.unsplash.com/photo-1627398242454-45a1465c2479?w=700&q=80" alt="CEX" loading="lazy"><div class="svc-img-overlay"></div></div>
+
+
+
+        <div class="svc-body">
+
+
+
+          <h3>Laravel / PHP Applications</h3>
+
+
+
+          <p>Robust, scalable PHP backends with Laravel — REST APIs, admin panels, multi-tenant SaaS, e-commerce platforms, and enterprise portals. Includes Eloquent ORM, queues, broadcasting, and full test coverage.</p>
+
+
+
+          <div style="display:flex;gap:6px;flex-wrap:wrap;margin:12px 0"><span class="tag-pill tag-green" style="font-size:0.68rem">Laravel</span><span class="tag-pill tag-blue" style="font-size:0.68rem">PHP 8</span><span class="tag-pill tag-purple" style="font-size:0.68rem">REST API</span></div>
+
+
+
+          <a href="../../contact/" class="svc-link hover-underline">Get Started <svg viewBox="0 0 14 14" fill="none"><path d="M1 7h12M7 1l6 6-6 6" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg></a>
+
+
+
+        </div>
+
+
+
+      </div>
+
+
+
+      <div class="svc-card tilt-card glow-card">
+
+
+
+        <div class="svc-img"><img src="https://images.unsplash.com/photo-1633356122544-f134324a6cee?w=700&q=80" alt="DEX" loading="lazy"><div class="svc-img-overlay"></div></div>
+
+
+
+        <div class="svc-body">
+
+
+
+          <h3>MERN Stack Development</h3>
+
+
+
+          <p>Full-stack JavaScript apps with MongoDB, Express, React, and Node.js — real-time dashboards, SaaS platforms, and cloud-ready APIs. Includes WebSocket support, JWT auth, and CI/CD pipelines.</p>
+
+
+
+          <div style="display:flex;gap:6px;flex-wrap:wrap;margin:12px 0"><span class="tag-pill tag-green" style="font-size:0.68rem">MongoDB</span><span class="tag-pill tag-blue" style="font-size:0.68rem">Express</span><span class="tag-pill tag-purple" style="font-size:0.68rem">Node.js</span></div>
+
+
+
+          <a href="../../contact/" class="svc-link hover-underline">Get Started <svg viewBox="0 0 14 14" fill="none"><path d="M1 7h12M7 1l6 6-6 6" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg></a>
+
+
+
+        </div>
+
+
+
+      </div>
+
+
+
+      <div class="svc-card tilt-card glow-card">
+
+
+
+        <div class="svc-img"><img src="https://images.unsplash.com/photo-1618477388954-7852f32655ec?w=700&q=80" alt="P2P" loading="lazy"><div class="svc-img-overlay"></div></div>
+
+
+
+        <div class="svc-body">
+
+
+
+          <h3>Next.js Applications</h3>
+
+
+
+          <p>SEO-optimized, server-side rendered React apps with Next.js — blazing fast, scalable, and production-grade. Includes App Router, API routes, ISR, and seamless deployment to Vercel or custom infrastructure.</p>
+
+
+
+          <div style="display:flex;gap:6px;flex-wrap:wrap;margin:12px 0"><span class="tag-pill tag-green" style="font-size:0.68rem">Next.js 14</span><span class="tag-pill tag-blue" style="font-size:0.68rem">App Router</span><span class="tag-pill tag-purple" style="font-size:0.68rem">TypeScript</span></div>
+
+
+
+          <a href="../../contact/" class="svc-link hover-underline">Get Started <svg viewBox="0 0 14 14" fill="none"><path d="M1 7h12M7 1l6 6-6 6" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg></a>
+
+
+
+        </div>
+
+
+
+      </div>
+
+
+
+      <div class="svc-card tilt-card glow-card">
+
+
+
+        <div class="svc-img"><img src="https://images.unsplash.com/photo-1593720213428-28a5b9e94613?w=700&q=80" alt="Hybrid" loading="lazy"><div class="svc-img-overlay"></div></div>
+
+
+
+        <div class="svc-body">
+
+
+
+          <h3>Django &amp; FastAPI</h3>
+
+
+
+          <p>Python-powered backends with Django or FastAPI — ideal for data-heavy apps, ML integrations, and high-throughput APIs. Django for full-featured platforms, FastAPI for async microservices with automatic OpenAPI docs.</p>
+
+
+
+          <div style="display:flex;gap:6px;flex-wrap:wrap;margin:12px 0"><span class="tag-pill tag-green" style="font-size:0.68rem">Django</span><span class="tag-pill tag-blue" style="font-size:0.68rem">FastAPI</span><span class="tag-pill tag-purple" style="font-size:0.68rem">Python 3</span></div>
+
+
+
+          <a href="../../contact/" class="svc-link hover-underline">Get Started <svg viewBox="0 0 14 14" fill="none"><path d="M1 7h12M7 1l6 6-6 6" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg></a>
+
+
+
+        </div>
+
+
+
+      </div>
+
+
+
+      <div class="svc-card tilt-card glow-card">
+
+
+
+        <div class="svc-img"><img src="https://images.unsplash.com/photo-1526374965328-7f61d4dc18c5?w=700&q=80" alt="White Label" loading="lazy"><div class="svc-img-overlay"></div></div>
+
+
+
+        <div class="svc-body">
+
+
+
+          <h3>Angular Enterprise Apps</h3>
+
+
+
+          <p>Launch your fully branded exchange in 4— —...“6 weeks with our battle-tested white-label platform. Full source code ownership, custom UI/UX with your brand identity, modular architecture you can extend at any time. Includes admin dashboard, liquidity management tools, and a dedicated launch support team.</p>
+
+
+
+          <div style="display:flex;gap:6px;flex-wrap:wrap;margin:12px 0"><span class="tag-pill tag-green" style="font-size:0.68rem">Angular 17</span><span class="tag-pill tag-blue" style="font-size:0.68rem">RxJS</span><span class="tag-pill tag-purple" style="font-size:0.68rem">NgRx</span></div>
+
+
+
+          <a href="../../contact/" class="svc-link hover-underline">Get Started <svg viewBox="0 0 14 14" fill="none"><path d="M1 7h12M7 1l6 6-6 6" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg></a>
+
+
+
+        </div>
+
+
+
+      </div>
+
+
+
+      <div class="svc-card tilt-card glow-card">
+
+
+
+        <div class="svc-img"><img src="https://images.unsplash.com/photo-1556742049-0cfed4f6a45d?w=700&q=80" alt="Derivatives" loading="lazy"><div class="svc-img-overlay"></div></div>
+
+
+
+        <div class="svc-body">
+
+
+
+          <h3>WordPress &amp; Shopify</h3>
+
+
+
+          <p>Custom WordPress themes, plugins, and WooCommerce stores — fast, SEO-optimized, and easy to manage. Shopify custom storefronts, apps, and headless commerce with Next.js frontends.</p>
+
+
+
+          <div style="display:flex;gap:6px;flex-wrap:wrap;margin:12px 0"><span class="tag-pill tag-green" style="font-size:0.68rem">WordPress</span><span class="tag-pill tag-blue" style="font-size:0.68rem">WooCommerce</span><span class="tag-pill tag-purple" style="font-size:0.68rem">Shopify</span></div>
+
+
+
+          <a href="../../contact/" class="svc-link hover-underline">Get Started <svg viewBox="0 0 14 14" fill="none"><path d="M1 7h12M7 1l6 6-6 6" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg></a>
+
+
+
+        </div>
+
+
+
+      </div>
+
+
+
+    </div>
+
+
+
+  </div>
+
+
+
+</section>
+
+
+
+
+
+
+
+<!-- Feature Why Full-Stack -->
+
+
+
+<section class="section" style="background:var(--bg2)">
+
+
+
+  <div class="container">
+
+
+
+    <div class="text-center reveal">
+
+
+
+      <span class="eyebrow">Why Full-Stack</span>
+
+
+
+      <h2>Why Choose <span class="grad-text2">PumaPulse for Web Dev?</span></h2>
+
+
+
+      <div class="section-divider"></div>
+
+
+
+    </div>
+
+
+
+    <div style="background:var(--card);border:1px solid var(--border);border-radius:20px;overflow:hidden;margin-top:40px" class="reveal">
+
+
+
+      <table class="feature-table">
+
+
+
+        <thead><tr><th>Feature</th><th>CEX</th><th>DEX</th><th>P2P</th><th>Hybrid</th><th>Derivatives</th></tr></thead>
+
+
+
+        <tbody>
+
+
+
+          <tr><td>Matching Speed</td><td class="check">1M+ TPS</td><td>On-chain</td><td>Manual</td><td class="check">1M+ TPS</td><td class="check">1M+ TPS</td></tr>
+
+
+
+          <tr><td>User Custody</td><td class="cross">Custodial</td><td class="check">Self-custody</td><td class="check">Self-custody</td><td class="check">Self-custody</td><td class="cross">Custodial</td></tr>
+
+
+
+          <tr><td>KYC/AML</td><td class="check">Built-in</td><td class="cross">Optional</td><td class="check">Built-in</td><td class="check">Built-in</td><td class="check">Built-in</td></tr>
+
+
+
+          <tr><td>Liquidity</td><td class="check">Deep</td><td>Pool-based</td><td>P2P</td><td class="check">Deep</td><td class="check">Deep</td></tr>
+
+
+
+          <tr><td>Launch Time</td><td>3-5 months</td><td>2-4 months</td><td>2-3 months</td><td>4-6 months</td><td>4-6 months</td></tr>
+
+
+
+          <tr><td>White-Label</td><td class="check">Available</td><td class="check">Available</td><td class="check">Available</td><td class="check">Available</td><td class="check">Available</td></tr>
+
+
+
+        </tbody>
+
+
+
+      </table>
+
+
+
+    </div>
+
+
+
+  </div>
+
+
+
+</section>
+
+
+
+
+
+
+
+<!-- Core Features -->
+
+
+
+<section class="section" style="background:#f5f6fa;padding:100px 0">
+  <div class="container">
+    <div style="display:grid;grid-template-columns:1fr 1fr;gap:72px;align-items:center">
+
+      <!-- Left: image -->
+      <div class="reveal-left" style="position:relative">
+        <img src="https://images.unsplash.com/photo-1518186285589-2f7649de83e0?w=900&q=80" alt="Exchange Platform" style="width:100%;height:420px;object-fit:cover;display:block">
+        <div style="position:absolute;bottom:0;left:0;right:0;background:rgba(0,0,0,0.75);backdrop-filter:blur(12px);padding:18px 24px;display:flex;align-items:center;gap:32px">
+          <div style="text-align:center"><div style="font-family:'Inter',sans-serif;font-size:28px;font-weight:900;color:#fff;line-height:1">1M<span style="color:#e0263a">+</span></div><div style="font-size:9px;font-weight:700;letter-spacing:.12em;text-transform:uppercase;color:rgba(200,215,235,.45);margin-top:4px">Orders/sec</div></div>
+          <div style="width:1px;height:36px;background:rgba(255,255,255,.15)"></div>
+          <div style="text-align:center"><div style="font-family:'Inter',sans-serif;font-size:28px;font-weight:900;color:#fff;line-height:1">&lt;1<span style="color:#e0263a">ms</span></div><div style="font-size:9px;font-weight:700;letter-spacing:.12em;text-transform:uppercase;color:rgba(200,215,235,.45);margin-top:4px">Latency</div></div>
+          <div style="width:1px;height:36px;background:rgba(255,255,255,.15)"></div>
+          <div style="text-align:center"><div style="font-family:'Inter',sans-serif;font-size:28px;font-weight:900;color:#fff;line-height:1">99.9<span style="color:#e0263a">%</span></div><div style="font-size:9px;font-weight:700;letter-spacing:.12em;text-transform:uppercase;color:rgba(200,215,235,.45);margin-top:4px">Uptime SLA</div></div>
+        </div>
+      </div>
+
+      <!-- Right: features -->
+      <div class="reveal-right">
+        <div style="display:inline-flex;align-items:center;gap:8px;font-size:11px;font-weight:700;letter-spacing:.18em;text-transform:uppercase;color:#c0202a;margin-bottom:16px">
+          <span style="width:20px;height:2px;background:#c0202a;border-radius:2px;display:inline-block"></span>Core Features
+        </div>
+        <h2 style="font-family:'Inter',sans-serif;font-weight:900;font-size:clamp(28px,3.5vw,44px);line-height:1.05;letter-spacing:-.03em;color:#1a1e2e;margin-bottom:14px">Full-Stack Engineering<br><em style="color:#e0263a;font-style:normal">Built to Scale.</em></h2>
+        <p style="font-size:15px;line-height:1.8;color:#4a5470;font-weight:300;margin-bottom:32px">Every app we build ships with clean architecture, full test coverage, CI/CD pipelines, and production-ready infrastructure — from MVP to enterprise scale.</p>
+
+        <div style="display:flex;flex-direction:column;gap:0;border:1px solid #e0e4ef">
+          <div style="display:flex;align-items:flex-start;gap:14px;padding:18px 20px;border-bottom:1px solid #e0e4ef;transition:background .2s" onmouseover="this.style.background='#fafafa'" onmouseout="this.style.background=''">
+            <div style="width:36px;height:36px;background:rgba(192,32,42,.08);border-radius:8px;display:flex;align-items:center;justify-content:center;flex-shrink:0"><svg viewBox="0 0 24 24" fill="none" stroke="#c0202a" stroke-width="2" stroke-linecap="round" style="width:16px;height:16px"><path d="M13 2L3 14h9l-1 8 10-12h-9l1-8z"/></svg></div>
+            <div><div style="font-size:14px;font-weight:800;color:#1a1e2e;margin-bottom:3px;letter-spacing:-.01em">Modern Architecture Patterns</div><div style="font-size:13px;color:#4a5470;line-height:1.65">Microservices, monorepo, or modular monolith — we choose the right architecture for your scale and team, with clear separation of concerns.</div></div>
+          </div>
+          <div style="display:flex;align-items:flex-start;gap:14px;padding:18px 20px;border-bottom:1px solid #e0e4ef;transition:background .2s" onmouseover="this.style.background='#fafafa'" onmouseout="this.style.background=''">
+            <div style="width:36px;height:36px;background:rgba(192,32,42,.08);border-radius:8px;display:flex;align-items:center;justify-content:center;flex-shrink:0"><svg viewBox="0 0 24 24" fill="none" stroke="#c0202a" stroke-width="2" stroke-linecap="round" style="width:16px;height:16px"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg></div>
+            <div><div style="font-size:14px;font-weight:800;color:#1a1e2e;margin-bottom:3px;letter-spacing:-.01em">Security Best Practices</div><div style="font-size:13px;color:#4a5470;line-height:1.65">Input validation, parameterized queries, JWT/OAuth2 auth, HTTPS enforcement, rate limiting, and OWASP Top 10 compliance on every project.</div></div>
+          </div>
+          <div style="display:flex;align-items:flex-start;gap:14px;padding:18px 20px;border-bottom:1px solid #e0e4ef;transition:background .2s" onmouseover="this.style.background='#fafafa'" onmouseout="this.style.background=''">
+            <div style="width:36px;height:36px;background:rgba(192,32,42,.08);border-radius:8px;display:flex;align-items:center;justify-content:center;flex-shrink:0"><svg viewBox="0 0 24 24" fill="none" stroke="#c0202a" stroke-width="2" stroke-linecap="round" style="width:16px;height:16px"><polyline points="22 12 18 12 15 21 9 3 6 12 2 12"/></svg></div>
+            <div><div style="font-size:14px;font-weight:800;color:#1a1e2e;margin-bottom:3px;letter-spacing:-.01em">API-First Development</div><div style="font-size:13px;color:#4a5470;line-height:1.65">RESTful and GraphQL APIs with OpenAPI documentation, versioning, pagination, and SDKs — built for third-party integrations from day one.</div></div>
+          </div>
+          <div style="display:flex;align-items:flex-start;gap:14px;padding:18px 20px;transition:background .2s" onmouseover="this.style.background='#fafafa'" onmouseout="this.style.background=''">
+            <div style="width:36px;height:36px;background:rgba(192,32,42,.08);border-radius:8px;display:flex;align-items:center;justify-content:center;flex-shrink:0"><svg viewBox="0 0 24 24" fill="none" stroke="#c0202a" stroke-width="2" stroke-linecap="round" style="width:16px;height:16px"><path d="M9 12l2 2 4-4m5.618-4.016A11.955 11.955 0 0112 2.944a11.955 11.955 0 01-8.618 3.04A12.02 12.02 0 003 9c0 5.591 3.824 10.29 9 11.622 5.176-1.332 9-6.03 9-11.622 0-1.042-.133-2.052-.382-3.016z"/></svg></div>
+            <div><div style="font-size:14px;font-weight:800;color:#1a1e2e;margin-bottom:3px;letter-spacing:-.01em">Cloud-Native Deployment</div><div style="font-size:13px;color:#4a5470;line-height:1.65">Docker, Kubernetes, AWS/GCP/Azure, CI/CD with GitHub Actions — zero-downtime deployments and auto-scaling infrastructure.</div></div>
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+
+
+
+
+
+
+<!-- Tech Stack -->
+
+
+
+<section class="section" style="background:var(--bg2)">
+
+
+
+  <div class="container">
+
+
+
+    <div class="text-center reveal">
+
+
+
+      <span class="eyebrow">Technology</span>
+
+
+
+      <h2>Our <span class="grad-text3">Full-Stack Tech</span></h2>
+
+
+
+      <div class="section-divider"></div>
+
+
+
+      <p class="section-desc" style="margin-top:16px">Battle-tested technologies across the full web development stack — chosen for performance, developer experience, and long-term maintainability.</p>
+
+
+
+    </div>
+
+
+
+    <div class="tech-showcase reveal-stagger">
+
+
+
+      <div class="tech-category-label">Backend Frameworks</div>
+
+
+
+      <div class="tech-logo-grid">
+
+
+
+        <div class="tech-logo-card featured">
+
+
+
+          <img src="https://cdn.simpleicons.org/rust/CE422B" alt="Rust">
+
+
+
+          <div><span class="tname">Rust</span><span class="tdesc">Ultra-low latency matching engine —  high-throughput order processing</span></div>
+
+
+
+        </div>
+
+
+
+        <div class="tech-logo-card featured">
+
+
+
+          <img src="https://cdn.simpleicons.org/go/00ADD8" alt="Go">
+
+
+
+          <div><span class="tname">Go</span><span class="tdesc">High-throughput microservices for order management, wallet, and settlement systems</span></div>
+
+
+
+        </div>
+
+
+
+        <div class="tech-logo-card"><img src="https://cdn.simpleicons.org/nodedotjs/339933" alt="Node.js"><span class="tname">Node.js</span><span class="tdesc">API gateway & WebSocket</span></div>
+
+
+
+        <div class="tech-logo-card"><img src="https://cdn.simpleicons.org/apachekafka/231F20" alt="Kafka"><span class="tname">Kafka</span><span class="tdesc">Event streaming</span></div>
+
+
+
+      </div>
+
+
+
+      <div class="tech-category-label">Frontend & Mobile</div>
+
+
+
+      <div class="tech-logo-grid">
+
+
+
+        <div class="tech-logo-card featured">
+
+
+
+          <img src="https://cdn.simpleicons.org/react/61DAFB" alt="React">
+
+
+
+          <div><span class="tname">React + TradingView</span><span class="tdesc">Professional trading UI with advanced charting, order book visualization, and real-time data</span></div>
+
+
+
+        </div>
+
+
+
+        <div class="tech-logo-card featured">
+
+
+
+          <img src="https://cdn.simpleicons.org/react/61DAFB" alt="React Native">
+
+
+
+          <div><span class="tname">React Native</span><span class="tdesc">Native iOS & Android trading apps with full feature parity and biometric authentication</span></div>
+
+
+
+        </div>
+
+
+
+        <div class="tech-logo-card"><img src="https://cdn.simpleicons.org/typescript/3178C6" alt="TypeScript"><span class="tname">TypeScript</span><span class="tdesc">Type-safe frontend</span></div>
+
+
+
+        <div class="tech-logo-card"><img src="https://cdn.simpleicons.org/nextdotjs/000000" alt="Next.js"><span class="tname">Next.js</span><span class="tdesc">SSR landing pages</span></div>
+
+
+
+      </div>
+
+
+
+      <div class="tech-category-label">Data & Infrastructure</div>
+
+
+
+      <div class="tech-logo-grid">
+
+
+
+        <div class="tech-logo-card"><img src="https://cdn.simpleicons.org/postgresql/4169E1" alt="PostgreSQL"><span class="tname">PostgreSQL</span><span class="tdesc">Primary database</span></div>
+
+
+
+        <div class="tech-logo-card"><img src="https://cdn.simpleicons.org/redis/DC382D" alt="Redis"><span class="tname">Redis</span><span class="tdesc">Order book cache</span></div>
+
+
+
+        <div class="tech-logo-card"><img src="https://cdn.simpleicons.org/elasticsearch/005571" alt="Elasticsearch"><span class="tname">Elasticsearch</span><span class="tdesc">Trade history search</span></div>
+
+
+
+        <div class="tech-logo-card"><img src="https://cdn.simpleicons.org/kubernetes/326CE5" alt="Kubernetes"><span class="tname">Kubernetes</span><span class="tdesc">Container orchestration</span></div>
+
+
+
+        <div class="tech-logo-card"><svg viewBox="0 0 24 24" style="width:28px;height:28px" fill="#FF9900"><path d="M6.763 10.036c0 .296.032.535.088.71.064.176.144.368.256.576.04.063.056.127.056.183 0 .08-.048.16-.152.24l-.503.335a.383.383 0 0 1-.208.072c-.08 0-.16-.04-.239-.112a2.47 2.47 0 0 1-.287-.375 6.18 6.18 0 0 1-.248-.471c-.622.734-1.405 1.101-2.347 1.101-.67 0-1.205-.191-1.596-.574-.391-.384-.59-.894-.59-1.533 0-.678.239-1.23.726-1.644.487-.415 1.133-.623 1.955-.623.272 0 .551.024.846.064.296.04.6.1.918.176v-.583c0-.607-.127-1.03-.375-1.277-.255-.248-.686-.369-1.3-.369a3.613 3.613 0 0 0-.879.112 6.494 6.494 0 0 0-.903.295 2.357 2.357 0 0 1-.288.12.5.5 0 0 1-.127.023c-.112 0-.168-.08-.168-.247v-.391c0-.128.016-.224.056-.28a.597.597 0 0 1 .224-.167 4.552 4.552 0 0 1 .997-.36A5.098 5.098 0 0 1 3.8 5.15c.95 0 1.644.216 2.09.647.439.43.662 1.083.662 1.958v2.281zm-3.24 1.214c.263 0 .534-.048.822-.144.287-.096.543-.271.758-.51.128-.152.224-.32.272-.503.048-.184.08-.407.08-.671v-.32a6.699 6.699 0 0 0-.735-.136 6.02 6.02 0 0 0-.75-.048c-.535 0-.926.104-1.19.32-.263.215-.39.518-.39.917 0 .375.095.655.295.846.191.2.47.295.838.295v-.046zm6.41.862c-.144 0-.24-.024-.304-.08-.063-.048-.12-.16-.168-.311L7.586 5.55a1.398 1.398 0 0 1-.072-.32c0-.128.064-.2.191-.2h.783c.151 0 .255.025.31.08.065.048.113.16.16.312l1.342 5.284 1.245-5.284c.04-.16.088-.264.151-.312a.549.549 0 0 1 .32-.08h.638c.152 0 .256.025.32.08.063.048.12.16.151.312l1.261 5.348 1.381-5.348c.048-.16.104-.264.16-.312a.52.52 0 0 1 .311-.08h.743c.127 0 .2.065.2.2 0 .04-.009.08-.017.128a1.137 1.137 0 0 1-.056.2l-1.923 6.17c-.048.16-.104.263-.168.311a.51.51 0 0 1-.303.08h-.687a.49.49 0 0 1-.32-.08c-.063-.056-.12-.16-.15-.32l-1.238-5.148-1.23 5.14c-.04.16-.087.264-.15.32a.513.513 0 0 1-.32.08h-.687zm10.257.28c-.415 0-.83-.048-1.229-.143-.399-.096-.71-.2-.918-.32-.128-.071-.215-.151-.247-.223a.563.563 0 0 1-.048-.224v-.407c0-.167.064-.247.183-.247.048 0 .096.008.144.024.048.016.12.048.2.08.271.12.566.215.878.279.319.064.63.096.95.096.502 0 .894-.088 1.165-.264a.86.86 0 0 0 .415-.758.777.777 0 0 0-.215-.559c-.144-.151-.416-.287-.807-.415l-1.157-.36c-.583-.183-1.014-.454-1.277-.813a1.902 1.902 0 0 1-.4-1.158c0-.335.073-.63.216-.886.144-.255.335-.479.575-.654.24-.184.51-.32.83-.415.32-.096.655-.136 1.006-.136.175 0 .359.008.535.032.183.024.35.056.518.088.16.04.312.08.455.127.144.048.256.096.336.144a.69.69 0 0 1 .24.2.43.43 0 0 1 .071.263v.375c0 .168-.064.256-.184.256a.83.83 0 0 1-.303-.096 3.652 3.652 0 0 0-1.532-.311c-.455 0-.815.071-1.062.223-.248.152-.375.383-.375.71 0 .224.08.416.24.567.159.152.454.304.877.44l1.134.358c.574.184.99.44 1.237.767.247.327.367.702.367 1.117 0 .343-.072.655-.207.926-.144.272-.336.511-.583.703-.248.2-.543.343-.886.447-.36.111-.743.167-1.158.167z"/></svg><span class="tname">AWS / GCP</span><span class="tdesc">Cloud infrastructure</span></div>
+
+
+
+        <div class="tech-logo-card"><img src="https://cdn.simpleicons.org/prometheus/E6522C" alt="Prometheus"><span class="tname">Prometheus</span><span class="tdesc">Metrics & alerting</span></div>
+
+
+
+      </div>
+
+
+
+    </div>
+
+
+
+  </div>
+
+
+
+</section>
+
+
+
+
+
+
+
+<section class="section-sm">
+
+
+
+  <div class="container">
+
+
+
+    <div class="cta-banner reveal">
+
+
+
+      <div class="cta-bg"><img src="https://images.pexels.com/photos/8358136/pexels-photo-8358136.jpeg?auto=compress&cs=tinysrgb&w=1600" alt="CTA"></div>
+
+
+
+      <div class="cta-content">
+
+
+
+        <h2>Ready to Build Your <span class="grad-text">Web Application?</span></h2>
+
+
+
+        <p>Talk to our engineers. We'll scope your project, recommend the right stack, and give you a clear roadmap to launch.</p>
+
+
+
+        <div class="cta-btns">
+
+
+
+          <a href="../../contact/" class="btn btn-accent btn-lg btn-magnetic">Get Free Quote</a>
+
+
+
+          <a href="../../about/" class="btn btn-white btn-lg">About PumaPulse</a>
+
+
+
+        </div>
+
+
+
+      </div>
+
+
+
+    </div>
+
+
+
+  </div>
+
+
+
+</section>
+
+
+
+
+
+
+
+<div id="footer-placeholder"></div>
+
+
+
+<script src="../../js/nav.js"></script>
+
+
+
+<script src="../../js/main.js"></script>
+
+
+
+<script src="../../js/animations.js"></script>
+
+
+
+</body>
+
+
+
+</html>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

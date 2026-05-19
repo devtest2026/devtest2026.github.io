@@ -1,0 +1,465 @@
+﻿<!DOCTYPE html>
+
+
+
+
+
+
+
+
+
+<html lang="en">
+
+
+
+
+
+
+
+
+
+<head>
+
+
+
+
+
+
+
+
+
+  <meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+
+
+
+
+
+
+
+
+  <title>PumaPulse Blog — Full-Stack, Mobile, AI/ML &amp; Blockchain Insights</title>
+
+
+
+
+
+
+
+
+
+  <meta name="description" content="Expert insights on Full-Stack development, Mobile apps, AI/ML, Blockchain, automation bots, and e-commerce from the PumaPulse engineering team.">
+
+
+
+
+
+
+
+
+
+  <link rel="icon" href="https://res.cloudinary.com/dtvnifa3t/image/upload/v1775203874/pumapulse/icon.png" type="image/png">
+  <link href="https://fonts.googleapis.com/css2—family=Inter:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="../css/style.css">
+  <link rel="stylesheet" href="../css/theme.css">
+  <link rel="stylesheet" href="../css/animations.css">
+  <link rel="stylesheet" href="../css/mobile.css">
+  <style>
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
+body{font-family:'Inter',sans-serif;background:#f5f6fa;color:#1a1e2e;overflow-x:hidden;line-height:1.6}
+.bl-hero{min-height:60vh;position:relative;display:flex;align-items:center;overflow:hidden;background:#060a14}
+.bl-hero-bg{position:absolute;inset:0;background:url('https://res.cloudinary.com/dtvnifa3t/image/upload/v1775271488/pumapulse/blog.png') center/cover no-repeat;opacity:.4}
+.bl-hero-grid{position:absolute;inset:0;background-image:linear-gradient(rgba(255,255,255,.03) 1px,transparent 1px),linear-gradient(90deg,rgba(255,255,255,.03) 1px,transparent 1px);background-size:60px 60px}
+.bl-hero-inner{position:relative;z-index:2;max-width:1200px;margin:0 auto;padding:140px 44px 80px}
+.bl-eyebrow{display:inline-flex;align-items:center;gap:10px;font-size:11px;font-weight:700;letter-spacing:.18em;text-transform:uppercase;color:rgba(192,32,42,.9);margin-bottom:22px}
+.bl-eyebrow::before{content:'';width:24px;height:2px;background:#c0202a;border-radius:2px;flex-shrink:0}
+.bl-hero h1{font-size:clamp(38px,5vw,68px);font-weight:900;line-height:1.0;letter-spacing:-.03em;color:#fff;margin-bottom:18px}
+.bl-hero h1 em{color:#e0263a;font-style:normal}
+.bl-hero-sub{font-size:16px;line-height:1.85;color:rgba(200,215,235,.7);font-weight:300;max-width:500px}
+/* SHARED */
+.bl-section{padding:80px 0 100px}
+.bl-container{max-width:1200px;margin:0 auto;padding:0 44px}
+.bl-label{display:inline-flex;align-items:center;gap:8px;font-size:11px;font-weight:700;letter-spacing:.18em;text-transform:uppercase;color:#c0202a;margin-bottom:16px}
+.bl-label::before{content:'';width:20px;height:2px;background:#c0202a;border-radius:2px;flex-shrink:0}
+/* FILTERS */
+.bl-filters{display:flex;gap:6px;flex-wrap:wrap;margin-bottom:48px}
+.bl-filter{padding:8px 18px;border-radius:50px;border:1.5px solid #e0e4ef;background:transparent;color:#4a5470;font-size:12px;font-weight:700;cursor:pointer;transition:all .2s;font-family:'Inter',sans-serif;letter-spacing:.04em;text-transform:uppercase}
+.bl-filter.active,.bl-filter:hover{background:#c0202a;border-color:#c0202a;color:#fff}
+/* FEATURED */
+.bl-featured{display:grid;grid-template-columns:1.6fr 1fr;gap:1px;background:#e0e4ef;border:1px solid #e0e4ef;margin-bottom:1px}
+.bl-card{background:#fff;overflow:hidden;transition:background .2s;cursor:pointer}
+.bl-card:hover{background:#fafafa}
+.bl-card-img{overflow:hidden;position:relative}
+.bl-card-img img{width:100%;height:100%;object-fit:cover;display:block;transition:transform .5s}
+.bl-card:hover .bl-card-img img{transform:scale(1.04)}
+.bl-card-body{padding:22px 24px 26px}
+.bl-card-tag{display:inline-block;font-size:10px;font-weight:700;letter-spacing:.1em;text-transform:uppercase;padding:3px 10px;background:rgba(192,32,42,.08);color:#c0202a;border-radius:3px;margin-bottom:10px}
+.bl-card-title{font-size:16px;font-weight:800;color:#1a1e2e;line-height:1.3;margin-bottom:8px;letter-spacing:-.01em}
+.bl-card-title-lg{font-size:20px}
+.bl-card-desc{font-size:13px;line-height:1.75;color:#4a5470;margin-bottom:12px}
+.bl-card-meta{display:flex;gap:16px;font-size:11px;font-weight:600;color:#8a93b0;letter-spacing:.04em;text-transform:uppercase}
+/* GRID */
+.bl-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:20px;background:transparent;border:none;border-top:none;margin-top:20px}
+.bl-featured-side{display:flex;flex-direction:column;gap:1px;background:#e0e4ef}
+/* CTA */
+.bl-cta{background:linear-gradient(135deg,#100e1a 0%,#1a0810 50%,#0a0c18 100%);padding:80px 0;text-align:center;position:relative;overflow:hidden}
+.bl-cta::before{content:'';position:absolute;top:50%;left:50%;transform:translate(-50%,-50%);width:500px;height:250px;background:radial-gradient(ellipse,rgba(192,32,42,.2) 0%,transparent 70%);pointer-events:none}
+.bl-cta h2{font-size:clamp(26px,3.5vw,44px);font-weight:900;color:#fff;line-height:1.05;letter-spacing:-.03em;margin-bottom:14px;position:relative;z-index:1}
+.bl-cta h2 em{color:#e0263a;font-style:normal}
+.bl-cta p{font-size:15px;color:rgba(200,215,235,.65);max-width:440px;margin:0 auto 28px;font-weight:300;position:relative;z-index:1}
+.bl-nl-form{display:flex;gap:10px;justify-content:center;flex-wrap:wrap;max-width:440px;margin:0 auto;position:relative;z-index:1}
+.bl-nl-input{flex:1;min-width:200px;background:rgba(255,255,255,.08);border:1.5px solid rgba(255,255,255,.15);border-radius:50px;padding:12px 20px;color:#fff;font-size:14px;outline:none;font-family:'Inter',sans-serif;transition:border-color .2s}
+.bl-nl-input:focus{border-color:rgba(192,32,42,.6)}
+.bl-nl-input::placeholder{color:rgba(200,215,235,.4)}
+.bl-nl-btn{background:#c0202a;color:#fff;border:none;padding:12px 24px;border-radius:50px;font-family:'Inter',sans-serif;font-size:14px;font-weight:700;cursor:pointer;transition:background .2s;white-space:nowrap}
+.bl-nl-btn:hover{background:#e0263a}
+/* ANIMATIONS */
+.reveal,.reveal-left,.reveal-right,.reveal-stagger>*{opacity:0;transition:opacity .7s ease,transform .7s ease}
+.reveal{transform:translateY(24px)}.reveal-left{transform:translateX(-32px)}.reveal-right{transform:translateX(32px)}
+.reveal-stagger>*{transform:translateY(20px)}
+.reveal.revealed,.reveal-left.revealed,.reveal-right.revealed{opacity:1;transform:none}
+.reveal-stagger.revealed>*{opacity:1;transform:none}
+.reveal-stagger.revealed>*:nth-child(1){transition-delay:.05s}.reveal-stagger.revealed>*:nth-child(2){transition-delay:.1s}.reveal-stagger.revealed>*:nth-child(3){transition-delay:.15s}.reveal-stagger.revealed>*:nth-child(4){transition-delay:.2s}.reveal-stagger.revealed>*:nth-child(5){transition-delay:.25s}.reveal-stagger.revealed>*:nth-child(6){transition-delay:.3s}.reveal-stagger.revealed>*:nth-child(7){transition-delay:.35s}.reveal-stagger.revealed>*:nth-child(8){transition-delay:.4s}.reveal-stagger.revealed>*:nth-child(9){transition-delay:.45s}
+/* RESPONSIVE */
+@media(max-width:1024px){.bl-featured{grid-template-columns:1fr}.bl-featured-side{flex-direction:row}.bl-grid{grid-template-columns:repeat(2,1fr)}.bl-container{padding:0 24px}.bl-hero-inner{padding:120px 24px 60px}}
+@media(max-width:768px){.bl-section{padding:52px 0 72px}.bl-container{padding:0 16px}.bl-grid{grid-template-columns:1fr}.bl-featured-side{flex-direction:column}}
+  </style>
+
+
+
+
+
+
+
+
+
+  <link href="https://fonts.googleapis.com/css2—family=Inter:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet">
+
+
+
+
+
+
+
+
+
+  <link rel="stylesheet" href="../css/style.css">
+
+
+
+
+
+
+
+
+  <link rel="stylesheet" href="../css/theme.css">
+
+
+
+
+
+
+
+
+  <link rel="stylesheet" href="../css/animations.css">
+  <link rel="stylesheet" href="../css/mobile.css">
+
+
+
+
+
+
+
+
+
+  <style>
+
+
+
+
+
+
+
+
+
+    .blog-filters{display:flex;gap:8px;flex-wrap:wrap;margin-bottom:40px}
+
+
+
+
+
+
+
+
+
+    .filter-btn{padding:8px 20px;border-radius:50px;border:1px solid var(--border);background:transparent;color:var(--muted2);font-size:0.83rem;font-weight:600;cursor:pointer;transition:all 0.2s;font-family:var(--font)}
+
+
+
+
+
+
+
+
+
+    .filter-btn.active,.filter-btn:hover{background:var(--ad);border-color:rgba(16,185,129,0.3);color:var(--accent)}
+
+
+
+
+
+
+
+
+
+    .blog-featured{display:grid;grid-template-columns:1.6fr 1fr;gap:22px;margin-bottom:22px}
+
+
+
+
+
+
+
+
+
+    .blog-featured .blog-card:first-child .blog-thumb{height:300px}
+
+
+
+
+
+
+
+
+
+    @media(max-width:768px){.blog-featured{grid-template-columns:1fr}}
+
+
+
+
+
+
+
+
+
+  </style>
+
+
+
+
+
+
+
+
+
+</head>
+
+
+
+
+
+
+
+
+
+<body>
+
+
+
+
+
+
+
+
+
+<div id="nav-placeholder"></div>
+
+<!-- HERO -->
+<section class="bl-hero">
+  <div class="bl-hero-bg"></div><div class="bl-hero-overlay"></div><div class="bl-hero-grid"></div>
+  <div class="bl-hero-inner reveal">
+    <div class="bl-eyebrow">Knowledge Hub</div>
+    <h1>Engineering the<br><em>Future of Digital.</em></h1>
+    <p class="bl-hero-sub">Deep dives, technical guides, and engineering insights from our Full-Stack, Mobile, AI/ML, and Blockchain development team.</p>
+  </div>
+</section>
+
+<!-- BLOG CONTENT -->
+<section class="bl-section" style="background:#f5f6fa">
+  <div class="bl-container">
+
+    <!-- Filters -->
+    <div class="bl-filters reveal">
+      <button class="bl-filter active">All</button>
+      <button class="bl-filter">Full-Stack</button>
+      <button class="bl-filter">Blockchain</button>
+      <button class="bl-filter">Mobile</button>
+      <button class="bl-filter">AI / ML</button>
+      <button class="bl-filter">Bots</button>
+      <button class="bl-filter">E-Commerce</button>
+    </div>
+
+    <!-- Featured -->
+    <div class="bl-featured reveal">
+      <div class="bl-card" onclick="location.href='how-to-build-crypto-exchange-2025/'" style="cursor:pointer" data-cat="fullstack">
+        <div class="bl-card-img" style="height:300px"><img src="https://images.unsplash.com/photo-1555066931-4365d14bab8c?w=900&q=80" alt="Full-Stack Development Guide" loading="lazy"></div>
+        <div class="bl-card-body">
+          <span class="bl-card-tag">Full-Stack</span>
+          <div class="bl-card-title bl-card-title-lg">Laravel vs Django vs Node.js in 2025: Which Backend Should You Choose?</div>
+          <p class="bl-card-desc">A deep technical comparison of the three most popular backend frameworks — performance benchmarks, ecosystem maturity, and when to use each one.</p>
+          <div class="bl-card-meta"><span>May 10, 2025</span><span>12 min read</span></div>
+        </div>
+      </div>
+      <div class="bl-featured-side">
+        <div class="bl-card" onclick="location.href='arbitrage-bot-strategies-2025/'" style="cursor:pointer" data-cat="mobile">
+          <div class="bl-card-img" style="height:140px"><img src="https://images.unsplash.com/photo-1512941937669-90a1b58e7e9c?w=700&q=80" alt="React Native vs Flutter" loading="lazy"></div>
+          <div class="bl-card-body"><span class="bl-card-tag">Mobile</span><div class="bl-card-title">React Native vs Flutter in 2025: The Definitive Guide</div><div class="bl-card-meta"><span>May 5, 2025</span><span>9 min read</span></div></div>
+        </div>
+        <div class="bl-card" onclick="location.href='neobank-vs-traditional-bank/'" style="cursor:pointer" data-cat="ai-ml">
+          <div class="bl-card-img" style="height:140px"><img src="https://images.unsplash.com/photo-1677442135703-1787eea5ce01?w=700&q=80" alt="OpenAI API Integration" loading="lazy"></div>
+          <div class="bl-card-body"><span class="bl-card-tag">AI / ML</span><div class="bl-card-title">How to Integrate OpenAI GPT-4 Into Your Web App</div><div class="bl-card-meta"><span>Apr 28, 2025</span><span>8 min read</span></div></div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Grid -->
+    <div class="bl-grid reveal-stagger">
+      <div class="bl-card" onclick="location.href='building-dex-2025/'" style="cursor:pointer" data-cat="blockchain">
+        <div class="bl-card-img" style="height:180px"><img src="https://images.unsplash.com/photo-1639322537228-f710d846310a?w=700&q=80" alt="Blockchain Smart Contracts" loading="lazy"></div>
+        <div class="bl-card-body"><span class="bl-card-tag">Blockchain</span><div class="bl-card-title">Building Your First Smart Contract: Solidity Best Practices 2025</div><p class="bl-card-desc">A practical guide to writing secure, gas-efficient Solidity smart contracts — from setup to deployment and audit.</p><div class="bl-card-meta"><span>Apr 20, 2025</span><span>11 min read</span></div></div>
+      </div>
+      <div class="bl-card" onclick="location.href='mpc-wallets-explained/'" style="cursor:pointer" data-cat="bots">
+        <div class="bl-card-img" style="height:180px"><img src="https://images.unsplash.com/photo-1551288049-bebda4e38f71?w=700&q=80" alt="Python Trading Bot" loading="lazy"></div>
+        <div class="bl-card-body"><span class="bl-card-tag">Bots</span><div class="bl-card-title">Build a Python Trading Bot in 2025: From Zero to Live</div><p class="bl-card-desc">Step-by-step guide to building an algorithmic trading bot with Python, CCXT, and a live dashboard — no fluff.</p><div class="bl-card-meta"><span>Apr 15, 2025</span><span>10 min read</span></div></div>
+      </div>
+      <div class="bl-card" onclick="location.href='forex-crm-features-2025/'" style="cursor:pointer" data-cat="ecommerce">
+        <div class="bl-card-img" style="height:180px"><img src="https://images.unsplash.com/photo-1556742049-0cfed4f6a45d?w=700&q=80" alt="Shopify Headless Commerce" loading="lazy"></div>
+        <div class="bl-card-body"><span class="bl-card-tag">E-Commerce</span><div class="bl-card-title">Headless Shopify with Next.js: The Complete 2025 Setup Guide</div><p class="bl-card-desc">How to build a blazing-fast headless Shopify storefront with Next.js App Router, Storefront API, and Vercel.</p><div class="bl-card-meta"><span>Apr 8, 2025</span><span>9 min read</span></div></div>
+      </div>
+      <div class="bl-card" onclick="location.href='crypto-payment-gateways-guide/'" style="cursor:pointer" data-cat="mobile">
+        <div class="bl-card-img" style="height:180px"><img src="https://images.unsplash.com/photo-1551650975-87deedd944c3?w=700&q=80" alt="Flutter App Development" loading="lazy"></div>
+        <div class="bl-card-body"><span class="bl-card-tag">Mobile</span><div class="bl-card-title">Flutter State Management in 2025: BLoC vs Riverpod vs Provider</div><p class="bl-card-desc">A practical comparison of the three most popular Flutter state management solutions with real-world code examples.</p><div class="bl-card-meta"><span>Apr 1, 2025</span><span>8 min read</span></div></div>
+      </div>
+      <div class="bl-card" onclick="location.href='layer-2-scaling-solutions/'" style="cursor:pointer" data-cat="ai-ml">
+        <div class="bl-card-img" style="height:180px"><img src="https://images.unsplash.com/photo-1620712943543-bcc4688e7485?w=700&q=80" alt="AI ML Python" loading="lazy"></div>
+        <div class="bl-card-body"><span class="bl-card-tag">AI / ML</span><div class="bl-card-title">Building a RAG Pipeline with LangChain and OpenAI in 2025</div><p class="bl-card-desc">How to build a production-ready Retrieval-Augmented Generation pipeline — from document ingestion to streaming responses.</p><div class="bl-card-meta"><span>Mar 25, 2025</span><span>13 min read</span></div></div>
+      </div>
+      <div class="bl-card" onclick="location.href='grid-trading-bots-sideways-markets/'" style="cursor:pointer" data-cat="fullstack">
+        <div class="bl-card-img" style="height:180px"><img src="https://images.unsplash.com/photo-1627398242454-45a1465c2479?w=700&q=80" alt="Next.js Full Stack" loading="lazy"></div>
+        <div class="bl-card-body"><span class="bl-card-tag">Full-Stack</span><div class="bl-card-title">Next.js 15 App Router: Everything You Need to Know</div><p class="bl-card-desc">A comprehensive guide to Next.js 15 — Server Components, streaming, caching strategies, and production deployment.</p><div class="bl-card-meta"><span>Mar 18, 2025</span><span>10 min read</span></div></div>
+      </div>
+      <div class="bl-card" data-cat="bots" onclick="location.href='how-to-build-crypto-exchange-2025/'" style="cursor:pointer">
+        <div class="bl-card-img" style="height:180px"><img src="https://images.unsplash.com/photo-1558494949-ef010cbdcc31?w=700&q=80" alt="Web Scraping Python" loading="lazy"></div>
+        <div class="bl-card-body"><span class="bl-card-tag">Bots</span><div class="bl-card-title">Web Scraping at Scale with Python: Scrapy, Playwright &amp; Proxies</div><p class="bl-card-desc">How to build robust, scalable web scrapers that handle JavaScript rendering, CAPTCHAs, and rate limiting.</p><div class="bl-card-meta"><span>Mar 10, 2025</span><span>9 min read</span></div></div>
+      </div>
+      <div class="bl-card" data-cat="mobile">
+        <div class="bl-card-img" style="height:180px"><img src="https://images.unsplash.com/photo-1607252650355-f7fd0460ccdb?w=700&q=80" alt="Android Kotlin" loading="lazy"></div>
+        <div class="bl-card-body"><span class="bl-card-tag">Mobile</span><div class="bl-card-title">Jetpack Compose in 2025: Building Native Android UIs</div><p class="bl-card-desc">A practical guide to Jetpack Compose — layouts, state management, animations, and navigation for modern Android apps.</p><div class="bl-card-meta"><span>Mar 3, 2025</span><span>8 min read</span></div></div>
+      </div>
+      <div class="bl-card" data-cat="blockchain">
+        <div class="bl-card-img" style="height:180px"><img src="https://images.unsplash.com/photo-1614064641938-3bbee52942c7?w=700&q=80" alt="DeFi Protocol" loading="lazy"></div>
+        <div class="bl-card-body"><span class="bl-card-tag">Blockchain</span><div class="bl-card-title">How to Build a DeFi Protocol: AMM, Staking &amp; Governance</div><p class="bl-card-desc">A technical deep-dive into building production-grade DeFi protocols — from AMM math to DAO governance contracts.</p><div class="bl-card-meta"><span>Feb 24, 2025</span><span>14 min read</span></div></div>
+      </div>
+    </div>
+
+    <div style="text-align:center;margin-top:48px" class="reveal">
+      <button id="loadMoreBtn" onclick="loadMore()" style="display:inline-flex;align-items:center;gap:8px;background:transparent;color:#1a1e2e;border:1.5px solid #e0e4ef;padding:12px 28px;border-radius:50px;font-family:'Inter',sans-serif;font-size:13px;font-weight:700;cursor:pointer;transition:all .2s;letter-spacing:.04em;text-transform:uppercase" onmouseover="this.style.borderColor='#c0202a';this.style.color='#c0202a'" onmouseout="this.style.borderColor='#e0e4ef';this.style.color='#1a1e2e'">Load More Articles &#8594;</button>
+    </div>
+  </div>
+</section>
+
+<!-- NEWSLETTER CTA -->
+<section class="bl-cta">
+  <div class="bl-container reveal">
+    <h2>Stay Ahead of the <em>Curve.</em></h2>
+    <p>Get our weekly newsletter with the latest Full-Stack, Mobile, AI/ML, and Blockchain insights delivered to your inbox.</p>
+    <form class="bl-nl-form" onsubmit="return false">
+      <input type="email" class="bl-nl-input" placeholder="Enter your email address">
+      <button type="submit" class="bl-nl-btn">Subscribe</button>
+    </form>
+  </div>
+</section>
+
+<div id="footer-placeholder"></div>
+<script src="../js/nav.js"></script>
+<script src="../js/main.js"></script>
+<script src="../js/animations.js"></script>
+<script>
+// -- Filter --
+var filterMap = {
+  'All': 'all',
+  'Full-Stack': 'fullstack',
+  'Blockchain': 'blockchain',
+  'Mobile': 'mobile',
+  'AI / ML': 'ai-ml',
+  'Bots': 'bots',
+  'E-Commerce': 'ecommerce'
+};
+
+document.querySelectorAll('.bl-filter').forEach(function(btn) {
+  btn.addEventListener('click', function() {
+    document.querySelectorAll('.bl-filter').forEach(function(b){ b.classList.remove('active'); });
+    this.classList.add('active');
+    var cat = filterMap[this.textContent.trim()] || 'all';
+
+    var featured = document.querySelector('.bl-featured');
+    var grid = document.querySelector('.bl-grid');
+    var gridCards = grid — grid.querySelectorAll('.bl-card') : [];
+
+    if (cat === 'all') {
+      // Restore original layout
+      if (featured) featured.style.display = '';
+      if (grid) { grid.style.gridTemplateColumns = ''; grid.style.maxWidth = ''; }
+      gridCards.forEach(function(c){ c.style.display = ''; });
+    } else {
+      // Hide featured section
+      if (featured) featured.style.display = 'none';
+
+      // Show only matching grid cards, adjust grid columns
+      var visible = 0;
+      gridCards.forEach(function(c){
+        if (c.dataset.cat === cat) { c.style.display = ''; visible++; }
+        else { c.style.display = 'none'; }
+      });
+
+      // Adjust grid to fit visible count cleanly
+      if (grid) {
+        if (visible === 1) grid.style.gridTemplateColumns = 'repeat(1,400px)';
+        else if (visible === 2) grid.style.gridTemplateColumns = 'repeat(2,1fr)';
+        else grid.style.gridTemplateColumns = 'repeat(3,1fr)';
+      }
+    }
+  });
+});
+
+// -- Load More --
+var extraPosts = [
+  { cat:'blockchain', tag:'Blockchain', title:'How to Audit a Smart Contract: Step-by-Step Guide', desc:'A practical walkthrough of smart contract security auditing - tools, techniques, and what to look for before deployment.', date:'Sep 20, 2024', read:'9 min read', img:'../img/security/Annotation%202026-04-04%20221253.jpg"bl-card-img" style="height:180px"><img src="' + p.img + '" alt="' + p.title + '" loading="lazy"></div><div class="bl-card-body"><span class="bl-card-tag">' + p.tag + '</span><div class="bl-card-title">' + p.title + '</div><p class="bl-card-desc">' + p.desc + '</p><div class="bl-card-meta"><span>' + p.date + '</span><span>' + p.read + '</span></div></div>';
+    grid.appendChild(card);
+  });
+  var btn = document.getElementById('loadMoreBtn');
+  if (btn) { btn.textContent = 'All Articles Loaded'; btn.disabled = true; btn.style.opacity = '0.5'; btn.style.cursor = 'default'; }
+}
+
+// -- Newsletter --
+var nlForm = document.querySelector('.bl-nl-form');
+if (nlForm) {
+  nlForm.addEventListener('submit', function(e) {
+    e.preventDefault();
+    var input = nlForm.querySelector('input');
+    var btn = nlForm.querySelector('button');
+    if (!input.value.trim()) return;
+    btn.textContent = 'Subscribed!';
+    btn.disabled = true;
+    input.disabled = true;
+    setTimeout(function() {
+      btn.textContent = 'Subscribe';
+      btn.disabled = false;
+      input.disabled = false;
+      input.value = '';
+    }, 3000);
+  });
+}
+</script>
+</body>
+</html>

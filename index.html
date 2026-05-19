@@ -1,0 +1,1321 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>PumaPulse - Full-Stack, Mobile App & AI/ML Development</title>
+<meta name="description" content="PumaPulse builds cutting-edge digital products — Full-Stack Web, Mobile Apps (React Native, Flutter, iOS, Android), AI/ML solutions, Blockchain, and intelligent automation bots.">
+<link rel="icon" href="https://res.cloudinary.com/dtvnifa3t/image/upload/v1775203874/pumapulse/icon.png" type="image/png">
+<link rel="shortcut icon" href="https://res.cloudinary.com/dtvnifa3t/image/upload/v1775203874/pumapulse/icon.png" type="image/png">
+<link rel="apple-touch-icon" href="https://res.cloudinary.com/dtvnifa3t/image/upload/v1775203874/pumapulse/icon.png">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="css/style.css">
+<link rel="stylesheet" href="css/theme.css">
+<link rel="stylesheet" href="css/animations.css">
+<link rel="stylesheet" href="css/mobile.css">
+<style>
+
+/* Mega menu - appended to body via JS */
+.mega-menu{position:absolute;top:100%;left:50%;transform:translateX(-50%);width:220px;background:rgba(8,12,24,0.96);backdrop-filter:blur(16px);-webkit-backdrop-filter:blur(16px);border:none;border-radius:0;padding:12px 0;box-shadow:0 16px 40px rgba(0,0,0,0.5);opacity:0;visibility:hidden;transition:opacity .2s,visibility .2s;z-index:9999;overflow:hidden;box-sizing:border-box}
+.nav-links .dropdown:hover .mega-menu{opacity:1;visibility:visible}
+.mega-item{display:flex;align-items:center;gap:0;padding:10px 20px;border-radius:0;text-decoration:none;transition:color .15s,background .15s;border:none;background:none;width:100%}
+.mega-item:hover{background:rgba(255,255,255,0.06)}
+.mega-icon{display:none}
+.mega-text-label{font-size:13px;font-weight:400;color:rgba(240,244,255,0.75);display:block;transition:color .15s;letter-spacing:0;white-space:nowrap}
+.mega-item:hover .mega-text-label{color:#fff}
+.mega-text-desc{display:none}
+.mega-menu-header{display:none}
+.mega-menu-grid{display:flex;flex-direction:column;gap:0;width:100%;padding:0}
+.mega-cta{display:none}
+.mega-menu-footer{display:none}
+/* Mobile */
+@media(max-width:1024px){.nav-links,.nav-cta{display:none}.hamburger{display:flex}}
+@media(max-width:1024px){.nav-mobile-open .nav-links{display:flex;flex-direction:column;position:fixed;top:68px;left:0;right:0;background:rgba(8,12,24,0.96);padding:16px;gap:4px;z-index:9998}.nav-mobile-open .nav-links>li>a{color:rgba(240,244,255,0.7);padding:12px 16px;border-radius:6px}.nav-mobile-open .nav-cta{display:flex;position:fixed;bottom:24px;left:24px;right:24px;z-index:9998}.nav-mobile-open .mega-menu{display:none}}
+</style>
+<style>
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
+html{scroll-behavior:smooth;-webkit-font-smoothing:antialiased}
+:root{
+  --bg:#0a0c12;
+  --bg2:#0f1219;
+  --bg3:#141820;
+  --bg-light:#f5f6fa;
+  --bg-light2:#edeef5;
+  --card:#ffffff;
+  --card-dark:#131a26;
+  --card-dark2:#192031;
+  --border:#e0e4ef;
+  --border-dark:#1e2a3c;
+  --red:#c0202a;
+  --red2:#e0263a;
+  --red3:#ff3b4e;
+  --red-glow:rgba(192,32,42,0.25);
+  --white:#ffffff;
+  --ink:#1a1e2e;
+  --mid:#4a5470;
+  --dim:#8a93b0;
+  --green:#0da678;
+  --yellow:#e8b800;
+  --display:'Inter',sans-serif;
+  --body:'Inter',sans-serif;
+  --cond:'Inter',sans-serif;
+  --mono:'Inter',monospace;
+}
+body{font-family:'Inter',sans-serif;background:var(--bg-light);color:var(--ink);overflow-x:hidden;line-height:1.6}
+::-webkit-scrollbar{width:4px}
+::-webkit-scrollbar-track{background:var(--bg-light)}
+::-webkit-scrollbar-thumb{background:var(--red);border-radius:2px}
+
+/* ===================== LIGHT STREAM CANVAS ===================== */
+#lightCanvas{position:fixed;top:0;left:0;width:100%;height:100%;pointer-events:none;z-index:0;opacity:0.55}
+
+
+/* ===================== TICKER ===================== */
+.ticker-bar{
+  position:fixed;top:62px;left:0;right:0;z-index:299;height:30px;
+  background:var(--bg);border-bottom:1px solid var(--border-dark);
+  overflow:hidden;display:flex;align-items:center;
+}
+.t-live{
+  display:flex;align-items:center;gap:7px;padding:0 16px;
+  font-family:var(--mono);font-size:9px;letter-spacing:.14em;text-transform:uppercase;
+  color:#4a7;flex-shrink:0;border-right:1px solid var(--border-dark);height:100%;white-space:nowrap;
+}
+.t-live .status-dot{background:#16c784;box-shadow:0 0 5px #16c784}
+.t-scroll{display:flex;white-space:nowrap;animation:slide 48s linear infinite}
+.t-item{display:flex;align-items:center;gap:10px;padding:0 22px;border-right:1px solid var(--border-dark);font-family:var(--mono);font-size:10px;}
+.t-sym{color:#ccd;font-weight:400;letter-spacing:.05em}
+.t-px{color:#6a7a99}
+.t-chg{font-size:9px;padding:2px 5px;border-radius:2px}
+.t-chg.up{background:rgba(22,199,132,0.15);color:#16c784}
+.t-chg.dn{background:rgba(255,59,78,0.15);color:#ff3b4e}
+@keyframes slide{from{transform:translateX(0)}to{transform:translateX(-50%)}}
+
+/* ===================== HERO ===================== */
+.hero{
+  min-height:100svh;padding-top:62px;position:relative;overflow:hidden;
+  background:url('https://res.cloudinary.com/dtvnifa3t/image/upload/v1775203904/pumapulse/background.jpg') center 20% / cover no-repeat,linear-gradient(155deg,#0a0c12 0%,#141028 45%,#1a0a10 100%);
+}
+.hero-bg{position:absolute;inset:0;pointer-events:none;overflow:hidden}
+.hero-grid{
+  position:absolute;inset:0;
+  background-image:linear-gradient(rgba(255,255,255,0.03) 1px,transparent 1px),linear-gradient(90deg,rgba(255,255,255,0.03) 1px,transparent 1px);
+  background-size:80px 80px;
+}
+.hero-orb1{
+  position:absolute;top:-180px;left:-120px;width:900px;height:700px;border-radius:50%;
+  background:radial-gradient(ellipse,rgba(192,32,42,0.2) 0%,transparent 65%);
+}
+.hero-orb2{
+  position:absolute;bottom:-200px;right:-80px;width:700px;height:600px;border-radius:50%;
+  background:radial-gradient(ellipse,rgba(100,60,200,0.1) 0%,transparent 65%);
+}
+.hero-content{
+  position:relative;z-index:2;
+  display:grid;grid-template-columns:1fr;gap:60px;align-items:center;
+  max-width:1200px;margin:0 auto;padding:80px 44px 0;
+}
+.hero-left{color:#fff}
+.h-eyebrow{
+  display:inline-flex;align-items:center;gap:10px;
+  font-family:'Inter',sans-serif;font-size:11px;font-weight:600;letter-spacing:.18em;text-transform:uppercase;
+  color:rgba(192,32,42,0.9);margin-bottom:22px;
+  opacity:0;animation:rise .6s ease .1s forwards;
+}
+.h-eyebrow::before{content:'--';margin-right:4px;color:rgba(255,255,255,0.35);letter-spacing:-.05em}
+h1{
+  font-family:'Inter',sans-serif;font-weight:900;
+  font-size:clamp(48px,6vw,88px);line-height:1.0;letter-spacing:-.03em;color:#fff;
+  opacity:0;animation:rise .65s ease .18s forwards;
+}
+h1 .accent{color:var(--red2)}
+h1 .dim-text{color:rgba(255,255,255,0.28);display:block;font-weight:400}
+.h-sub{
+  margin-top:22px;max-width:490px;font-size:16px;line-height:1.8;font-weight:300;
+  font-family:'Inter',sans-serif;
+  color:rgba(200,210,230,0.9);
+  opacity:0;animation:rise .6s ease .28s forwards;
+}
+.h-btns{
+  margin-top:34px;display:flex;gap:12px;flex-wrap:wrap;
+  opacity:0;animation:rise .6s ease .38s forwards;
+}
+.btn-primary{
+  font-family:'Inter',sans-serif;font-size:14px;font-weight:700;letter-spacing:.01em;text-transform:none;
+  background:var(--red);color:#fff;border:none;padding:14px 28px;cursor:pointer;
+  border-radius:50px;
+  transition:background .15s,box-shadow .2s;text-decoration:none;display:inline-flex;align-items:center;gap:8px;
+}
+.btn-primary:hover{background:var(--red2);box-shadow:0 0 28px rgba(192,32,42,0.5)}
+.btn-outline-light{
+  font-family:'Inter',sans-serif;font-size:14px;font-weight:600;letter-spacing:.01em;text-transform:none;
+  background:rgba(255,255,255,0.08);color:#fff;
+  border:1px solid rgba(255,255,255,0.25);
+  padding:14px 28px;cursor:pointer;border-radius:50px;
+  transition:color .15s,border-color .15s,background .15s;text-decoration:none;display:inline-flex;align-items:center;gap:8px;
+}
+.btn-outline-light:hover{color:#fff;border-color:rgba(255,255,255,0.6);background:rgba(255,255,255,0.14)}
+/* -- Footer: force completely dark -- */
+footer,
+.footer-top,
+.footer-bottom-bar,
+footer .container {
+  background: #000000 !important;
+  color: rgba(200,215,235,0.6) !important;
+}
+.footer-top-inner { background: #000000 !important; }
+.footer-brand-new .nav-logo img { height: 64px !important; width: auto !important; }
+.footer-col-new h5 { color: rgba(200,215,235,0.85) !important; }
+.footer-col-new ul li a { color: rgba(200,215,235,0.7) !important; }
+.footer-col-new ul li a:hover { color: rgba(200,215,235,0.85) !important; }
+.footer-brand-new .tagline { color: rgba(200,215,235,0.7) !important; }
+.footer-bottom-bar { background: #000000 !important; border-top: 1px solid rgba(255,255,255,0.06) !important; }
+.footer-bottom-bar p { color: rgba(200,215,235,0.6) !important; }
+.footer-contact-mini a { color: rgba(200,215,235,0.7) !important; }
+.footer-contact-mini a:hover { color: rgba(200,215,235,0.8) !important; }
+.btn,.btn-primary,.btn-accent,.btn-ghost,.btn-outline,.btn-outline-light,.btn-white{
+  border-radius:50px !important;
+  clip-path:none !important;
+  font-family:'Inter',sans-serif !important;
+  letter-spacing:.01em !important;
+  text-transform:none !important;
+}
+.btn:hover,.btn-primary:hover,.btn-accent:hover,.btn-ghost:hover,.btn-outline:hover,.btn-outline-light:hover,.btn-white:hover{
+  transform:none !important;
+}
+.btn-primary{background:#c0202a !important;color:#fff !important;padding:14px 28px !important;font-size:14px !important;font-weight:700 !important}
+.btn-primary:hover{background:#e0263a !important;box-shadow:0 0 28px rgba(192,32,42,0.5) !important}
+.btn-accent{background:#c0202a !important;color:#fff !important}
+.btn-accent:hover{background:#e0263a !important;box-shadow:0 4px 16px rgba(192,32,42,0.4) !important}
+.btn-ghost,.btn-outline-light{background:rgba(255,255,255,0.08) !important;color:#fff !important;border:1.5px solid rgba(255,255,255,0.28) !important;padding:14px 28px !important;font-size:14px !important;font-weight:600 !important}
+.btn-ghost:hover,.btn-outline-light:hover{background:rgba(255,255,255,0.14) !important;border-color:rgba(255,255,255,0.55) !important;color:#fff !important}
+.h-stats{
+  margin-top:48px;padding-top:28px;border-top:1px solid rgba(255,255,255,0.2);
+  display:flex;gap:0;
+  opacity:0;animation:rise .6s ease .48s forwards;
+}
+.h-stat{padding-right:32px;border-right:1px solid rgba(255,255,255,0.2)}
+.h-stat:last-child{border-right:none;padding-left:32px;padding-right:0}
+.h-stat:not(:first-child){padding-left:32px}
+.h-stat-val{font-family:'Inter',sans-serif;font-weight:800;font-size:38px;line-height:1;color:#fff}
+.h-stat-val span{color:var(--red2)}
+.h-stat-lbl{font-family:'Inter',sans-serif;font-size:10px;font-weight:500;letter-spacing:.08em;text-transform:uppercase;color:rgba(200,210,230,0.45);margin-top:4px}
+
+/* HERO DASHBOARD */
+.hero-right{opacity:0;animation:rise .65s ease .32s forwards;position:relative;z-index:2}
+.dash-widget{
+  background:rgba(15,18,28,0.85);
+  border:1px solid rgba(255,255,255,0.2);
+  backdrop-filter:blur(20px);
+  position:relative;overflow:hidden;
+  box-shadow:0 24px 80px rgba(0,0,0,0.5),0 0 0 1px rgba(192,32,42,0.15);
+}
+.dash-widget::before{
+  content:'';position:absolute;top:0;left:0;right:0;height:1px;
+  background:linear-gradient(90deg,transparent,var(--red2),transparent);
+}
+.dw-header{display:flex;align-items:center;justify-content:space-between;padding:14px 18px;border-bottom:1px solid rgba(255,255,255,0.07);background:rgba(255,255,255,0.02)}
+.dw-title{font-family:var(--mono);font-size:9.5px;letter-spacing:.16em;text-transform:uppercase;color:rgba(200,210,230,0.4)}
+.dw-badge{display:flex;align-items:center;gap:5px;font-family:var(--mono);font-size:8.5px;letter-spacing:.1em;color:#16c784}
+.dw-tabs{display:flex;border-bottom:1px solid rgba(255,255,255,0.07)}
+.dw-tab{font-family:var(--mono);font-size:9.5px;letter-spacing:.1em;text-transform:uppercase;padding:8px 16px;color:rgba(200,210,230,0.35);cursor:pointer;border-bottom:2px solid transparent;transition:color .15s,border-color .15s}
+.dw-tab.on{color:var(--red2);border-bottom-color:var(--red2)}
+.dw-pair{display:grid;grid-template-columns:1fr auto auto;align-items:center;gap:12px;padding:11px 18px;border-bottom:1px solid rgba(255,255,255,0.05);transition:background .15s}
+.dw-pair:hover{background:rgba(255,255,255,0.03)}
+.dw-pair:last-child{border-bottom:none}
+.dw-sym{font-family:var(--display);font-weight:600;font-size:13px;color:#fff}
+.dw-sub{font-family:var(--mono);font-size:8.5px;color:rgba(200,210,230,0.3);display:block;margin-top:1px}
+.dw-price{font-family:var(--mono);font-size:12px;color:#dde;text-align:right}
+.dw-chg{font-family:var(--mono);font-size:9.5px;padding:3px 7px;text-align:right}
+.dw-chg.up{background:rgba(22,199,132,0.12);color:#16c784}
+.dw-chg.dn{background:rgba(255,59,78,0.12);color:#ff3b4e}
+.mini-chart{width:56px;height:26px;display:flex;align-items:flex-end;gap:1.5px;padding:0 4px}
+.mc-bar{flex:1;border-radius:1px;min-height:2px}
+.mc-bar.up{background:#16c784;opacity:.65}
+.mc-bar.dn{background:#ff3b4e;opacity:.65}
+.dw-vol{font-family:var(--mono);font-size:8.5px;color:rgba(200,210,230,0.3)}
+.dw-vol span{color:rgba(200,210,230,0.6)}
+
+/* ===================== WAVE DIVIDERS ===================== */
+.wave-down{position:relative;z-index:1;line-height:0;margin-top:-1px}
+.wave-down svg{display:block;width:100%;}
+.wave-up{position:relative;z-index:1;line-height:0;margin-bottom:-1px}
+.wave-up svg{display:block;width:100%;}
+.angle-div{position:relative;z-index:1;height:60px;overflow:hidden}
+.angle-div::after{content:'';position:absolute;bottom:0;left:0;right:0;height:60px;background:var(--bg-light);clip-path:polygon(0 60px,100% 0,100% 60px)}
+
+/* ===================== LAYOUT ===================== */
+.container{max-width:1200px;margin:0 auto;padding:0 44px}
+.section-light{background:var(--bg-light);padding:100px 0;position:relative}
+.section-white{background:#fff;padding:100px 0;position:relative}
+.section-dark{background:var(--bg);padding:100px 0;position:relative;color:#fff}
+.section-tint{background:var(--bg-light2);padding:100px 0;position:relative}
+
+/* EYEBROW / HEADINGS (light sections) */
+.eyebrow{
+  font-family:'Inter',sans-serif;font-size:11px;font-weight:600;letter-spacing:.18em;text-transform:uppercase;
+  color:var(--red);display:inline-flex;align-items:center;gap:8px;margin-bottom:14px;
+}
+.eyebrow::before{content:'--';color:rgba(192,32,42,0.4);letter-spacing:-.05em}
+h2.light{font-family:'Inter',sans-serif;font-weight:800;font-size:clamp(32px,4vw,54px);line-height:1.05;letter-spacing:-.03em;color:var(--ink)}
+h2.light .muted{color:#4a5470;font-weight:400}
+h2.dark{font-family:'Inter',sans-serif;font-weight:800;font-size:clamp(32px,4vw,54px);line-height:1.05;letter-spacing:-.03em;color:#fff}
+h2.dark .muted{color:rgba(200,215,235,0.75);font-weight:400}
+.sec-sub.light{font-size:16px;line-height:1.8;color:var(--mid);font-weight:300;max-width:480px;margin-top:14px}
+.sec-sub.dark{font-size:16px;line-height:1.8;color:rgba(200,215,235,0.6);font-weight:300;max-width:480px;margin-top:14px}
+
+/* ===================== TECH STRIP ===================== */
+.tech-strip{background:var(--bg);padding:18px 0;overflow:hidden;border-top:1px solid var(--border-dark);border-bottom:1px solid var(--border-dark)}
+.ts-scroll{display:flex;white-space:nowrap;animation:slide 32s linear infinite}
+.ts-item{display:inline-flex;align-items:center;gap:10px;padding:0 30px;font-family:var(--cond);font-size:13px;font-weight:600;letter-spacing:.06em;color:rgba(150,170,200,0.4);border-right:1px solid var(--border-dark);white-space:nowrap}
+.ts-item img{width:18px;height:18px;object-fit:contain;filter:grayscale(1) brightness(.5);transition:filter .2s}
+.ts-item:hover img{filter:grayscale(0) brightness(1)}
+.ts-item:hover{color:rgba(200,215,235,0.7)}
+
+/* ===================== METRICS (dark section) ===================== */
+.metrics-wrap{display:grid;grid-template-columns:repeat(5,1fr);gap:1px;background:rgba(255,255,255,0.06);border:1px solid rgba(255,255,255,0.08);margin-top:52px}
+.metric{padding:44px 24px;background:rgba(255,255,255,0.02);text-align:center;position:relative;overflow:hidden;transition:background .2s}
+.metric:hover{background:rgba(255,255,255,0.05)}
+.metric-val{font-family:var(--display);font-weight:700;font-size:44px;line-height:1;color:#fff}
+.metric-val span{color:var(--red2)}
+.metric-lbl{font-family:var(--mono);font-size:9px;letter-spacing:.12em;text-transform:uppercase;color:rgba(200,215,235,0.85);margin-top:8px}
+.metric-sub{font-size:11px;color:rgba(200,215,235,0.25);margin-top:4px}
+
+/* LIVE PANEL */
+.live-panel{background:rgba(255,255,255,0.03);border:1px solid rgba(255,255,255,0.08);position:relative;overflow:hidden;margin-top:44px}
+.live-panel::before{content:'';position:absolute;top:0;left:0;right:0;height:1px;background:linear-gradient(90deg,transparent,var(--red2),transparent)}
+.lp-header{display:flex;align-items:center;justify-content:space-between;padding:14px 24px;border-bottom:1px solid rgba(255,255,255,0.06);background:rgba(255,255,255,0.02)}
+.lp-title{font-family:var(--mono);font-size:9.5px;letter-spacing:.16em;text-transform:uppercase;color:rgba(200,215,235,0.75)}
+.lp-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:1px;background:rgba(255,255,255,0.06)}
+.lp-cell{background:rgba(10,12,18,0.8);padding:22px 24px}
+.lp-cell-lbl{font-family:var(--mono);font-size:9px;letter-spacing:.15em;text-transform:uppercase;color:rgba(200,215,235,0.3)}
+.lp-cell-val{font-family:var(--display);font-size:30px;font-weight:700;color:#fff;margin-top:4px;line-height:1}
+.lp-cell-val .unit{font-size:16px;color:rgba(200,215,235,0.85)}
+.lp-cell-change{font-family:var(--mono);font-size:9.5px;margin-top:5px;color:#16c784}
+
+/* ===================== SERVICES (light) ===================== */
+.svc-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:20px;margin-top:52px}
+.svc{
+  padding:36px 28px;background:#fff;
+  border:1px solid var(--border);
+  transition:transform .2s,box-shadow .2s,border-color .2s,padding .3s;
+  position:relative;overflow:hidden;
+  background-size:cover;background-position:center;
+}
+.svc::after{
+  content:'';position:absolute;inset:0;
+  background:linear-gradient(rgba(255,255,255,0.98),rgba(255,255,255,1));
+  transition:opacity .3s;z-index:0;
+}
+.svc:hover::after{opacity:0.3}
+.svc:hover{transform:translateY(-4px);box-shadow:0 12px 40px rgba(192,32,42,0.1);border-color:rgba(192,32,42,0.2);padding-top:20px}
+.svc::before{content:'';position:absolute;top:0;left:0;width:3px;height:0;background:var(--red);transition:height .3s;z-index:1}
+.svc:hover::before{height:100%}
+.svc-icon{font-size:32px;margin-bottom:18px;display:block;position:relative;z-index:1}
+.svc-n{font-family:var(--mono);font-size:9px;letter-spacing:.14em;text-transform:uppercase;color:var(--dim);margin-bottom:8px;display:block;position:relative;z-index:1}
+.svc-t{font-family:var(--display);font-size:18px;font-weight:700;color:var(--ink);margin-bottom:10px;position:relative;z-index:1}
+.svc-d{font-size:13px;line-height:1.75;color:var(--mid);position:relative;z-index:1}
+.svc-tags{display:flex;flex-wrap:wrap;gap:5px;margin-top:14px;position:relative;z-index:1}
+.tag{font-family:var(--mono);font-size:8.5px;letter-spacing:.1em;text-transform:uppercase;padding:3px 8px;border:1px solid var(--border);color:var(--dim);background:var(--bg-light)}
+
+/* SECURITY */
+.security-strip{display:grid;grid-template-columns:repeat(4,1fr);gap:16px;margin-top:44px}
+.sec-badge{background:#fff;border:1px solid var(--border);padding:22px;display:flex;align-items:center;gap:16px;transition:box-shadow .2s,border-color .2s}
+.sec-badge:hover{box-shadow:0 8px 30px rgba(192,32,42,0.08);border-color:rgba(192,32,42,0.2)}
+.sec-badge-icon{font-size:26px;flex-shrink:0}
+.sec-badge-t{font-family:var(--display);font-size:14px;font-weight:700;color:var(--ink)}
+.sec-badge-d{font-size:11px;color:var(--dim);margin-top:2px}
+
+/* ===================== SERVICES v2 (modern) ===================== */
+.svc2-header{max-width:640px;margin-bottom:56px}
+.svc2-eyebrow{display:inline-flex;align-items:center;gap:10px;font-size:11px;font-weight:700;letter-spacing:.18em;text-transform:uppercase;color:var(--red);margin-bottom:18px}
+.svc2-line{display:inline-block;width:28px;height:2px;background:var(--red);border-radius:2px;flex-shrink:0}
+.svc2-title{font-family:'Inter',sans-serif;font-weight:900;font-size:clamp(36px,4.5vw,60px);line-height:1.0;letter-spacing:-.03em;color:var(--ink);margin-bottom:16px}
+.svc2-accent{color:var(--red)}
+.svc2-sub{font-size:16px;line-height:1.8;color:var(--mid);font-weight:300;max-width:480px}
+
+/* Grid */
+.svc2-grid{display:flex;gap:0;border:1px solid #e0e4ef;margin-bottom:0;height:300px;overflow:hidden}
+
+/* Card */
+.svc2-card{
+  position:relative;overflow:hidden;
+  flex:1;min-width:0;height:300px;
+  transition:flex .45s cubic-bezier(.4,0,.2,1);
+  cursor:pointer;
+  border-right:1px solid #e0e4ef;
+}
+.svc2-card:last-child{border-right:none}
+.svc2-card:hover{flex:2.8}
+.svc2-img-wrap{position:absolute;inset:0;overflow:hidden}
+.svc2-img{width:100%;height:100%;object-fit:cover;display:block;transition:transform .5s ease;filter:brightness(1)}
+.svc2-card:hover .svc2-img{transform:scale(1.06);filter:brightness(0.6)}
+.svc2-img-wrap::after{content:'';position:absolute;inset:0;background:linear-gradient(to top,rgba(0,0,0,0.88) 0%,rgba(0,0,0,0.45) 45%,rgba(0,0,0,0.05) 100%)}
+.svc2-card::before{content:'';position:absolute;top:0;left:0;right:0;height:3px;background:#c0202a;transform:scaleX(0);transform-origin:left;transition:transform .35s ease;z-index:3}
+.svc2-card:hover::before{transform:scaleX(1)}
+.svc2-num{position:absolute;top:14px;left:16px;z-index:2;font-family:'Inter',sans-serif;font-size:10px;font-weight:700;letter-spacing:.14em;color:rgba(255,255,255,0.45);padding:0;margin:0}
+.svc2-body{position:absolute;bottom:0;left:0;right:0;z-index:2;padding:14px 16px 18px}
+.svc2-label{font-size:9px;font-weight:700;letter-spacing:.16em;text-transform:uppercase;color:#e0263a;margin-bottom:4px;display:block;opacity:0;transform:translateY(4px);transition:opacity .3s ease .05s,transform .3s ease .05s}
+.svc2-card:hover .svc2-label{opacity:1;transform:translateY(0)}
+.svc2-name{font-family:'Inter',sans-serif;font-size:13px;font-weight:800;color:#fff;line-height:1.3;margin-bottom:0;letter-spacing:-.01em;white-space:nowrap;overflow:hidden;text-overflow:ellipsis;transition:font-size .3s ease,white-space .1s}
+.svc2-card:hover .svc2-name{white-space:normal;overflow:visible;text-overflow:unset;font-size:15px}
+.svc2-desc{font-size:11.5px;line-height:1.6;color:rgba(255,255,255,0.88);font-weight:300;max-height:0;overflow:hidden;opacity:0;margin-top:0;transition:max-height .4s ease .08s,opacity .35s ease .12s,margin-top .3s ease .05s}
+.svc2-card:hover .svc2-desc{max-height:90px;opacity:1;margin-top:8px}
+.svc2-tags{display:flex;flex-wrap:wrap;gap:4px;margin-top:0;padding-bottom:0;max-height:0;overflow:hidden;opacity:0;transition:max-height .35s ease .12s,opacity .3s ease .18s,margin-top .3s ease .08s}
+.svc2-card:hover .svc2-tags{max-height:36px;opacity:1;margin-top:8px}
+.svc2-tags span{font-size:9px;font-weight:600;letter-spacing:.05em;text-transform:uppercase;padding:2px 7px;border:1px solid rgba(255,255,255,0.25);color:rgba(255,255,255,0.75);background:rgba(255,255,255,0.08);border-radius:2px}
+.svc2-arrow{display:none}
+@media(max-width:1024px){.svc2-grid{flex-wrap:wrap;height:auto}.svc2-card{flex:0 0 33.33%;height:220px;border-bottom:1px solid #e0e4ef}.svc2-card:hover{flex:0 0 33.33%}.svc2-name{white-space:normal}}
+@media(max-width:640px){.svc2-card{flex:0 0 50%;height:180px}}
+
+/* Trust badges */
+.svc2-badges{display:grid;grid-template-columns:repeat(4,1fr);gap:0;border:1px solid #e0e4ef;border-top:none;margin-top:0}
+.svc2-badge{background:#fff;padding:20px 24px;display:flex;align-items:center;gap:16px;border-right:1px solid #e0e4ef;transition:background .2s}
+.svc2-badge:last-child{border-right:none}
+.svc2-badge:hover{background:#f9f9fb}
+.svc2-badge-icon{width:36px;height:36px;border-radius:8px;background:rgba(192,32,42,0.07);display:flex;align-items:center;justify-content:center;flex-shrink:0}
+.svc2-badge-icon svg{width:16px;height:16px;stroke:#c0202a;fill:none;stroke-width:2;stroke-linecap:round;stroke-linejoin:round}
+.svc2-badge strong{display:block;font-size:12px;font-weight:700;color:#1a1e2e;margin-bottom:2px;letter-spacing:-.01em}
+.svc2-badge span{font-size:11px;color:#8a93b0;line-height:1.4}
+
+/* Responsive */
+@media(max-width:1024px){.svc2-grid{grid-template-columns:repeat(2,1fr)}.svc2-badges{grid-template-columns:repeat(2,1fr)}}
+@media(max-width:640px){.svc2-grid{grid-template-columns:1fr}.svc2-badges{grid-template-columns:1fr}}
+
+/* ===================== ABOUT / VALUES ===================== */
+.about-grid{display:grid;grid-template-columns:1fr 1fr;gap:80px;align-items:start}
+.sticky-side{position:sticky;top:90px}
+.val-list{margin-top:40px;border-top:1px solid var(--border)}
+.v-row{display:grid;grid-template-columns:130px 1fr;gap:16px;padding:18px 0;border-bottom:1px solid var(--border)}
+.v-k{font-family:var(--cond);font-size:13px;font-weight:700;letter-spacing:.05em;text-transform:uppercase;color:var(--red)}
+.v-v{font-size:13px;line-height:1.75;color:var(--mid)}
+.about-cards{display:grid;gap:16px}
+.a-card{
+  background:#fff;border:1px solid var(--border);padding:28px;
+  position:relative;transition:box-shadow .2s,transform .2s;overflow:hidden;
+}
+.a-card:hover{box-shadow:0 8px 28px rgba(0,0,0,0.08);transform:translateY(-2px)}
+.a-card-num{font-family:var(--display);font-size:72px;font-weight:700;color:rgba(192,32,42,0.06);position:absolute;top:8px;right:16px;line-height:1}
+.a-card-t{font-family:var(--display);font-size:18px;font-weight:700;color:var(--ink);margin-bottom:8px}
+.a-card-d{font-size:13px;line-height:1.75;color:var(--mid)}
+
+/* ===================== SOLUTIONS v2 ===================== */
+/* Feature split */
+.sol2-split{display:grid;grid-template-columns:1fr 1fr;gap:0;margin-top:52px;border:1px solid rgba(255,255,255,0.08);overflow:hidden}
+.sol2-split-img{position:relative;min-height:380px;overflow:hidden}
+.sol2-split-img img{width:100%;height:100%;object-fit:cover;display:block;filter:brightness(0.6);transition:transform .5s}
+.sol2-split:hover .sol2-split-img img{transform:scale(1.03)}
+.sol2-split-overlay{position:absolute;inset:0;background:linear-gradient(135deg,rgba(192,32,42,0.25) 0%,transparent 60%)}
+.sol2-split-stats{position:absolute;bottom:0;left:0;right:0;background:rgba(0,0,0,0.7);backdrop-filter:blur(12px);border-top:1px solid rgba(255,255,255,0.08);padding:18px 24px;display:flex;align-items:center;gap:0}
+.sol2-stat{flex:1;text-align:center}
+.sol2-stat-val{font-family:'Inter',sans-serif;font-size:26px;font-weight:900;color:#fff;line-height:1;letter-spacing:-.02em}
+.sol2-stat-val span{font-size:14px;color:rgba(200,215,235,0.75);font-weight:400}
+.sol2-stat-lbl{font-size:9px;font-weight:700;letter-spacing:.12em;text-transform:uppercase;color:rgba(200,215,235,0.85);margin-top:4px}
+.sol2-stat-div{width:1px;height:36px;background:rgba(255,255,255,0.2);flex-shrink:0}
+/* Content side */
+.sol2-split-content{padding:44px 40px;background:rgba(255,255,255,0.03);display:flex;flex-direction:column;justify-content:center}
+.sol2-eyebrow{font-size:10px;font-weight:700;letter-spacing:.18em;text-transform:uppercase;color:rgba(192,32,42,0.85);margin-bottom:16px;display:flex;align-items:center;gap:8px}
+.sol2-eyebrow::before{content:'';width:20px;height:2px;background:rgba(192,32,42,0.6);border-radius:2px;flex-shrink:0}
+.sol2-heading{font-family:'Inter',sans-serif;font-size:clamp(22px,2.5vw,32px);font-weight:900;color:#fff;line-height:1.15;letter-spacing:-.02em;margin-bottom:14px}
+.sol2-heading span{color:rgba(200,215,235,0.85);font-weight:400}
+.sol2-body{font-size:14px;line-height:1.85;color:rgba(200,215,235,0.85) !important;margin-bottom:24px}
+.sol2-checks{display:flex;flex-direction:column;gap:10px}
+.sol2-check{display:flex;align-items:center;gap:12px;font-size:13px;color:rgba(200,215,235,0.85) !important}
+.sol2-check span{width:20px;height:20px;background:rgba(192,32,42,0.15);border:1px solid rgba(192,32,42,0.35);border-radius:4px;display:grid;place-items:center;font-size:10px;color:#e0263a;flex-shrink:0;font-weight:700}
+/* Tabs */
+.sol2-tabs{display:flex;gap:0;margin-top:44px;border-bottom:1px solid rgba(255,255,255,0.08);overflow-x:auto}
+.sol2-tab{font-family:'Inter',sans-serif;font-size:12px;font-weight:700;letter-spacing:.08em;text-transform:uppercase;padding:12px 22px;border:none;background:none;cursor:pointer;color:rgba(200,215,235,0.85);border-bottom:2px solid transparent;transition:color .15s,border-color .15s;white-space:nowrap;flex-shrink:0}
+.sol2-tab:hover{color:rgba(200,215,235,0.7)}
+.sol2-tab.on{color:#fff;border-bottom-color:#c0202a}
+/* Panels */
+.sol2-panel{display:none;grid-template-columns:repeat(3,1fr);gap:1px;background:rgba(255,255,255,0.06);border:1px solid rgba(255,255,255,0.08);border-top:none;margin-bottom:0}
+.sol2-panel.on{display:grid}
+/* Cards */
+.sol2-card{background:#0d1018;overflow:hidden;transition:background .2s,border-color .2s;position:relative;padding:24px 22px;border:1px solid rgba(255,255,255,0.06)}
+.sol2-card:hover{background:#111520;border-color:rgba(192,32,42,0.3)}
+.sol2-card-img{display:none !important}
+.sol2-card-body{padding:0}
+.sol2-card-t{font-family:'Inter',sans-serif;font-size:14px;font-weight:700;color:#fff !important;margin-bottom:8px;letter-spacing:-.01em}
+.sol2-card-d{font-size:12.5px;line-height:1.65;color:rgba(200,215,235,0.75) !important}
+/* Responsive */
+@media(max-width:1024px){.sol2-split{grid-template-columns:1fr}.sol2-panel.on{grid-template-columns:repeat(2,1fr)}}
+@media(max-width:640px){.sol2-panel.on{grid-template-columns:1fr}}
+.tab-row{display:flex;border:1px solid rgba(255,255,255,0.2);width:fit-content;margin-top:40px;overflow:hidden}
+.tab{font-family:var(--cond);font-size:12px;font-weight:700;letter-spacing:.09em;text-transform:uppercase;padding:10px 20px;border:none;background:none;cursor:pointer;color:rgba(200,215,235,0.4);border-right:1px solid rgba(255,255,255,0.2);transition:all .15s}
+.tab:last-child{border-right:none}
+.tab.on{background:var(--red);color:#fff}
+.tab:not(.on):hover{background:rgba(255,255,255,0.05);color:rgba(200,215,235,0.8)}
+.sol-panel{display:none;margin-top:20px}
+.sol-panel.on{display:grid;grid-template-columns:repeat(3,1fr);gap:1px;background:rgba(255,255,255,0.06);border:1px solid rgba(255,255,255,0.08)}
+.sol-card{background:rgba(255,255,255,0.03);padding:0;transition:background .2s;position:relative;overflow:hidden}
+.sol-card:hover{background:rgba(255,255,255,0.06)}
+.sol-card-img{width:100%;height:140px;object-fit:cover;display:block;opacity:0.7;transition:opacity .3s,transform .4s}
+.sol-card:hover .sol-card-img{opacity:0.9;transform:scale(1.04)}
+.sol-card-body{padding:20px 22px 24px}
+.sol-card::after{content:'?';position:absolute;bottom:20px;right:20px;color:rgba(200,215,235,0.2);font-size:16px;opacity:0;transition:opacity .2s,transform .2s}
+.sol-card:hover::after{opacity:1;transform:translateX(4px)}
+.sol-t{font-family:'Inter',sans-serif;font-size:15px;font-weight:700;color:#fff;margin-bottom:8px;letter-spacing:-.01em}
+.sol-d{font-size:12.5px;line-height:1.65;color:rgba(200,215,235,0.75)}
+
+/* ===================== PROCESS (light) ===================== */
+.proc-row{display:grid;grid-template-columns:repeat(4,1fr);gap:0;margin-top:52px;position:relative}
+.proc-connector{
+  position:absolute;top:40px;left:12%;right:12%;height:1px;z-index:0;
+  background:linear-gradient(90deg,var(--red) 0%,rgba(192,32,42,0.15) 100%);
+  opacity:.4;
+}
+.p-step{
+  padding:36px 24px 32px;background:#fff;
+  border:1px solid var(--border);margin-right:-1px;
+  transition:z-index .0s,box-shadow .2s,transform .2s;
+  position:relative;z-index:1;
+}
+.p-step:hover{z-index:2;box-shadow:0 12px 40px rgba(192,32,42,0.12);transform:translateY(-4px);border-color:rgba(192,32,42,0.25)}
+.p-num{font-family:'Inter',sans-serif;font-size:52px;font-weight:900;color:rgba(192,32,42,0.18);margin-bottom:12px;line-height:1;transition:color .2s;letter-spacing:-.03em}
+.p-step:hover .p-num{color:rgba(192,32,42,0.45)}
+.p-t{font-family:'Inter',sans-serif;font-size:16px;font-weight:800;color:var(--ink,#1a1e2e);margin-bottom:10px;letter-spacing:-.01em}
+.p-d{font-size:13px;line-height:1.75;color:#4a5470}
+.p-tag{display:inline-block;margin-top:14px;font-family:'Inter',sans-serif;font-size:9px;font-weight:700;letter-spacing:.1em;text-transform:uppercase;padding:4px 10px;border:1px solid rgba(192,32,42,0.25);color:var(--red,#c0202a);background:rgba(192,32,42,0.05);border-radius:4px}
+
+/* ===================== WORK ===================== */
+.work-rows{margin-top:52px;border-top:1px solid var(--border)}
+.w-row{
+  display:grid;grid-template-columns:2fr 1.4fr 160px;
+  gap:32px;align-items:start;padding:32px 0;border-bottom:1px solid var(--border);
+  transition:padding .15s,background .15s;
+}
+.w-row:hover{padding-left:12px;background:rgba(192,32,42,0.02)}
+.w-tag{font-family:var(--mono);font-size:9px;letter-spacing:.14em;text-transform:uppercase;color:var(--red);margin-bottom:8px;display:block}
+.w-name{font-family:var(--display);font-size:22px;font-weight:700;color:var(--ink)}
+.w-desc{margin-top:8px;font-size:13px;line-height:1.65;color:var(--mid)}
+.w-pills{display:flex;flex-wrap:wrap;gap:5px;margin-top:12px}
+.w-pill{font-family:var(--mono);font-size:8px;letter-spacing:.1em;text-transform:uppercase;padding:3px 8px;border:1px solid var(--border);color:var(--dim);background:var(--bg-light)}
+.w-quote{font-size:13px;line-height:1.8;color:var(--mid);font-style:italic;position:relative;padding-left:14px}
+.w-quote::before{content:'';position:absolute;left:0;top:4px;bottom:4px;width:2px;background:var(--red);opacity:.5}
+.w-client{text-align:left;padding-left:8px;border-left:2px solid rgba(192,32,42,0.2)}
+.w-cn{font-family:'Inter',sans-serif;font-size:14px;font-weight:700;color:var(--ink,#1a1e2e);line-height:1.3;word-break:break-word}
+.w-cl{font-family:'Inter',sans-serif;font-size:10px;color:var(--dim,#8a93b0);margin-top:4px;font-weight:500}
+.w-stars{color:var(--yellow,#e8b800);font-size:12px;margin-top:8px}
+
+/* ===================== TESTIMONIALS v2 ===================== */
+.tc-card{
+  position:relative;overflow:hidden;
+  height:420px;
+  border-radius:0;
+  cursor:default;
+  transition:transform .3s,box-shadow .3s;
+}
+.tc-card:hover{}
+.tc-bg{
+  position:absolute;inset:0;
+  background-size:cover;background-position:center top;
+  transition:transform .5s ease,filter .4s;
+  filter:brightness(0.45);
+}
+.tc-card:hover .tc-bg{transform:scale(1.02);filter:brightness(0.45)}
+.tc-overlay{
+  position:absolute;inset:0;
+  background:linear-gradient(to top, rgba(0,0,0,0.88) 0%, rgba(0,0,0,0.45) 55%, transparent 100%);
+}
+.tc-content{
+  position:absolute;inset:0;
+  display:flex;flex-direction:column;justify-content:flex-end;
+  padding:32px 28px;
+  z-index:2;
+}
+.tc-quote{
+  font-family:'Inter',sans-serif;font-size:80px;font-weight:900;
+  color:rgba(192,32,42,0.5);line-height:1;
+  margin-bottom:8px;
+  opacity:1;transform:none;
+  transition:none;
+}
+.tc-card:hover .tc-quote{opacity:1;transform:translateY(0)}
+.tc-text{
+  font-size:13.5px;line-height:1.8;
+  color:rgba(255,255,255,0.92);
+  margin-bottom:20px;
+  opacity:0;transform:translateY(20px);
+  transition:opacity .4s ease .1s,transform .4s ease .1s;
+}
+.tc-card:hover .tc-text{opacity:1;transform:translateY(0)}
+.tc-footer{border-top:1px solid rgba(255,255,255,0.4);padding-top:16px;opacity:1;transform:none;transition:none;}
+}
+.tc-footer{border-top:1px solid rgba(255,255,255,0.4);padding-top:16px;opacity:1;transform:none;transition:none;}
+.tc-name{font-family:'Inter',sans-serif;font-size:15px;font-weight:800;color:#fff;letter-spacing:-.01em}
+.tc-role{font-size:11px;color:rgba(255,255,255,0.7);margin-top:3px;font-weight:500;letter-spacing:.03em}
+.tc-stars{color:#e8b800;font-size:12px;margin-top:8px;letter-spacing:2px}
+@media(max-width:768px){
+  .tc-card{height:360px}
+  [style*="grid-template-columns:repeat(3,1fr)"]{grid-template-columns:1fr !important}
+}
+
+/* ===================== TESTIMONIALS (old - keep for compat) ===================== */
+.testi-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:20px;margin-top:52px}
+.testi{
+  background:rgba(255,255,255,0.04);border:1px solid rgba(255,255,255,0.08);
+  padding:36px 28px;transition:background .2s,border-color .2s;position:relative;overflow:hidden;
+}
+.testi:hover{background:rgba(255,255,255,0.07);border-color:rgba(192,32,42,0.3)}
+.testi::before{content:'\201C';position:absolute;top:-16px;left:16px;font-family:var(--display);font-size:120px;color:var(--red);opacity:.08;line-height:1}
+.testi-q{font-size:13.5px;line-height:1.85;color:rgba(200,215,235,0.85);margin-bottom:24px;position:relative;z-index:1}
+.testi-n{font-family:var(--display);font-size:15px;font-weight:700;color:#fff}
+.testi-r{font-family:var(--mono);font-size:9.5px;color:rgba(200,215,235,0.3);margin-top:3px}
+.testi-rating{display:flex;gap:3px;margin-top:8px}
+.star{color:var(--yellow);font-size:11px}
+
+/* ===================== TECH GRID (light) ===================== */
+.tech-grid{display:grid;grid-template-columns:repeat(6,1fr);gap:0;border:1px solid var(--border);margin-top:52px}
+.tech-chip{
+  background:#fff;padding:24px 16px;display:flex;flex-direction:column;align-items:center;justify-content:center;gap:10px;
+  border-right:1px solid var(--border);border-bottom:1px solid var(--border);transition:background .2s,box-shadow .2s;
+}
+.tech-chip:nth-child(6n){border-right:none}
+.tech-chip:hover{background:var(--bg-light);box-shadow:inset 0 -2px 0 var(--red)}
+.tech-chip img{width:28px;height:28px;object-fit:contain;filter:grayscale(1) brightness(.6);transition:filter .3s}
+.tech-chip:hover img{filter:grayscale(0) brightness(1)}
+.tech-chip svg{width:28px;height:28px;opacity:.45;transition:opacity .3s;flex-shrink:0}
+.tech-chip:hover svg{opacity:1}
+.tech-chip span{font-family:var(--mono);font-size:9px;letter-spacing:.1em;color:var(--dim);text-align:center;transition:color .2s}
+.tech-chip:hover span{color:var(--mid)}
+
+/* ===================== FAQ ===================== */
+.faq-layout{display:grid;grid-template-columns:1fr 1fr;gap:80px;align-items:start}
+.faq-list{border-top:1px solid var(--border)}
+.faq-item{border-bottom:1px solid var(--border)}
+.faq-q{display:flex;justify-content:space-between;align-items:center;padding:18px 0;cursor:pointer;font-family:var(--display);font-size:16px;font-weight:600;color:var(--ink);letter-spacing:.01em;transition:color .15s}
+.faq-q:hover{color:var(--red)}
+.faq-ico{width:28px;height:28px;border:1px solid var(--border);display:grid;place-items:center;flex-shrink:0;transition:transform .25s,border-color .15s,background .15s}
+.faq-ico svg{width:10px;height:10px;stroke:var(--dim);stroke-width:1.8;fill:none;stroke-linecap:round;transition:stroke .15s}
+.faq-item.open .faq-ico{transform:rotate(45deg);border-color:var(--red);background:rgba(192,32,42,0.06)}
+.faq-item.open .faq-ico svg{stroke:var(--red)}
+.faq-ans{max-height:0;overflow:hidden;transition:max-height .3s ease}
+.faq-item.open .faq-ans{max-height:300px}
+.faq-ans p{padding-bottom:18px;font-size:13.5px;line-height:1.85;color:var(--mid)}
+
+/* ===================== SECTION IMAGE CARDS ===================== */
+.img-split{display:grid;grid-template-columns:1fr 1fr;gap:0;min-height:440px;overflow:hidden;margin-top:52px}
+.img-split-content{padding:50px 48px;display:flex;flex-direction:column;justify-content:center}
+.img-split-visual{position:relative;overflow:hidden;background:var(--bg);min-height:340px}
+.img-split-visual img{width:100%;height:100%;object-fit:cover;opacity:.7;transition:opacity .4s,transform .4s}
+.img-split:hover .img-split-visual img{opacity:.85;transform:scale(1.03)}
+.img-split-visual-overlay{
+  position:absolute;inset:0;
+  background:linear-gradient(135deg,rgba(192,32,42,0.3) 0%,transparent 60%);
+}
+.img-split-visual-badge{
+  position:absolute;bottom:20px;left:20px;right:20px;
+  background:rgba(0,0,0,0.7);backdrop-filter:blur(12px);
+  border:1px solid rgba(255,255,255,0.2);padding:14px 18px;
+  display:flex;align-items:center;gap:14px;
+}
+.isvb-val{font-family:var(--display);font-size:28px;font-weight:700;color:#fff;line-height:1}
+.isvb-lbl{font-family:var(--mono);font-size:9px;letter-spacing:.14em;text-transform:uppercase;color:rgba(200,215,235,0.75)}
+
+/* ===================== CTA ===================== */
+.cta-section{
+  background:linear-gradient(135deg,#100e1a 0%,#1a0810 50%,#0a0c18 100%);
+  padding:160px 0 100px;position:relative;overflow:hidden;text-align:center;color:#fff;
+}
+.cta-section::before{
+  content:'';position:absolute;top:50%;left:50%;transform:translate(-50%,-50%);
+  width:800px;height:400px;
+  background:radial-gradient(ellipse,rgba(192,32,42,0.18) 0%,transparent 70%);
+  pointer-events:none;
+}
+.cta-logo{margin-bottom:28px;opacity:0;animation:rise .6s ease .1s forwards}
+.cta-logo img{height:48px;filter:drop-shadow(0 0 16px rgba(192,32,42,0.6))}
+.cta-section h2{font-size:clamp(36px,5vw,64px);position:relative;z-index:1;font-family:var(--display);font-weight:700;color:#fff;line-height:.95}
+.cta-section p{font-size:16px;color:rgba(200,215,235,0.6);margin:20px auto 36px;max-width:480px;position:relative;z-index:1}
+.cta-btns{display:flex;gap:12px;justify-content:center;flex-wrap:wrap}
+
+/* ===================== SCROLL REVEAL ===================== */
+.rv{opacity:0;transform:translateY(22px);transition:opacity .65s ease,transform .65s ease}
+.rv.in{opacity:1;transform:none}
+.d1{transition-delay:.08s}.d2{transition-delay:.18s}.d3{transition-delay:.28s}
+@keyframes rise{from{opacity:0;transform:translateY(18px)}to{opacity:1;transform:none}}
+
+/* RESPONSIVE */
+@media(max-width:900px){
+  .hero-content,.about-grid,.faq-layout,.img-split,.f-top{grid-template-columns:1fr}
+  .hero-right{display:none}
+  .svc-grid,.metrics-wrap,.tech-grid{grid-template-columns:repeat(2,1fr)}
+  .proc-row{grid-template-columns:repeat(2,1fr)}
+  .sol-panel.on,.testi-grid{grid-template-columns:1fr}
+  .w-row{grid-template-columns:1fr}
+  .security-strip{grid-template-columns:repeat(2,1fr)}
+  .lp-grid{grid-template-columns:repeat(2,1fr)}
+  nav{padding:0 20px}
+  .container{padding:0 20px}
+  .nav-links{display:none}
+}
+</style>
+</head>
+<body>
+
+<!-- FLOWING LIGHT CANVAS -->
+<canvas id="lightCanvas"></canvas>
+
+<!-- NAV -->
+<div id="nav-placeholder"></div>
+
+<!-- ===================== HERO (dark) ===================== -->
+<section class="hero">
+  
+  <div class="hero-content">
+    <div class="hero-left">
+      <div class="h-eyebrow">Full-Stack · Mobile · AI/ML · Blockchain · Bots</div>
+      <h1>We Build Digital<br><span class="accent">Products That</span><span class="dim-text">Feel Alive.</span></h1>
+      <p class="h-sub">Passionate Full-Stack &amp; Mobile App developers blending cutting-edge AI/ML with high-performance engineering — from intuitive front-ends to robust back-ends and intelligent automation.</p>
+      <div class="h-btns">
+        <a href="contact/" class="btn-primary">Start Your Project</a>
+        <a href="portfolio/" class="btn-outline-light">View Portfolio &#8594;</a>
+      </div>
+      <div class="h-stats">
+        <div class="h-stat"><div class="h-stat-val">150<span>+</span></div><div class="h-stat-lbl">Projects Delivered</div></div>
+        <div class="h-stat"><div class="h-stat-val">50<span>+</span></div><div class="h-stat-lbl">Happy Clients</div></div>
+        <div class="h-stat"><div class="h-stat-val">40<span>+</span></div><div class="h-stat-lbl">Countries</div></div>
+        <div class="h-stat"><div class="h-stat-val">7<span>yr</span></div><div class="h-stat-lbl">Experience</div></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- SERVICES STRIP -->
+<div class="tech-strip" style="position:relative;z-index:3;border-bottom:none;">
+  <div class="ts-scroll" id="servicesStrip" style="animation-direction:reverse;"></div>
+</div>
+
+<!-- TECH STRIP -->
+<div class="tech-strip" style="position:relative;z-index:3;border-top:none;margin-top:-1px;">
+  <div class="ts-scroll" id="techStrip"></div>
+</div>
+
+<!-- ===================== METRICS (dark) ===================== -->
+<section class="section-dark" id="about" style="position:relative">
+  <div class="container" style="position:relative;z-index:2;padding-top:0px">
+    <div class="rv">
+      <span class="eyebrow" style="color:rgba(192,32,42,0.85)">By the Numbers</span>
+      <h2 class="dark">Proven Scale.<br><span class="muted">Measurable Results.</span></h2>
+      <p class="sec-sub dark">Years of engineering digital products that delight users, drive business impact, and run at production-grade reliability.</p>
+    </div>
+    <div class="metrics-wrap rv d1">
+      <div class="metric"><div class="metric-val">150<span>+</span></div><div class="metric-lbl">Projects Shipped</div><div class="metric-sub">Web, Mobile, AI &amp; Blockchain</div></div>
+      <div class="metric"><div class="metric-val">50<span>+</span></div><div class="metric-lbl">Happy Clients</div><div class="metric-sub">Startups to enterprises</div></div>
+      <div class="metric"><div class="metric-val">40<span>+</span></div><div class="metric-lbl">Countries Served</div><div class="metric-sub">Global client base</div></div>
+      <div class="metric"><div class="metric-val">99.9<span>%</span></div><div class="metric-lbl">Uptime SLA</div><div class="metric-sub">Production guarantee</div></div>
+      <div class="metric"><div class="metric-val">7<span>yr</span></div><div class="metric-lbl">In the Market</div><div class="metric-sub">Est. 2018</div></div>
+    </div>
+    <div class="live-panel rv d2">
+      <div class="lp-header">
+        <span class="lp-title">// WHAT WE DELIVER — REAL IMPACT</span>
+        <div class="dw-badge"><span class="status-dot"></span>LIVE</div>
+      </div>
+      <div class="lp-grid">
+        <div class="lp-cell"><div class="lp-cell-lbl">Full-Stack Apps Built</div><div class="lp-cell-val"><span id="tps">80+</span></div><div class="lp-cell-change">&#8593; PHP, Laravel, MERN, Next.js, Django</div></div>
+        <div class="lp-cell"><div class="lp-cell-lbl">Mobile Apps Launched</div><div class="lp-cell-val"><span id="conn">40+</span></div><div class="lp-cell-change">&#8593; React Native, Flutter, iOS, Android</div></div>
+        <div class="lp-cell"><div class="lp-cell-lbl">AI/ML Models Deployed</div><div class="lp-cell-val"><span id="lat">20+</span></div><div class="lp-cell-change">&#8593; TensorFlow, PyTorch, OpenAI APIs</div></div>
+        <div class="lp-cell"><div class="lp-cell-lbl">Bots &amp; Automations</div><div class="lp-cell-val"><span id="nodes">30+</span></div><div class="lp-cell-change">&#8593; Trading, Scraping, Telegram, CRM</div></div>
+      </div>
+    </div>
+  </div>
+  <!-- Wave bottom to light -->
+  <div style="position:absolute;bottom:0;left:0;right:0;z-index:1;line-height:0">
+    <svg viewBox="0 0 1440 70" preserveAspectRatio="none" style="height:70px;display:block;width:100%">
+      <path d="M0,70 C480,0 960,0 1440,70 L1440,70 L0,70 Z" fill="#f5f6fa"/>
+    </svg>
+  </div>
+</section>
+
+<!-- ===================== SERVICES (light) ===================== -->
+<section class="section-light" id="services" style="position:relative;overflow:hidden">
+
+  <div class="container" style="position:relative;z-index:1">
+
+    <!-- Header -->
+    <div class="svc2-header rv">
+      <div class="svc2-eyebrow">
+        <span class="svc2-line"></span>
+        <span>Core Services</span>
+      </div>
+      <h2 class="svc2-title">What We <span class="svc2-accent">Build.</span></h2>
+      <p class="svc2-sub">From intuitive front-end interfaces to robust back-end architectures and AI-driven automation — we deliver end-to-end digital products.</p>
+    </div>
+
+    <!-- Cards grid -->
+    <div class="svc2-grid rv d1">
+
+      <div class="svc2-card">
+        <div class="svc2-num">01</div>
+        <div class="svc2-img-wrap"><img class="svc2-img" src="https://images.unsplash.com/photo-1555066931-4365d14bab8c?w=800&q=80" alt="Full-Stack Development"></div>
+        <div class="svc2-body">
+          <div class="svc2-label">Full-Stack</div>
+          <div class="svc2-name">Full-Stack Web Development</div>
+          <p class="svc2-desc">End-to-end web applications built with PHP, Laravel, MERN, Next.js, Angular, Django, FastAPI, WordPress, Shopify, and Odoo — fast, scalable, and production-ready.</p>
+          <div class="svc2-tags"><span>Laravel</span><span>MERN</span><span>Next.js</span><span>Django</span></div>
+        </div>
+        <div class="svc2-arrow">&#8594;</div>
+      </div>
+
+      <div class="svc2-card">
+        <div class="svc2-num">02</div>
+        <div class="svc2-img-wrap"><img class="svc2-img" src="https://images.unsplash.com/photo-1512941937669-90a1b58e7e9c?w=800&q=80" alt="Mobile App Development"></div>
+        <div class="svc2-body">
+          <div class="svc2-label">Mobile</div>
+          <div class="svc2-name">Mobile App Development</div>
+          <p class="svc2-desc">Cross-platform and native mobile apps with React Native, Flutter, Expo, Android (Kotlin), and iOS (Swift) — beautiful UX, high performance, and seamless deployment.</p>
+          <div class="svc2-tags"><span>React Native</span><span>Flutter</span><span>iOS</span><span>Android</span></div>
+        </div>
+        <div class="svc2-arrow">&#8594;</div>
+      </div>
+
+      <div class="svc2-card">
+        <div class="svc2-num">03</div>
+        <div class="svc2-img-wrap"><img class="svc2-img" src="https://images.unsplash.com/photo-1677442135703-1787eea5ce01?w=800&q=80" alt="AI/ML Development"></div>
+        <div class="svc2-body">
+          <div class="svc2-label">AI / ML</div>
+          <div class="svc2-name">AI &amp; Machine Learning</div>
+          <p class="svc2-desc">Intelligent solutions powered by Python, TensorFlow, PyTorch, OpenAI APIs, OpenCV, and predictive modeling — from recommendation engines to computer vision systems.</p>
+          <div class="svc2-tags"><span>TensorFlow</span><span>PyTorch</span><span>OpenAI</span><span>OpenCV</span></div>
+        </div>
+        <div class="svc2-arrow">&#8594;</div>
+      </div>
+
+      <div class="svc2-card">
+        <div class="svc2-num">04</div>
+        <div class="svc2-img-wrap"><img class="svc2-img" src="https://images.unsplash.com/photo-1639322537228-f710d846310a?w=800&q=80" alt="Blockchain Development"></div>
+        <div class="svc2-body">
+          <div class="svc2-label">Blockchain</div>
+          <div class="svc2-name">Blockchain &amp; Web3</div>
+          <p class="svc2-desc">Smart contracts, DeFi protocols, NFT platforms, token launches, crypto exchanges, and enterprise blockchain solutions across Ethereum, Solana, BNB Chain, and more.</p>
+          <div class="svc2-tags"><span>Solidity</span><span>DeFi</span><span>NFT</span><span>Web3</span></div>
+        </div>
+        <div class="svc2-arrow">&#8594;</div>
+      </div>
+
+      <div class="svc2-card">
+        <div class="svc2-num">05</div>
+        <div class="svc2-img-wrap"><img class="svc2-img" src="https://images.unsplash.com/photo-1551288049-bebda4e38f71?w=800&q=80" alt="Bots & Automation"></div>
+        <div class="svc2-body">
+          <div class="svc2-label">Automation</div>
+          <div class="svc2-name">Bots &amp; Automation</div>
+          <p class="svc2-desc">Python-powered bots for algo trading, web scraping, Telegram automation, CRM workflows, and Excel/data processing — saving time and driving real business impact.</p>
+          <div class="svc2-tags"><span>Algo Trading</span><span>Scraping</span><span>Telegram</span><span>CRM</span></div>
+        </div>
+        <div class="svc2-arrow">&#8594;</div>
+      </div>
+
+      <div class="svc2-card">
+        <div class="svc2-num">06</div>
+        <div class="svc2-img-wrap"><img class="svc2-img" src="https://images.unsplash.com/photo-1460925895917-afdab827c52f?w=800&q=80" alt="E-Commerce & CMS"></div>
+        <div class="svc2-body">
+          <div class="svc2-label">E-Commerce</div>
+          <div class="svc2-name">E-Commerce &amp; CMS Platforms</div>
+          <p class="svc2-desc">Custom Shopify, WooCommerce, WordPress, and Odoo solutions — from storefront design to payment integration, inventory management, and ERP customization.</p>
+          <div class="svc2-tags"><span>Shopify</span><span>WordPress</span><span>Odoo</span><span>WooCommerce</span></div>
+        </div>
+        <div class="svc2-arrow">&#8594;</div>
+      </div>
+
+    </div>
+
+    <!-- Trust badges -->
+    <div class="svc2-badges rv d2">
+      <div class="svc2-badge"><div class="svc2-badge-icon"><svg viewBox="0 0 24 24"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/><path d="M9 12l2 2 4-4"/></svg></div><div><strong>Clean, Documented Code</strong><span>Every project delivered with full source &amp; docs</span></div></div>
+      <div class="svc2-badge"><div class="svc2-badge-icon"><svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="10"/><path d="M12 8v4l3 3"/></svg></div><div><strong>On-Time Delivery</strong><span>Fixed-price contracts with clear milestones</span></div></div>
+      <div class="svc2-badge"><div class="svc2-badge-icon"><svg viewBox="0 0 24 24"><rect x="3" y="11" width="18" height="11" rx="2"/><path d="M7 11V7a5 5 0 0110 0v4"/></svg></div><div><strong>NDA Before Discovery</strong><span>Full confidentiality guaranteed</span></div></div>
+      <div class="svc2-badge"><div class="svc2-badge-icon"><svg viewBox="0 0 24 24"><path d="M14 2H6a2 2 0 00-2 2v16a2 2 0 002 2h12a2 2 0 002-2V8z"/><path d="M14 2v6h6M16 13H8M16 17H8M10 9H8"/></svg></div><div><strong>Post-Launch Support</strong><span>24/7 monitoring &amp; maintenance retainers</span></div></div>
+    </div>
+
+  </div>
+</section>
+
+<!-- DIAGONAL DIVIDER -->
+<div style="background:#f5f6fa;line-height:0;position:relative;z-index:1">
+  <svg viewBox="0 0 1440 60" preserveAspectRatio="none" style="height:60px;display:block;width:100%">
+    <path d="M0,0 L1440,60 L1440,60 L0,60 Z" fill="#0a0c12"/>
+  </svg>
+</div>
+
+<!-- ===================== SOLUTIONS (dark) ===================== -->
+<section class="section-dark" id="solutions" style="padding-top:80px;padding-bottom:0">
+  <div class="container" style="position:relative;z-index:2">
+
+    <!-- Header -->
+    <div class="rv" style="max-width:700px">
+      <span class="eyebrow" style="color:rgba(192,32,42,0.9)">Solution Verticals</span>
+      <h2 class="dark" style="font-family:'Inter',sans-serif;font-weight:900;font-size:clamp(36px,4.5vw,60px);letter-spacing:-.03em">Tailored for Every <span style="color:rgba(200,215,235,0.85);font-weight:400">Industry.</span></h2>
+      <p class="sec-sub dark">Deep expertise across every segment of the digital product landscape — from consumer apps to enterprise platforms and intelligent automation.</p>
+    </div>
+
+    <!-- Feature split -->
+    <div class="sol2-split rv d1">
+      <div class="sol2-split-img">
+        <img src="https://images.unsplash.com/photo-1498050108023-c5249f4df085?w=900&q=80" alt="Full-stack development team">
+        <div class="sol2-split-overlay"></div>
+        <div class="sol2-split-stats">
+          <div class="sol2-stat"><div class="sol2-stat-val">150<span>+</span></div><div class="sol2-stat-lbl">Projects</div></div>
+          <div class="sol2-stat-div"></div>
+          <div class="sol2-stat"><div class="sol2-stat-val">7<span>yr</span></div><div class="sol2-stat-lbl">Experience</div></div>
+          <div class="sol2-stat-div"></div>
+          <div class="sol2-stat"><div class="sol2-stat-val">40<span>+</span></div><div class="sol2-stat-lbl">Countries</div></div>
+        </div>
+      </div>
+      <div class="sol2-split-content">
+        <div class="sol2-eyebrow">Why PumaPulse</div>
+        <h3 class="sol2-heading">Creative Precision.<br><span>Startup Velocity.</span></h3>
+        <p class="sol2-body">We blend technical depth with creative thinking — building products that feel fast, smart, and alive. From idea to launch, we're your end-to-end engineering partner.</p>
+        <div class="sol2-checks">
+          <div class="sol2-check"><span>&#10003;</span>Fixed-price contracts with clear milestones</div>
+          <div class="sol2-check"><span>&#10003;</span>NDA signed before any project discussion</div>
+          <div class="sol2-check"><span>&#10003;</span>Weekly video demos throughout build phase</div>
+          <div class="sol2-check"><span>&#10003;</span>24/7 post-launch monitoring and support</div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Tabs -->
+    <div class="sol2-tabs rv d2" id="tabRow">
+      <button class="sol2-tab on" data-tab="fullstack">Full-Stack</button>
+      <button class="sol2-tab" data-tab="mobile">Mobile</button>
+      <button class="sol2-tab" data-tab="aiml">AI / ML</button>
+      <button class="sol2-tab" data-tab="blockchain">Blockchain</button>
+      <button class="sol2-tab" data-tab="bots">Bots</button>
+      <button class="sol2-tab" data-tab="ecommerce">E-Commerce</button>
+    </div>
+
+    <!-- Panels -->
+    <div class="sol2-panel on rv d3" id="panel-fullstack">
+      <div class="sol2-card"><div class="sol2-card-body"><div class="sol2-card-t">Laravel / PHP Applications</div><p class="sol2-card-d">Robust, scalable PHP backends with Laravel — REST APIs, admin panels, multi-tenant SaaS, and enterprise portals.</p></div></div>
+      <div class="sol2-card"><div class="sol2-card-body"><div class="sol2-card-t">MERN Stack Development</div><p class="sol2-card-d">Full-stack JavaScript apps with MongoDB, Express, React, and Node.js — real-time, high-performance, and cloud-ready.</p></div></div>
+      <div class="sol2-card"><div class="sol2-card-body"><div class="sol2-card-t">Next.js Applications</div><p class="sol2-card-d">SEO-optimized, server-side rendered React apps with Next.js — blazing fast, scalable, and production-grade.</p></div></div>
+      <div class="sol2-card"><div class="sol2-card-body"><div class="sol2-card-t">Django &amp; FastAPI</div><p class="sol2-card-d">Python-powered backends with Django or FastAPI — ideal for data-heavy apps, ML integrations, and high-throughput APIs.</p></div></div>
+      <div class="sol2-card"><div class="sol2-card-body"><div class="sol2-card-t">Angular Enterprise Apps</div><p class="sol2-card-d">Complex, feature-rich enterprise frontends with Angular — dashboards, CRMs, ERPs, and internal tools.</p></div></div>
+      <div class="sol2-card"><div class="sol2-card-body"><div class="sol2-card-t">Odoo ERP Customization</div><p class="sol2-card-d">Custom Odoo modules, integrations, and full ERP implementations tailored to your business workflows.</p></div></div>
+    </div>
+    <div class="sol2-panel" id="panel-mobile">
+      <div class="sol2-card"><div class="sol2-card-body"><div class="sol2-card-t">React Native Apps</div><p class="sol2-card-d">Cross-platform iOS &amp; Android apps with React Native — single codebase, native performance, and rapid iteration.</p></div></div>
+      <div class="sol2-card"><div class="sol2-card-body"><div class="sol2-card-t">Flutter Development</div><p class="sol2-card-d">Beautiful, pixel-perfect cross-platform apps with Flutter — smooth animations, fast rendering, and one codebase for all platforms.</p></div></div>
+      <div class="sol2-card"><div class="sol2-card-body"><div class="sol2-card-t">iOS (Swift) Development</div><p class="sol2-card-d">Native iPhone and iPad apps built with Swift — optimized for Apple's ecosystem, App Store guidelines, and iOS performance.</p></div></div>
+      <div class="sol2-card"><div class="sol2-card-body"><div class="sol2-card-t">Android (Kotlin) Development</div><p class="sol2-card-d">Native Android apps with Kotlin — modern architecture, Material Design, and full Google Play Store deployment.</p></div></div>
+      <div class="sol2-card"><div class="sol2-card-body"><div class="sol2-card-t">Expo &amp; Cross-Platform</div><p class="sol2-card-d">Rapid mobile prototyping and production apps with Expo — OTA updates, push notifications, and seamless CI/CD.</p></div></div>
+      <div class="sol2-card"><div class="sol2-card-body"><div class="sol2-card-t">Mobile UI/UX Design</div><p class="sol2-card-d">Intuitive, accessible mobile interfaces designed for engagement — wireframes, prototypes, and design systems.</p></div></div>
+    </div>
+    <div class="sol2-panel" id="panel-aiml">
+      <div class="sol2-card"><div class="sol2-card-body"><div class="sol2-card-t">Predictive Modeling</div><p class="sol2-card-d">Machine learning models for forecasting, classification, and anomaly detection — built with scikit-learn, TensorFlow, and PyTorch.</p></div></div>
+      <div class="sol2-card"><div class="sol2-card-body"><div class="sol2-card-t">OpenAI API Integration</div><p class="sol2-card-d">GPT-4, DALL-E, Whisper, and Embeddings integrations — chatbots, content generation, semantic search, and AI assistants.</p></div></div>
+      <div class="sol2-card"><div class="sol2-card-body"><div class="sol2-card-t">Computer Vision (OpenCV)</div><p class="sol2-card-d">Image recognition, object detection, face analysis, and video processing systems using OpenCV and deep learning models.</p></div></div>
+      <div class="sol2-card"><div class="sol2-card-body"><div class="sol2-card-t">NLP &amp; Text Analytics</div><p class="sol2-card-d">Sentiment analysis, entity extraction, document classification, and language models for business intelligence.</p></div></div>
+      <div class="sol2-card"><div class="sol2-card-body"><div class="sol2-card-t">Recommendation Engines</div><p class="sol2-card-d">Personalized recommendation systems for e-commerce, content platforms, and SaaS products using collaborative filtering and deep learning.</p></div></div>
+      <div class="sol2-card"><div class="sol2-card-body"><div class="sol2-card-t">AI-Powered Dashboards</div><p class="sol2-card-d">Real-time analytics dashboards with ML-driven insights, automated reporting, and intelligent alerting systems.</p></div></div>
+    </div>
+    <div class="sol2-panel" id="panel-blockchain">
+      <div class="sol2-card"><div class="sol2-card-body"><div class="sol2-card-t">Smart Contract Development</div><p class="sol2-card-d">Audited Solidity smart contracts for ERC-20/721/1155 tokens, DeFi protocols, DAOs, and custom on-chain logic.</p></div></div>
+      <div class="sol2-card"><div class="sol2-card-body"><div class="sol2-card-t">DeFi Protocol Development</div><p class="sol2-card-d">AMMs, lending protocols, yield optimizers, and liquidity mining programs with audited contracts across 15+ chains.</p></div></div>
+      <div class="sol2-card"><div class="sol2-card-body"><div class="sol2-card-t">Crypto Exchange (CEX/DEX)</div><p class="sol2-card-d">Centralized and decentralized exchange platforms with matching engines, KYC/AML, and institutional-grade security.</p></div></div>
+      <div class="sol2-card"><div class="sol2-card-body"><div class="sol2-card-t">NFT Marketplace</div><p class="sol2-card-d">Full-featured NFT platforms with minting, auctions, royalties, and multi-chain asset support.</p></div></div>
+      <div class="sol2-card"><div class="sol2-card-body"><div class="sol2-card-t">Token Launch &amp; IDO</div><p class="sol2-card-d">ERC-20/BEP-20 token creation, tokenomics design, vesting schedules, and launchpad integration.</p></div></div>
+      <div class="sol2-card"><div class="sol2-card-body"><div class="sol2-card-t">Web3 Wallet Integration</div><p class="sol2-card-d">MPC, custodial, and non-custodial wallets with multi-chain support, DeFi integration, and biometric auth.</p></div></div>
+    </div>
+    <div class="sol2-panel" id="panel-bots">
+      <div class="sol2-card"><div class="sol2-card-body"><div class="sol2-card-t">Algo Trading Bots</div><p class="sol2-card-d">Arbitrage, DCA, grid, market-making, and AI-driven strategy bots deployed across crypto and forex markets.</p></div></div>
+      <div class="sol2-card"><div class="sol2-card-body"><div class="sol2-card-t">Web Scraping &amp; Data Extraction</div><p class="sol2-card-d">Scalable Python scrapers with Scrapy, Selenium, and Playwright — structured data pipelines for any website.</p></div></div>
+      <div class="sol2-card"><div class="sol2-card-body"><div class="sol2-card-t">Telegram Bots</div><p class="sol2-card-d">Feature-rich Telegram bots for notifications, trading signals, customer support, payments, and community management.</p></div></div>
+      <div class="sol2-card"><div class="sol2-card-body"><div class="sol2-card-t">CRM &amp; Workflow Automation</div><p class="sol2-card-d">Automated CRM workflows, lead nurturing, email sequences, and business process automation with Python and APIs.</p></div></div>
+      <div class="sol2-card"><div class="sol2-card-body"><div class="sol2-card-t">Excel &amp; Data Automation</div><p class="sol2-card-d">Python scripts for Excel automation, report generation, data transformation, and scheduled data processing pipelines.</p></div></div>
+      <div class="sol2-card"><div class="sol2-card-body"><div class="sol2-card-t">API Integration Bots</div><p class="sol2-card-d">Automated integrations between third-party APIs — Zapier-style workflows built custom for your exact business logic.</p></div></div>
+    </div>
+    <div class="sol2-panel" id="panel-ecommerce">
+      <div class="sol2-card"><div class="sol2-card-body"><div class="sol2-card-t">Shopify Development</div><p class="sol2-card-d">Custom Shopify themes, apps, and integrations — from storefront design to checkout optimization and headless commerce.</p></div></div>
+      <div class="sol2-card"><div class="sol2-card-body"><div class="sol2-card-t">WordPress &amp; WooCommerce</div><p class="sol2-card-d">Custom WordPress themes, plugins, and WooCommerce stores — fast, SEO-optimized, and easy to manage.</p></div></div>
+      <div class="sol2-card"><div class="sol2-card-body"><div class="sol2-card-t">Odoo ERP &amp; E-Commerce</div><p class="sol2-card-d">Full Odoo implementations with e-commerce, inventory, accounting, CRM, and HR modules — all in one platform.</p></div></div>
+      <div class="sol2-card"><div class="sol2-card-body"><div class="sol2-card-t">Payment Gateway Integration</div><p class="sol2-card-d">Stripe, PayPal, Razorpay, crypto payments, and custom payment flows integrated into any platform.</p></div></div>
+      <div class="sol2-card"><div class="sol2-card-body"><div class="sol2-card-t">Headless Commerce</div><p class="sol2-card-d">Decoupled storefronts with Next.js or Nuxt.js frontends connected to Shopify, WooCommerce, or custom backends.</p></div></div>
+      <div class="sol2-card"><div class="sol2-card-body"><div class="sol2-card-t">Marketplace Platforms</div><p class="sol2-card-d">Multi-vendor marketplace platforms with seller dashboards, commission management, and dispute resolution systems.</p></div></div>
+    </div>
+
+  </div>
+  <!-- Wave to light -->
+  <div style="line-height:0;position:relative;z-index:1;margin-top:60px">
+    <svg viewBox="0 0 1440 80" preserveAspectRatio="none" style="height:80px;display:block;width:100%">
+      <path d="M0,80 Q360,0 720,40 Q1080,80 1440,0 L1440,80 L0,80 Z" fill="#f5f6fa"/>
+    </svg>
+  </div>
+</section>
+
+<!-- ===================== PROCESS (light) ===================== -->
+<section class="section-light" id="process" style="padding-top:80px">
+  <div class="container">
+    <div class="rv">
+      <span class="eyebrow">How We Work</span>
+      <h2 class="light">From Idea to <span class="muted">Live Product.</span></h2>
+      <p class="sec-sub light">A disciplined, four-phase process that keeps you in control at every stage — no surprises, no hidden costs.</p>
+    </div>
+    <div class="proc-row rv d1">
+      <div class="proc-connector"></div>
+      <div class="p-step"><div class="p-num">01</div><div class="p-t">Discovery &amp; Strategy</div><p class="p-d">We deep-dive into your goals, users, and technical requirements. Deliverable: a signed architecture brief, full project scope, and fixed-price contract. NDA first, always.</p><span class="p-tag">Week 1–2</span></div>
+      <div class="p-step"><div class="p-num">02</div><div class="p-t">Architecture &amp; Design</div><p class="p-d">System architecture, database schemas, API specs, and high-fidelity UI/UX prototypes — reviewed and signed off before a single line of production code is written.</p><span class="p-tag">Week 2–4</span></div>
+      <div class="p-step"><div class="p-num">03</div><div class="p-t">Build &amp; Test</div><p class="p-d">Agile sprints with weekly video demos. Automated test coverage, code reviews, and staged deployments to preview environments — you see progress every week.</p><span class="p-tag">Week 4–Launch</span></div>
+      <div class="p-step"><div class="p-num">04</div><div class="p-t">Launch &amp; Scale</div><p class="p-d">Zero-downtime deployment, 24/7 monitoring, performance tuning, and flexible retainer-based maintenance. Most clients continue with us as a long-term engineering partner.</p><span class="p-tag">Ongoing</span></div>
+    </div>
+    <!-- IMAGE SPLIT: team / global reach -->
+    <div class="img-split rv d2" style="margin-top:52px;border:1px solid var(--border);overflow:hidden">
+      <div class="img-split-visual" style="order:-1">
+        <img src="img/about/remote2.jpg" alt="Global development team">
+        <div class="img-split-visual-overlay"></div>
+        <div class="img-split-visual-badge">
+          <div><div class="isvb-val" style="color:#fff">40<span style="font-size:16px;color:rgba(200,215,235,0.75)">+</span></div><div class="isvb-lbl">Countries</div></div>
+          <div style="width:1px;height:40px;background:rgba(255,255,255,0.15)"></div>
+          <div><div class="isvb-val" style="color:#fff">7yr</div><div class="isvb-lbl">Experience</div></div>
+        </div>
+      </div>
+      <div class="img-split-content" style="background:var(--bg-light)">
+        <span class="eyebrow">Global Reach</span>
+        <h2 class="light" style="font-size:clamp(26px,3vw,38px)">Remote-First.<br><span class="muted">Reliable Delivery.</span></h2>
+        <p class="sec-sub light" style="max-width:100%">Distributed engineering team across multiple time zones — meaning your project moves around the clock. Clients from Dubai, Singapore, Malaysia, US, the EU, and beyond trust PumaPulse for mission-critical digital products.</p>
+        <div style="margin-top:20px"><a href="contact/" class="btn-primary">Book a Free Call</a></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- DIAGONAL DIVIDER (light ? dark) -->
+<div style="background:var(--bg-light);line-height:0;position:relative;z-index:1">
+  <svg viewBox="0 0 1440 60" preserveAspectRatio="none" style="height:60px;display:block;width:100%">
+    <path d="M0,60 L1440,0 L1440,60 L0,60 Z" fill="#0a0c12"/>
+  </svg>
+</div>
+
+<!-- ===================== PORTFOLIO (dark) ===================== -->
+<section class="section-dark" id="work" style="padding-top:80px;padding-bottom:0px">
+  <div class="container" style="position:relative;z-index:2">
+    <div class="rv">
+      <span class="eyebrow" style="color:rgba(192,32,42,0.85)">Selected Work</span>
+      <h2 class="dark">Real Projects. <span class="muted">Real Results.</span></h2>
+      <p class="sec-sub dark">How we've helped startups, enterprises, and innovators launch, scale, and lead their markets.</p>
+    </div>
+    <div class="work-rows rv d1" style="border-top:1px solid rgba(255,255,255,0.08)">
+      <div class="w-row" style="border-bottom:1px solid rgba(255,255,255,0.08)">
+        <div><span class="w-tag">// Full-Stack Web App - Dubai, UAE</span><div class="w-name" style="color:#fff">Dreamster Exchange</div><p class="w-desc" style="color:rgba(200,215,235,0.8)">A Web3 digital asset trading platform with high-performance matching engine, advanced trading tools, live market data, and an intuitive interface built for retail and institutional traders.</p><div class="w-pills"><span class="w-pill" style="border-color:rgba(255,255,255,0.2);color:rgba(200,215,235,0.3);background:rgba(255,255,255,0.03)">Node.js</span><span class="w-pill" style="border-color:rgba(255,255,255,0.2);color:rgba(200,215,235,0.3);background:rgba(255,255,255,0.03)">React</span><span class="w-pill" style="border-color:rgba(255,255,255,0.2);color:rgba(200,215,235,0.3);background:rgba(255,255,255,0.03)">PostgreSQL</span><span class="w-pill" style="border-color:rgba(255,255,255,0.2);color:rgba(200,215,235,0.3);background:rgba(255,255,255,0.03)">Redis</span><span class="w-pill" style="border-color:rgba(255,255,255,0.2);color:rgba(200,215,235,0.3);background:rgba(255,255,255,0.03)">Kubernetes</span></div></div>
+        <div class="w-quote" style="color:rgba(200,215,235,0.75);border-left:2px solid rgba(192,32,42,0.5)">They delivered a secure, easy-to-use platform with excellent communication and strong technical skills — gave useful suggestions throughout the project.</div>
+        <div class="w-client"><div class="w-cn" style="color:#fff">Mario Butler</div><div class="w-cl">Founder — Dubai, UAE</div><div class="w-stars">&#9733;&#9733;&#9733;&#9733;&#9733;</div></div>
+      </div>
+      <div class="w-row" style="border-bottom:1px solid rgba(255,255,255,0.08)">
+        <div><span class="w-tag">// Mobile App - United States</span><div class="w-name" style="color:#fff">MetaStation</div><p class="w-desc" style="color:rgba(200,215,235,0.8)">A full-featured React Native trading app with multi-layer security architecture, advanced order types, live market data, and institutional-grade performance — built for high-trust, high-volume trading on iOS and Android.</p><div class="w-pills"><span class="w-pill" style="border-color:rgba(255,255,255,0.2);color:rgba(200,215,235,0.3);background:rgba(255,255,255,0.03)">React Native</span><span class="w-pill" style="border-color:rgba(255,255,255,0.2);color:rgba(200,215,235,0.3);background:rgba(255,255,255,0.03)">Node.js</span><span class="w-pill" style="border-color:rgba(255,255,255,0.2);color:rgba(200,215,235,0.3);background:rgba(255,255,255,0.03)">AWS</span></div></div>
+        <div class="w-quote" style="color:rgba(200,215,235,0.75);border-left:2px solid rgba(192,32,42,0.5)">Attention to detail was outstanding and quality exceeded expectations. Communication throughout was transparent and timely.</div>
+        <div class="w-client"><div class="w-cn" style="color:#fff">James Mitchell</div><div class="w-cl">Founder — New York, US</div><div class="w-stars">&#9733;&#9733;&#9733;&#9733;&#9733;</div></div>
+      </div>
+      <div class="w-row" style="border-bottom:1px solid rgba(255,255,255,0.08)">
+        <div><span class="w-tag">// AI-Powered CRM - Malaysia</span><div class="w-name" style="color:#fff">MarginFX</div><p class="w-desc" style="color:rgba(200,215,235,0.8)">Custom Laravel CRM with AI-driven lead scoring, automated client onboarding, KYC/AML workflows, IB affiliate tracking, and automated compliance reporting — all in one unified platform.</p><div class="w-pills"><span class="w-pill" style="border-color:rgba(255,255,255,0.2);color:rgba(200,215,235,0.3);background:rgba(255,255,255,0.03)">Laravel</span><span class="w-pill" style="border-color:rgba(255,255,255,0.2);color:rgba(200,215,235,0.3);background:rgba(255,255,255,0.03)">Python</span><span class="w-pill" style="border-color:rgba(255,255,255,0.2);color:rgba(200,215,235,0.3);background:rgba(255,255,255,0.03)">React</span></div></div>
+        <div class="w-quote" style="color:rgba(200,215,235,0.75);border-left:2px solid rgba(192,32,42,0.5)">From client registration to KYC and IB tracking, everything works flawlessly. The process was smooth and professional.</div>
+        <div class="w-client"><div class="w-cn" style="color:#fff">Manoj Kumaran</div><div class="w-cl">CEO — Malaysia</div><div class="w-stars">&#9733;&#9733;&#9733;&#9733;&#9733;</div></div>
+      </div>
+      <div class="w-row" style="border-bottom:1px solid rgba(255,255,255,0.08)">
+        <div><span class="w-tag">// Blockchain &amp; Web3 - Singapore</span><div class="w-name" style="color:#fff">Cryptinum Protocol</div><p class="w-desc" style="color:rgba(200,215,235,0.8)">An EVM-compatible DeFi ecosystem with audited AMM liquidity pools, token staking, governance DAO, and a cross-chain bridge supporting Ethereum, BNB Chain, and Polygon.</p><div class="w-pills"><span class="w-pill" style="border-color:rgba(255,255,255,0.2);color:rgba(200,215,235,0.3);background:rgba(255,255,255,0.03)">Solidity</span><span class="w-pill" style="border-color:rgba(255,255,255,0.2);color:rgba(200,215,235,0.3);background:rgba(255,255,255,0.03)">Hardhat</span><span class="w-pill" style="border-color:rgba(255,255,255,0.2);color:rgba(200,215,235,0.3);background:rgba(255,255,255,0.03)">Chainlink</span><span class="w-pill" style="border-color:rgba(255,255,255,0.2);color:rgba(200,215,235,0.3);background:rgba(255,255,255,0.03)">IPFS</span></div></div>
+        <div class="w-quote" style="color:rgba(200,215,235,0.75);border-left:2px solid rgba(192,32,42,0.5)">Big thanks to PumaPulse for handling our token project so well. Everything delivered exactly as expected — truly appreciate the effort.</div>
+        <div class="w-client"><div class="w-cn" style="color:#fff">Steven Kim Wee</div><div class="w-cl">Founder — Singapore</div><div class="w-stars">&#9733;&#9733;&#9733;&#9733;&#9733;</div></div>
+      </div>
+    </div>
+    <div style="margin-top:32px" class="rv d2"><a href="portfolio/" class="btn-outline-light">View All Projects &#8594;</a></div>
+  </div>
+  <!-- Wave to light -->
+  <div style="line-height:0;margin-top:80px">
+    <svg viewBox="0 0 1440 70" preserveAspectRatio="none" style="height:70px;display:block;width:100%">
+      <path d="M0,0 C360,70 1080,0 1440,70 L1440,70 L0,70 Z" fill="#f5f6fa"/>
+    </svg>
+  </div>
+</section>
+
+<!-- ===================== TESTIMONIALS (light) ===================== -->
+<section class="section-light" style="padding-top:80px;padding-bottom:100px">
+  <div class="container">
+    <div class="rv">
+      <span class="eyebrow">Client Stories</span>
+      <h2 class="light" style="font-family:'Inter',sans-serif;font-weight:900;letter-spacing:-.03em">Trusted by <span class="muted">Builders Worldwide.</span></h2>
+    </div>
+    <div style="display:grid;grid-template-columns:repeat(3,1fr);gap:20px;margin-top:52px">
+
+      <!-- Card 1 - Leon sheen - https://res.cloudinary.com/dtvnifa3t/image/upload/v1775203877/pumapulse/user1.jpg -->
+      <div class="tc-card">
+        <div class="tc-bg" style="background-image:url('https://res.cloudinary.com/dtvnifa3t/image/upload/v1775203877/pumapulse/user1.jpg')"></div>
+        <div class="tc-overlay"></div>
+        <div class="tc-content">
+          <div class="tc-quote">"</div>
+          <p class="tc-text">Big thanks to PumaPulse for handling our token project so well! Everything was fine from start to finish, and they delivered exactly as expected. We truly appreciate their effort and look forward to working with them again.</p>
+          <div class="tc-footer">
+            <div class="tc-name">Steven Kim Wee</div>
+            <div class="tc-role">Founder, Cryptinum - Singapore</div>
+            <div class="tc-stars">&#9733;&#9733;&#9733;&#9733;&#9733;</div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Card 2 - Kooban Naidoo - https://res.cloudinary.com/dtvnifa3t/image/upload/v1775203880/pumapulse/user2.jpg -->
+      <div class="tc-card">
+        <div class="tc-bg" style="background-image:url('https://res.cloudinary.com/dtvnifa3t/image/upload/v1775203880/pumapulse/user2.jpg')"></div>
+        <div class="tc-overlay"></div>
+        <div class="tc-content">
+          <div class="tc-quote">"</div>
+          <p class="tc-text">The team supported me throughout, suggested useful changes, delivered on time, and quickly resolved any issues. The whole process was handled professionally. I highly recommend PumaPulse for any fintech project.</p>
+          <div class="tc-footer">
+            <div class="tc-name">Kooban Naidoo</div>
+            <div class="tc-role">CEO, Apzor - South Africa</div>
+            <div class="tc-stars">&#9733;&#9733;&#9733;&#9733;&#9733;</div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Card 3 - James Mitchell - https://res.cloudinary.com/dtvnifa3t/image/upload/v1775203886/pumapulse/user4.jpg (order: 1,2,4,3) -->
+      <div class="tc-card">
+        <div class="tc-bg" style="background-image:url('https://res.cloudinary.com/dtvnifa3t/image/upload/v1775203886/pumapulse/user4.jpg')"></div>
+        <div class="tc-overlay"></div>
+        <div class="tc-content">
+          <div class="tc-quote">"</div>
+          <p class="tc-text">I must commend the team on an exceptionally well-executed delivery of our Cryptocurrency Exchange. I would not hesitate to recommend PumaPulse for any high-level fintech initiative requiring precision and reliability.</p>
+          <div class="tc-footer">
+            <div class="tc-name">James Mitchell</div>
+            <div class="tc-role">Founder, MetaStation - US</div>
+            <div class="tc-stars">&#9733;&#9733;&#9733;&#9733;&#9733;</div>
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<!-- WAVE divider light ? dark -->
+<div style="background:var(--bg-light);line-height:0;position:relative;z-index:1">
+  <svg viewBox="0 0 1440 70" preserveAspectRatio="none" style="height:70px;display:block;width:100%">
+    <path d="M0,0 Q720,70 1440,0 L1440,70 L0,70 Z" fill="#0a0c12"/>
+  </svg>
+</div>
+
+<!-- ===================== TECH STACK (dark) ===================== -->
+<section class="section-dark" style="padding-top:0px;padding-bottom:0px">
+  <div class="container" style="position:relative;z-index:2">
+    <div class="rv">
+      <span class="eyebrow" style="color:rgba(192,32,42,0.85)">Technology</span>
+      <h2 class="dark">Our Tech <span class="muted">Arsenal.</span></h2>
+      <p class="sec-sub dark">Battle-tested technologies across full-stack, mobile, AI/ML, and blockchain — chosen for performance, reliability, and developer experience.</p>
+    </div>
+    <div class="tech-grid rv d1" style="background:rgba(255,255,255,0.04);border:1px solid rgba(255,255,255,0.08);margin-top:5px">
+      <div class="tech-chip" style="background:rgba(255,255,255,0.02);border-right:1px solid rgba(255,255,255,0.07);border-bottom:1px solid rgba(255,255,255,0.07)"><img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/php/php-original.svg" alt="PHP" width="28" height="28"><span style="color:rgba(200,215,235,0.3)">PHP</span></div>
+      <div class="tech-chip" style="background:rgba(255,255,255,0.02);border-right:1px solid rgba(255,255,255,0.07);border-bottom:1px solid rgba(255,255,255,0.07)"><img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/laravel/laravel-original.svg" alt="Laravel" width="28" height="28"><span style="color:rgba(200,215,235,0.3)">Laravel</span></div>
+      <div class="tech-chip" style="background:rgba(255,255,255,0.02);border-right:1px solid rgba(255,255,255,0.07);border-bottom:1px solid rgba(255,255,255,0.07)"><img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/react/react-original.svg" alt="React" width="28" height="28"><span style="color:rgba(200,215,235,0.3)">React</span></div>
+      <div class="tech-chip" style="background:rgba(255,255,255,0.02);border-right:1px solid rgba(255,255,255,0.07);border-bottom:1px solid rgba(255,255,255,0.07)"><img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/nextjs/nextjs-original.svg" alt="Next.js" width="28" height="28" style="filter:invert(1)"><span style="color:rgba(200,215,235,0.3)">Next.js</span></div>
+      <div class="tech-chip" style="background:rgba(255,255,255,0.02);border-right:1px solid rgba(255,255,255,0.07);border-bottom:1px solid rgba(255,255,255,0.07)"><img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/angularjs/angularjs-original.svg" alt="Angular" width="28" height="28"><span style="color:rgba(200,215,235,0.3)">Angular</span></div>
+      <div class="tech-chip" style="background:rgba(255,255,255,0.02);border-right:none;border-bottom:1px solid rgba(255,255,255,0.07)"><img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/django/django-plain.svg" alt="Django" width="28" height="28"><span style="color:rgba(200,215,235,0.3)">Django</span></div>
+      <div class="tech-chip" style="background:rgba(255,255,255,0.02);border-right:1px solid rgba(255,255,255,0.07);border-bottom:1px solid rgba(255,255,255,0.07)"><img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/python/python-original.svg" alt="Python" width="28" height="28"><span style="color:rgba(200,215,235,0.3)">Python</span></div>
+      <div class="tech-chip" style="background:rgba(255,255,255,0.02);border-right:1px solid rgba(255,255,255,0.07);border-bottom:1px solid rgba(255,255,255,0.07)"><img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/react/react-original.svg" alt="React Native" width="28" height="28"><span style="color:rgba(200,215,235,0.3)">React Native</span></div>
+      <div class="tech-chip" style="background:rgba(255,255,255,0.02);border-right:1px solid rgba(255,255,255,0.07);border-bottom:1px solid rgba(255,255,255,0.07)"><img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/flutter/flutter-original.svg" alt="Flutter" width="28" height="28"><span style="color:rgba(200,215,235,0.3)">Flutter</span></div>
+      <div class="tech-chip" style="background:rgba(255,255,255,0.02);border-right:1px solid rgba(255,255,255,0.07);border-bottom:1px solid rgba(255,255,255,0.07)"><img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/swift/swift-original.svg" alt="Swift" width="28" height="28"><span style="color:rgba(200,215,235,0.3)">Swift</span></div>
+      <div class="tech-chip" style="background:rgba(255,255,255,0.02);border-right:1px solid rgba(255,255,255,0.07);border-bottom:1px solid rgba(255,255,255,0.07)"><img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/kotlin/kotlin-original.svg" alt="Kotlin" width="28" height="28"><span style="color:rgba(200,215,235,0.3)">Kotlin</span></div>
+      <div class="tech-chip" style="background:rgba(255,255,255,0.02);border-right:none;border-bottom:1px solid rgba(255,255,255,0.07)"><img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/tensorflow/tensorflow-original.svg" alt="TensorFlow" width="28" height="28"><span style="color:rgba(200,215,235,0.3)">TensorFlow</span></div>
+      <div class="tech-chip" style="background:rgba(255,255,255,0.02);border-right:1px solid rgba(255,255,255,0.07);border-bottom:none"><img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/pytorch/pytorch-original.svg" alt="PyTorch" width="28" height="28"><span style="color:rgba(200,215,235,0.3)">PyTorch</span></div>
+      <div class="tech-chip" style="background:rgba(255,255,255,0.02);border-right:1px solid rgba(255,255,255,0.07);border-bottom:none"><img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/nodejs/nodejs-original.svg" alt="Node.js" width="28" height="28"><span style="color:rgba(200,215,235,0.3)">Node.js</span></div>
+      <div class="tech-chip" style="background:rgba(255,255,255,0.02);border-right:1px solid rgba(255,255,255,0.07);border-bottom:none"><img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/mongodb/mongodb-original.svg" alt="MongoDB" width="28" height="28"><span style="color:rgba(200,215,235,0.3)">MongoDB</span></div>
+      <div class="tech-chip" style="background:rgba(255,255,255,0.02);border-right:1px solid rgba(255,255,255,0.07);border-bottom:none"><img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/postgresql/postgresql-original.svg" alt="PostgreSQL" width="28" height="28"><span style="color:rgba(200,215,235,0.3)">PostgreSQL</span></div>
+      <div class="tech-chip" style="background:rgba(255,255,255,0.02);border-right:1px solid rgba(255,255,255,0.07);border-bottom:none"><img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/docker/docker-original.svg" alt="Docker" width="28" height="28"><span style="color:rgba(200,215,235,0.3)">Docker</span></div>
+      <div class="tech-chip" style="background:rgba(255,255,255,0.02);border-right:none;border-bottom:none"><img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/amazonwebservices/amazonwebservices-original-wordmark.svg" alt="AWS" width="28" height="28"><span style="color:rgba(200,215,235,0.3)">AWS</span></div>
+    </div>
+  </div>
+  <!-- Curved wave to light -->
+  <div style="line-height:0;margin-top:5px;margin-bottom:-1px;">
+    <svg viewBox="0 0 1440 100" preserveAspectRatio="none" style="height:100px;display:block;width:100%">
+      <path d="M0,0 C360,100 1080,100 1440,0 L1440,100 L0,100 Z" fill="#f5f6fa"/>
+    </svg>
+  </div>
+</section>
+
+<!-- ===================== FAQ (light) ===================== -->
+<section class="section-light" id="faq" style="padding-top:100px;">
+  <div class="container">
+    <div class="faq-layout rv">
+      <div>
+        <h2 class="light">Common <span class="muted">Questions.</span></h2>
+        <p class="sec-sub light">Answers to the questions we hear most before starting a project. Don't see yours? Book a call.</p>
+        <div style="margin-top:28px"><a href="contact/" class="btn-primary">Book Free Strategy Call</a></div>
+        <!-- FAQ image -->
+        <div style="margin-top:32px;position:relative;overflow:hidden;border:1px solid var(--border)">
+          <img src="img/about/workers-it-company-working-computer (1).jpg" alt="Development team" style="width:100%;height:220px;object-fit:cover;display:block;opacity:0.85">
+          <div style="position:absolute;inset:0;background:linear-gradient(135deg,rgba(192,32,42,0.2) 0%,transparent 70%)"></div>
+          <div style="position:absolute;bottom:16px;left:16px;background:rgba(0,0,0,0.7);backdrop-filter:blur(8px);padding:10px 14px;border:1px solid rgba(255,255,255,0.2)">
+            <div style="font-family:var(--mono);font-size:9px;letter-spacing:.12em;text-transform:uppercase;color:rgba(200,215,235,0.75)">TECHNOLOGIES MASTERED</div>
+            <div style="font-family:var(--display);font-size:22px;font-weight:700;color:#fff;line-height:1;margin-top:2px">30<span style="color:var(--red2)">+</span></div>
+          </div>
+        </div>
+      </div>
+      <div class="faq-list">
+        <div class="faq-item"><div class="faq-q" onclick="faq(this)">What types of projects do you specialize in?<div class="faq-ico"><svg viewBox="0 0 10 10"><path d="M5 1v8M1 5h8"/></svg></div></div><div class="faq-ans"><p>We specialize in Full-Stack Web (PHP, Laravel, MERN, Next.js, Django), Mobile Apps (React Native, Flutter, iOS, Android), AI/ML solutions, Blockchain/Web3, and intelligent automation bots. We love projects that blend multiple disciplines.</p></div></div>
+        <div class="faq-item"><div class="faq-q" onclick="faq(this)">How long does a typical project take?<div class="faq-ico"><svg viewBox="0 0 10 10"><path d="M5 1v8M1 5h8"/></svg></div></div><div class="faq-ans"><p>A mobile app typically takes 6-12 weeks. A full-stack web platform takes 4-16 weeks depending on complexity. AI/ML integrations vary from 2 weeks (API integration) to 3+ months (custom model training). We provide a detailed timeline after discovery.</p></div></div>
+        <div class="faq-item"><div class="faq-q" onclick="faq(this)">Do you build cross-platform or native mobile apps?<div class="faq-ico"><svg viewBox="0 0 10 10"><path d="M5 1v8M1 5h8"/></svg></div></div><div class="faq-ans"><p>Both. We build cross-platform apps with React Native and Flutter (one codebase, iOS + Android), and native apps with Swift (iOS) and Kotlin (Android) when maximum performance or platform-specific features are required.</p></div></div>
+        <div class="faq-item"><div class="faq-q" onclick="faq(this)">Can you integrate AI/ML into an existing app?<div class="faq-ico"><svg viewBox="0 0 10 10"><path d="M5 1v8M1 5h8"/></svg></div></div><div class="faq-ans"><p>Absolutely. We can add AI features to any existing platform — chatbots via OpenAI APIs, recommendation engines, predictive analytics, computer vision with OpenCV, or custom ML models with TensorFlow/PyTorch.</p></div></div>
+        <div class="faq-item"><div class="faq-q" onclick="faq(this)">Do you sign NDAs before discussions?<div class="faq-ico"><svg viewBox="0 0 10 10"><path d="M5 1v8M1 5h8"/></svg></div></div><div class="faq-ans"><p>Absolutely. We sign NDAs before any project discussion. Your ideas, plans, and technical requirements are treated with complete confidentiality. Fixed-price contracts are available so there are no surprises.</p></div></div>
+        <div class="faq-item"><div class="faq-q" onclick="faq(this)">What is your pricing model?<div class="faq-ico"><svg viewBox="0 0 10 10"><path d="M5 1v8M1 5h8"/></svg></div></div><div class="faq-ans"><p>We offer both fixed-price and time-and-materials contracts. After a free discovery call, we provide a detailed proposal with clear milestones and payment schedules. No hidden fees, ever.</p></div></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+
+
+<!-- ===================== CTA (dark gradient) ===================== -->
+<div class="cta-section" id="contact">
+  <div class="container">
+    <h2>Your Vision.<br><span style="color:rgba(255,255,255,0.3);font-weight:400">Our Engineering Precision.</span></h2>
+    <p>Book a free 30-minute strategy call. No sales pitch — just honest advice on how to build your product right, on time, and within budget.</p>
+    <div class="cta-btns">
+      <a href="contact/" class="btn-primary">Book Free Strategy Call</a>
+      <a href="portfolio/" class="btn-outline-light">View Portfolio &#8594;</a>
+    </div>
+  </div>
+</div>
+
+<!-- ===================== FOOTER ===================== -->
+<div id="footer-placeholder"></div>
+
+<script>
+// ===================== LIGHT STREAMS =====================
+(function(){
+  const canvas = document.getElementById('lightCanvas');
+  const ctx = canvas.getContext('2d');
+  let W, H, streams = [];
+
+  function resize(){
+    W = canvas.width = window.innerWidth;
+    H = canvas.height = window.innerHeight;
+  }
+  window.addEventListener('resize', resize);
+  resize();
+
+  function Stream(){
+    this.reset();
+  }
+  Stream.prototype.reset = function(){
+    this.x = Math.random() * W;
+    this.y = -100 - Math.random() * H;
+    this.len = 80 + Math.random() * 200;
+    this.speed = 0.4 + Math.random() * 1.2;
+    this.width = 0.5 + Math.random() * 1.5;
+    this.alpha = 0.04 + Math.random() * 0.12;
+    // Color: mostly red-crimson, occasional blue-purple or white
+    const r = Math.random();
+    if (r < 0.65) {
+      this.color = `rgba(${192 + Math.floor(Math.random()*40)}, ${20 + Math.floor(Math.random()*20)}, ${30 + Math.floor(Math.random()*20)}, `;
+    } else if (r < 0.85) {
+      this.color = `rgba(180, 160, 255, `;
+    } else {
+      this.color = `rgba(220, 230, 255, `;
+    }
+    this.angle = -0.15 + Math.random() * 0.3;
+    this.dx = Math.sin(this.angle) * this.speed * 0.4;
+  };
+  Stream.prototype.update = function(){
+    this.y += this.speed;
+    this.x += this.dx;
+    if (this.y - this.len > H || this.x < -50 || this.x > W + 50) this.reset();
+  };
+  Stream.prototype.draw = function(){
+    const grad = ctx.createLinearGradient(this.x, this.y - this.len, this.x + this.dx * this.len, this.y);
+    grad.addColorStop(0, this.color + '0)');
+    grad.addColorStop(0.4, this.color + this.alpha + ')');
+    grad.addColorStop(1, this.color + '0)');
+    ctx.beginPath();
+    ctx.moveTo(this.x, this.y - this.len);
+    ctx.lineTo(this.x + this.dx * (this.len / this.speed), this.y);
+    ctx.strokeStyle = grad;
+    ctx.lineWidth = this.width;
+    ctx.stroke();
+  };
+
+  for (let i = 0; i < 55; i++) {
+    const s = new Stream();
+    s.y = Math.random() * H * 2; // distribute initially
+    streams.push(s);
+  }
+
+  function animate(){
+    ctx.clearRect(0, 0, W, H);
+    streams.forEach(s => { s.update(); s.draw(); });
+    requestAnimationFrame(animate);
+  }
+  animate();
+})();
+
+// ===================== TECH STRIP =====================
+(function(){
+  const techs=[
+    {name:'PHP',icon:'php/777BB4'},{name:'Laravel',icon:'laravel/FF2D20'},
+    {name:'React',icon:'react/61DAFB'},{name:'Next.js',icon:'nextdotjs/ffffff'},
+    {name:'Angular',icon:'angular/DD0031'},{name:'Django',icon:'django/092E20'},
+    {name:'Python',icon:'python/3776AB'},{name:'React Native',icon:'react/61DAFB'},
+    {name:'Flutter',icon:'flutter/02569B'},{name:'Swift',icon:'swift/F05138'},
+    {name:'Kotlin',icon:'kotlin/7F52FF'},{name:'TensorFlow',icon:'tensorflow/FF6F00'},
+    {name:'PyTorch',icon:'pytorch/EE4C2C'},{name:'Node.js',icon:'nodedotjs/339933'},
+    {name:'WordPress',icon:'wordpress/21759B'},{name:'Shopify',icon:'shopify/96BF48'},
+  ];
+  let h='';
+  for(let r=0;r<2;r++) techs.forEach(t=>{
+    h+=`<div class="ts-item"><img src="https://cdn.simpleicons.org/${t.icon}" alt="${t.name}">${t.name}</div>`;
+  });
+  document.getElementById('techStrip').innerHTML=h;
+})();
+
+// ===================== SERVICES STRIP =====================
+(function(){
+  const services=[
+    'Full-Stack Web Development',
+    'Mobile App Development',
+    'AI / ML Solutions',
+    'Blockchain & Web3',
+    'Trading Bots & Automation',
+    'React Native & Flutter',
+    'Laravel & Django',
+    'OpenAI API Integration',
+    'Shopify & WordPress',
+    'Telegram Bots'
+  ];
+  let h='';
+  for(let r=0;r<2;r++) services.forEach(s=>{
+    h+=`<div class="ts-item">${s}</div>`;
+  });
+  document.getElementById('servicesStrip').innerHTML=h;
+})();
+
+// ===================== LIVE METRICS =====================
+(function(){
+  // Static display — no random flicker needed for project counts
+})();
+
+// ===================== TABS =====================
+document.getElementById('tabRow').addEventListener('click',e=>{
+  const b=e.target.closest('.sol2-tab'); if(!b) return;
+  document.querySelectorAll('.sol2-tab').forEach(x=>x.classList.remove('on'));
+  document.querySelectorAll('.sol2-panel').forEach(x=>x.classList.remove('on'));
+  b.classList.add('on');
+  const p=document.getElementById('panel-'+b.dataset.tab);
+  if(p) p.classList.add('on');
+});
+
+// ===================== FAQ =====================
+function faq(el){
+  const item=el.closest('.faq-item');
+  const was=item.classList.contains('open');
+  document.querySelectorAll('.faq-item.open').forEach(x=>x.classList.remove('open'));
+  if(!was) item.classList.add('open');
+}
+
+// ===================== SCROLL REVEAL =====================
+const io=new IntersectionObserver(entries=>{
+  entries.forEach(e=>{ if(e.isIntersecting){e.target.classList.add('in');io.unobserve(e.target);} });
+},{threshold:0.06});
+document.querySelectorAll('.rv').forEach(el=>io.observe(el));
+</script>
+
+<script src="js/nav.js"></script>
+<script src="js/main.js"></script>
+</body>
+</html>

@@ -1,0 +1,551 @@
+﻿<!DOCTYPE html>
+
+
+
+
+
+
+
+
+
+
+<html lang="en">
+
+
+
+
+
+
+
+
+
+
+<head>
+
+
+
+
+
+
+
+
+
+
+  <meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+
+
+
+
+
+
+
+
+
+  <title>Portfolio — PumaPulse | Real Projects. Real Results.</title>
+
+
+
+
+
+
+
+
+
+
+  <meta name="description" content="PumaPulse portfolio — Full-Stack Web, Mobile Apps, AI/ML, Blockchain, and Automation projects delivered for clients across 40+ countries.">
+
+
+
+
+
+
+
+
+
+
+  <link rel="icon" href="https://res.cloudinary.com/dtvnifa3t/image/upload/v1775203874/pumapulse/icon.png" type="image/png">
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="../css/style.css">
+  <link rel="stylesheet" href="../css/theme.css">
+  <link rel="stylesheet" href="../css/animations.css">
+  <link rel="stylesheet" href="../css/mobile.css">
+  <style>
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
+body{font-family:'Inter',sans-serif;background:#f5f6fa;color:#1a1e2e;overflow-x:hidden;line-height:1.6}
+/* HERO */
+.pf-hero{min-height:72vh;position:relative;display:flex;align-items:center;overflow:hidden;background:#060a14}
+.pf-hero-bg{position:absolute;inset:0;background:url('../img/portfolio/Annotation%202026-04-05%20001330.jpg') top center/cover no-repeat;opacity:.4}
+.pf-hero-overlay{position:absolute;inset:0;background:linear-gradient(135deg,rgba(192,32,42,.18) 0%,transparent 55%),linear-gradient(to top,#060a14 0%,transparent 55%)}
+.pf-hero-grid{position:absolute;inset:0;background-image:linear-gradient(rgba(255,255,255,.03) 1px,transparent 1px),linear-gradient(90deg,rgba(255,255,255,.03) 1px,transparent 1px);background-size:60px 60px}
+.pf-hero-inner{position:relative;z-index:2;max-width:1200px;margin:0 auto;padding:140px 44px 80px}
+.pf-eyebrow{display:inline-flex;align-items:center;gap:10px;font-size:11px;font-weight:700;letter-spacing:.18em;text-transform:uppercase;color:rgba(192,32,42,.9);margin-bottom:22px}
+.pf-eyebrow::before{content:'';width:24px;height:2px;background:#c0202a;border-radius:2px;flex-shrink:0}
+.pf-hero h1{font-size:clamp(40px,5.5vw,72px);font-weight:900;line-height:1.0;letter-spacing:-.03em;color:#fff;margin-bottom:20px}
+.pf-hero h1 em{color:#e0263a;font-style:normal}
+.pf-hero-sub{font-size:16px;line-height:1.85;color:rgba(200,215,235,.7);font-weight:300;max-width:520px;margin-bottom:36px}
+.pf-btns{display:flex;gap:12px;flex-wrap:wrap}
+.pf-btn-red{display:inline-flex;align-items:center;gap:8px;background:#c0202a;color:#fff;padding:14px 28px;border-radius:50px;font-weight:700;font-size:14px;text-decoration:none;transition:background .2s,box-shadow .2s}
+.pf-btn-red:hover{background:#e0263a;box-shadow:0 0 28px rgba(192,32,42,.5)}
+.pf-btn-outline{display:inline-flex;align-items:center;gap:8px;background:rgba(255,255,255,.08);color:#fff;padding:14px 28px;border-radius:50px;font-weight:600;font-size:14px;text-decoration:none;border:1.5px solid rgba(255,255,255,.2);transition:all .2s}
+.pf-btn-outline:hover{background:rgba(255,255,255,.14);border-color:rgba(255,255,255,.5)}
+/* SHARED */
+.pf-section{padding:100px 0}
+.pf-container{max-width:1200px;margin:0 auto;padding:0 44px}
+.pf-label{display:inline-flex;align-items:center;gap:8px;font-size:11px;font-weight:700;letter-spacing:.18em;text-transform:uppercase;color:#c0202a;margin-bottom:16px}
+.pf-label::before{content:'';width:20px;height:2px;background:#c0202a;border-radius:2px;flex-shrink:0}
+.pf-h2{font-size:clamp(28px,4vw,50px);font-weight:900;line-height:1.05;letter-spacing:-.03em;color:#1a1e2e;margin-bottom:14px}
+.pf-h2 em{color:#e0263a;font-style:normal}
+.pf-h2-white{color:#fff}
+/* PROJECTS GRID */
+.pf-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:1px;background:#e0e4ef;border:1px solid #e0e4ef;margin-top:56px}
+.pf-card{background:#fff;overflow:hidden;transition:background .2s;position:relative}
+.pf-card:hover{background:#fafafa}
+.pf-card-img{height:200px;overflow:hidden;position:relative}
+.pf-card-img img{width:100%;height:100%;object-fit:cover;transition:transform .5s}
+.pf-card:hover .pf-card-img img{transform:scale(1.05)}
+.pf-card-img-overlay{position:absolute;inset:0;background:linear-gradient(to bottom,transparent 40%,rgba(6,10,20,.7) 100%)}
+.pf-card-tags{position:absolute;top:14px;left:14px;display:flex;gap:6px;flex-wrap:wrap;z-index:2}
+.pf-tag{font-size:10px;font-weight:700;letter-spacing:.06em;text-transform:uppercase;padding:3px 10px;border-radius:3px;background:rgba(192,32,42,.85);color:#fff}
+.pf-tag-blue{background:rgba(59,130,246,.85)}
+.pf-tag-green{background:rgba(13,166,120,.85)}
+.pf-tag-purple{background:rgba(124,58,237,.85)}
+.pf-card-body{padding:24px 24px 28px}
+.pf-card-title{font-size:17px;font-weight:800;color:#1a1e2e;margin-bottom:10px;letter-spacing:-.01em}
+.pf-card-desc{font-size:13px;line-height:1.75;color:#4a5470;margin-bottom:14px}
+.pf-card-stack{display:flex;flex-wrap:wrap;gap:5px;margin-bottom:16px}
+.pf-stack-tag{font-size:10px;font-weight:600;letter-spacing:.06em;text-transform:uppercase;padding:3px 9px;border:1px solid #e0e4ef;color:#8a93b0;background:#f5f6fa}
+.pf-card-quote{font-size:12.5px;line-height:1.8;color:#4a5470;font-style:italic;padding:14px 16px;border-left:3px solid #c0202a;background:#f5f6fa;margin-bottom:16px}
+.pf-card-client{display:flex;align-items:center;gap:12px}
+.pf-client-avatar{width:38px;height:38px;border-radius:50%;display:flex;align-items:center;justify-content:center;font-size:12px;font-weight:800;color:#fff;flex-shrink:0}
+.pf-client-name{font-size:13px;font-weight:700;color:#1a1e2e}
+.pf-client-loc{font-size:11px;color:#8a93b0;margin-top:2px}
+/* INDUSTRIES */
+.pf-industries{display:grid;grid-template-columns:repeat(3,1fr);gap:1px;background:#e0e4ef;border:1px solid #e0e4ef;margin-top:56px}
+.pf-industry{background:#fff;padding:32px;transition:background .2s}
+.pf-industry:hover{background:#fafafa}
+.pf-industry-icon{width:44px;height:44px;background:rgba(192,32,42,.08);border-radius:10px;display:flex;align-items:center;justify-content:center;margin-bottom:16px}
+.pf-industry-icon svg{width:20px;height:20px;stroke:#c0202a;fill:none;stroke-width:2;stroke-linecap:round;stroke-linejoin:round}
+.pf-industry-t{font-size:15px;font-weight:800;color:#1a1e2e;margin-bottom:8px;letter-spacing:-.01em}
+.pf-industry-d{font-size:13px;line-height:1.7;color:#4a5470}
+/* RECOGNITION */
+.pf-recog{display:grid;grid-template-columns:repeat(4,1fr);gap:1px;background:#e0e4ef;border:1px solid #e0e4ef;margin-top:56px}
+.pf-recog-card{background:#fff;padding:32px 24px;text-align:center;transition:background .2s}
+.pf-recog-card:hover{background:#fafafa}
+.pf-recog-card img{width:44px;height:44px;margin:0 auto 14px;object-fit:contain}
+.pf-recog-t{font-size:14px;font-weight:800;color:#1a1e2e;margin-bottom:8px}
+.pf-recog-d{font-size:12px;line-height:1.65;color:#4a5470}
+/* CTA */
+.pf-cta{background:linear-gradient(135deg,#100e1a 0%,#1a0810 50%,#0a0c18 100%);padding:100px 0;text-align:center;position:relative;overflow:hidden}
+.pf-cta::before{content:'';position:absolute;top:50%;left:50%;transform:translate(-50%,-50%);width:600px;height:300px;background:radial-gradient(ellipse,rgba(192,32,42,.2) 0%,transparent 70%);pointer-events:none}
+.pf-cta h2{font-size:clamp(28px,4vw,52px);font-weight:900;color:#fff;line-height:1.05;letter-spacing:-.03em;margin-bottom:16px;position:relative;z-index:1}
+.pf-cta h2 em{color:#e0263a;font-style:normal}
+.pf-cta p{font-size:16px;color:rgba(200,215,235,.65);max-width:480px;margin:0 auto 36px;font-weight:300;position:relative;z-index:1}
+.pf-cta-btns{display:flex;gap:12px;justify-content:center;flex-wrap:wrap;position:relative;z-index:1}
+/* ANIMATIONS */
+.reveal,.reveal-left,.reveal-right,.reveal-stagger>*{opacity:0;transition:opacity .7s ease,transform .7s ease}
+.reveal{transform:translateY(24px)}.reveal-left{transform:translateX(-32px)}.reveal-right{transform:translateX(32px)}
+.reveal-stagger>*{transform:translateY(20px)}
+.reveal.revealed,.reveal-left.revealed,.reveal-right.revealed{opacity:1;transform:none}
+.reveal-stagger.revealed>*{opacity:1;transform:none}
+.reveal-stagger.revealed>*:nth-child(1){transition-delay:.05s}.reveal-stagger.revealed>*:nth-child(2){transition-delay:.1s}.reveal-stagger.revealed>*:nth-child(3){transition-delay:.15s}.reveal-stagger.revealed>*:nth-child(4){transition-delay:.2s}.reveal-stagger.revealed>*:nth-child(5){transition-delay:.25s}.reveal-stagger.revealed>*:nth-child(6){transition-delay:.3s}
+/* RESPONSIVE */
+@media(max-width:1024px){.pf-grid{grid-template-columns:repeat(2,1fr)}.pf-industries{grid-template-columns:repeat(2,1fr)}.pf-recog{grid-template-columns:repeat(2,1fr)}.pf-container{padding:0 24px}.pf-hero-inner{padding:120px 24px 60px}}
+@media(max-width:768px){.pf-section{padding:64px 0}.pf-container{padding:0 16px}.pf-grid{grid-template-columns:1fr}.pf-industries{grid-template-columns:1fr}.pf-recog{grid-template-columns:1fr 1fr}.pf-btns{flex-direction:column}.pf-btn-red,.pf-btn-outline{justify-content:center}}
+@media(max-width:480px){.pf-recog{grid-template-columns:1fr}}
+  </style>
+
+
+
+
+
+
+
+
+
+
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet">
+
+
+
+
+
+
+
+
+
+
+  <link rel="stylesheet" href="../css/style.css">
+
+
+
+
+
+
+
+
+
+
+  <link rel="stylesheet" href="../css/theme.css">
+
+
+
+
+
+
+
+
+
+
+  <link rel="stylesheet" href="../css/animations.css">
+  <link rel="stylesheet" href="../css/mobile.css">
+
+
+
+
+
+
+
+
+
+
+  <style>
+
+
+
+
+
+
+
+
+
+
+    .recognition-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:20px}
+
+
+
+
+
+
+
+
+
+
+    .recognition-card{background:var(--card);border:1px solid var(--border);border-radius:16px;padding:28px;text-align:center;transition:all 0.3s}
+
+
+
+
+
+
+
+
+
+
+    .recognition-card:hover{border-color:var(--border2);transform:translateY(-4px)}
+
+
+
+
+
+
+
+
+
+
+    .recognition-card img{width:48px;height:48px;margin:0 auto 14px;object-fit:contain;filter:grayscale(0.2)}
+
+
+
+
+
+
+
+
+
+
+    .recognition-card h4{font-size:0.95rem;margin-bottom:6px}
+
+
+
+
+
+
+
+
+
+
+    .recognition-card p{font-size:0.82rem}
+
+
+
+
+
+
+
+
+
+
+    @media(max-width:1024px){.recognition-grid{grid-template-columns:repeat(2,1fr)}}
+
+
+
+
+
+
+
+
+
+
+    @media(max-width:768px){.recognition-grid{grid-template-columns:1fr}}
+
+
+
+
+
+
+
+
+
+
+  </style>
+
+
+
+
+
+
+
+
+
+
+</head>
+
+
+
+
+
+
+
+
+
+
+<body>
+
+
+
+
+
+
+
+
+
+
+<div id="nav-placeholder"></div>
+
+<!-- HERO -->
+<section class="pf-hero">
+  <div class="pf-hero-bg"></div><div class="pf-hero-overlay"></div><div class="pf-hero-grid"></div>
+  <div class="pf-hero-inner reveal">
+    <div class="pf-eyebrow">Our Work</div>
+    <h1>Real Projects.<br><em>Real Results.</em></h1>
+    <p class="pf-hero-sub">We turn ideas into real-world digital products. Explore how we've helped startups, enterprises, and innovators launch, scale, and lead with confidence.</p>
+    <div class="pf-btns">
+      <a href="../contact/" class="pf-btn-red">Start Your Project</a>
+      <a href="#projects" class="pf-btn-outline">View Projects &#8594;</a>
+    </div>
+  </div>
+</section>
+
+<!-- STATS -->
+<div class="stats-row counter-section">
+  <div class="stat-cell"><div class="stat-num" data-target="150" data-suffix="+">150+</div><p>Projects Delivered</p></div>
+  <div class="stat-cell"><div class="stat-num" data-target="98" data-suffix="%">98%</div><p>Client Satisfaction</p></div>
+  <div class="stat-cell"><div class="stat-num" data-target="40" data-suffix="+">40+</div><p>Countries Served</p></div>
+  <div class="stat-cell"><div class="stat-num" data-target="50" data-suffix="+">50+</div><p>Happy Clients</p></div>
+</div>
+
+<!-- PROJECTS -->
+<section class="pf-section" id="projects" style="background:#f5f6fa">
+  <div class="pf-container">
+    <div class="reveal">
+      <div class="pf-label">Featured Work</div>
+      <h2 class="pf-h2">Let the Projects <em>Talk.</em></h2>
+      <p style="font-size:15px;line-height:1.8;color:#4a5470;font-weight:300;max-width:520px">Every project below is live, real, and built by our team. No mockups, no demos — just shipped products.</p>
+    </div>
+    <div class="pf-grid reveal-stagger">
+
+      <!-- PROJECT 1: Full-Stack Web App -->
+      <div class="pf-card">
+        <div class="pf-card-img">
+          <img src="https://images.unsplash.com/photo-1555066931-4365d14bab8c?w=800&q=80" alt="Full-Stack SaaS Platform" loading="lazy">
+          <div class="pf-card-img-overlay"></div>
+          <div class="pf-card-tags"><span class="pf-tag">Full-Stack Web</span><span class="pf-tag pf-tag-blue">Laravel</span><span class="pf-tag pf-tag-green">SaaS</span></div>
+        </div>
+        <div class="pf-card-body">
+          <div class="pf-card-title">TradeDesk Pro</div>
+          <p class="pf-card-desc">A full-stack SaaS trading dashboard built with Laravel backend and React frontend. Features real-time WebSocket data feeds, multi-user role management, subscription billing via Stripe, automated reporting, REST API with full OpenAPI docs, and a responsive admin panel. Deployed on AWS with Docker and CI/CD via GitHub Actions. Onboarded 2,000+ users in the first 60 days with 99.9% uptime.</p>
+          <div class="pf-card-stack"><span class="pf-stack-tag">Laravel</span><span class="pf-stack-tag">React</span><span class="pf-stack-tag">PostgreSQL</span><span class="pf-stack-tag">Stripe</span><span class="pf-stack-tag">AWS</span></div>
+          <div class="pf-card-quote">"They delivered a secure, easy-to-use platform with excellent communication and strong technical skills — gave useful suggestions throughout the project."</div>
+          <div class="pf-card-client"><div class="pf-client-avatar" style="background:#0da678">MB</div><div><div class="pf-client-name">Mario Butler</div><div class="pf-client-loc">Dubai, UAE</div></div></div>
+        </div>
+      </div>
+
+      <!-- PROJECT 2: Mobile App -->
+      <div class="pf-card">
+        <div class="pf-card-img">
+          <img src="https://images.unsplash.com/photo-1512941937669-90a1b58e7e9c?w=800&q=80" alt="React Native Mobile App" loading="lazy">
+          <div class="pf-card-img-overlay"></div>
+          <div class="pf-card-tags"><span class="pf-tag pf-tag-purple">Mobile App</span><span class="pf-tag pf-tag-blue">React Native</span></div>
+        </div>
+        <div class="pf-card-body">
+          <div class="pf-card-title">MetaStation</div>
+          <p class="pf-card-desc">A high-performance React Native trading app for iOS and Android. Features real-time price feeds, advanced charting with TradingView integration, biometric authentication, push notifications, portfolio tracking, and seamless order management. Built with Expo EAS for CI/CD, Redux for state management, and a Node.js backend. Achieved 4.8★ on both App Store and Google Play with 50,000+ downloads.</p>
+          <div class="pf-card-stack"><span class="pf-stack-tag">React Native</span><span class="pf-stack-tag">Expo</span><span class="pf-stack-tag">Node.js</span><span class="pf-stack-tag">Redux</span></div>
+          <div class="pf-card-quote">"Attention to detail was outstanding and quality exceeded expectations. Communication throughout was transparent and timely."</div>
+          <div class="pf-card-client"><div class="pf-client-avatar" style="background:#e8b800">JM</div><div><div class="pf-client-name">James Mitchell</div><div class="pf-client-loc">New York, US</div></div></div>
+        </div>
+      </div>
+
+      <!-- PROJECT 3: AI/ML -->
+      <div class="pf-card">
+        <div class="pf-card-img">
+          <img src="https://images.unsplash.com/photo-1677442135703-1787eea5ce01?w=800&q=80" alt="AI ML Platform" loading="lazy">
+          <div class="pf-card-img-overlay"></div>
+          <div class="pf-card-tags"><span class="pf-tag pf-tag-green">AI / ML</span><span class="pf-tag pf-tag-blue">OpenAI</span></div>
+        </div>
+        <div class="pf-card-body">
+          <div class="pf-card-title">SmartLead AI</div>
+          <p class="pf-card-desc">An AI-powered lead scoring and sales automation platform built with Python FastAPI backend and Next.js frontend. Integrates GPT-4 for lead qualification, sentiment analysis on emails, predictive churn modeling with scikit-learn, and automated follow-up sequences. The ML pipeline processes 10,000+ leads/day with 87% prediction accuracy. Reduced sales team workload by 60% and increased conversion rate by 34%.</p>
+          <div class="pf-card-stack"><span class="pf-stack-tag">Python</span><span class="pf-stack-tag">FastAPI</span><span class="pf-stack-tag">OpenAI</span><span class="pf-stack-tag">scikit-learn</span><span class="pf-stack-tag">Next.js</span></div>
+          <div class="pf-card-quote">"The AI features transformed our sales process. The team understood our business deeply and delivered beyond expectations."</div>
+          <div class="pf-card-client"><div class="pf-client-avatar" style="background:#06b6d4">SC</div><div><div class="pf-client-name">Sarah Chen</div><div class="pf-client-loc">Singapore</div></div></div>
+        </div>
+      </div>
+
+      <!-- PROJECT 4: Blockchain & Web3 -->
+      <div class="pf-card">
+        <div class="pf-card-img">
+          <img src="https://images.unsplash.com/photo-1639322537228-f710d846310a?w=800&q=80" alt="Blockchain DeFi Platform" loading="lazy">
+          <div class="pf-card-img-overlay"></div>
+          <div class="pf-card-tags"><span class="pf-tag">Blockchain</span><span class="pf-tag pf-tag-purple">Web3</span><span class="pf-tag pf-tag-blue">DeFi</span></div>
+        </div>
+        <div class="pf-card-body">
+          <div class="pf-card-title">Cryptinum Protocol</div>
+          <p class="pf-card-desc">An EVM-compatible DeFi ecosystem with audited AMM liquidity pools, token staking, governance DAO, and a cross-chain bridge supporting Ethereum, BNB Chain, and Polygon. Smart contracts written in Solidity with Hardhat, Chainlink price feeds, and IPFS metadata storage. The platform handled $2.4M in token sales in its first month with zero security incidents.</p>
+          <div class="pf-card-stack"><span class="pf-stack-tag">Solidity</span><span class="pf-stack-tag">Hardhat</span><span class="pf-stack-tag">Chainlink</span><span class="pf-stack-tag">React</span><span class="pf-stack-tag">IPFS</span></div>
+          <div class="pf-card-quote">"Big thanks to PumaPulse for handling our token project so well! Everything was fine from start to finish, delivered exactly as expected."</div>
+          <div class="pf-card-client"><div class="pf-client-avatar" style="background:#3b82f6">SK</div><div><div class="pf-client-name">Steven Kim Wee</div><div class="pf-client-loc">Singapore</div></div></div>
+        </div>
+      </div>
+
+      <!-- PROJECT 5: Bots & Automation -->
+      <div class="pf-card">
+        <div class="pf-card-img">
+          <img src="https://images.unsplash.com/photo-1551288049-bebda4e38f71?w=800&q=80" alt="Trading Bot Automation" loading="lazy">
+          <div class="pf-card-img-overlay"></div>
+          <div class="pf-card-tags"><span class="pf-tag pf-tag-green">Bots</span><span class="pf-tag pf-tag-blue">Automation</span><span class="pf-tag pf-tag-purple">Python</span></div>
+        </div>
+        <div class="pf-card-body">
+          <div class="pf-card-title">AlgoTrader Suite</div>
+          <p class="pf-card-desc">A Python-powered algorithmic trading bot suite with arbitrage, DCA, and grid strategies deployed across Binance, Kraken, and OKX via CCXT. Features a live PnL dashboard built with Django + React, Telegram notifications, automated risk controls, and a backtesting engine with 5 years of historical data. Also includes a web scraper for market sentiment analysis and a CRM automation bot for client reporting. Running 24/7 with 99.5% uptime.</p>
+          <div class="pf-card-stack"><span class="pf-stack-tag">Python</span><span class="pf-stack-tag">Django</span><span class="pf-stack-tag">CCXT</span><span class="pf-stack-tag">Telegram</span><span class="pf-stack-tag">React</span></div>
+          <div class="pf-card-quote">"From client registration to reporting, everything works flawlessly. The automation saved us 20+ hours per week. Smooth and professional."</div>
+          <div class="pf-card-client"><div class="pf-client-avatar" style="background:#e0263a">MK</div><div><div class="pf-client-name">Manoj Kumaran</div><div class="pf-client-loc">Malaysia</div></div></div>
+        </div>
+      </div>
+
+      <!-- PROJECT 6: E-Commerce & CMS -->
+      <div class="pf-card">
+        <div class="pf-card-img">
+          <img src="https://images.unsplash.com/photo-1556742049-0cfed4f6a45d?w=800&q=80" alt="E-Commerce Platform" loading="lazy">
+          <div class="pf-card-img-overlay"></div>
+          <div class="pf-card-tags"><span class="pf-tag">E-Commerce</span><span class="pf-tag pf-tag-blue">Shopify</span><span class="pf-tag pf-tag-green">Headless</span></div>
+        </div>
+        <div class="pf-card-body">
+          <div class="pf-card-title">Apzor Store</div>
+          <p class="pf-card-desc">A headless Shopify e-commerce platform with a custom Next.js storefront, delivering blazing-fast page loads (98 PageSpeed score), SEO-optimized product pages, and a seamless checkout experience. Features custom Shopify apps for subscription management, loyalty rewards, and inventory sync with Odoo ERP. Integrated Stripe, PayPal, and crypto payments. Revenue increased 45% in the first 3 months post-launch.</p>
+          <div class="pf-card-stack"><span class="pf-stack-tag">Shopify</span><span class="pf-stack-tag">Next.js</span><span class="pf-stack-tag">Odoo</span><span class="pf-stack-tag">Stripe</span><span class="pf-stack-tag">TypeScript</span></div>
+          <div class="pf-card-quote">"The team supported me throughout, suggested useful changes, delivered on time, and quickly fixed any issues. Highly recommend PumaPulse."</div>
+          <div class="pf-card-client"><div class="pf-client-avatar" style="background:#a78bfa">KN</div><div><div class="pf-client-name">Kooban Naidoo</div><div class="pf-client-loc">South Africa</div></div></div>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<!-- INDUSTRIES -->
+<section class="pf-section" style="background:#fff">
+  <div class="pf-container">
+    <div class="reveal">
+      <div class="pf-label">Industries</div>
+      <h2 class="pf-h2">Industries We've <em>Served.</em></h2>
+      <p style="font-size:15px;line-height:1.8;color:#4a5470;font-weight:300;max-width:520px">From full-stack web apps to mobile apps, AI solutions, and blockchain platforms — we've built production systems across every major digital vertical.</p>
+    </div>
+    <div class="pf-industries reveal-stagger">
+      <div class="pf-industry"><div class="pf-industry-icon"><svg viewBox="0 0 24 24"><path d="M12 2L2 7l10 5 10-5-10-5z"/><path d="M2 17l10 5 10-5"/><path d="M2 12l10 5 10-5"/></svg></div><div class="pf-industry-t">Full-Stack Web</div><p class="pf-industry-d">PHP, Laravel, MERN, Next.js, Angular, Django, and FastAPI applications — from SaaS platforms to enterprise portals.</p></div>
+      <div class="pf-industry"><div class="pf-industry-icon"><svg viewBox="0 0 24 24"><path d="M13 2L3 14h9l-1 8 10-12h-9l1-8z"/></svg></div><div class="pf-industry-t">Mobile Apps</div><p class="pf-industry-d">React Native, Flutter, iOS (Swift), and Android (Kotlin) apps — cross-platform and native, from MVP to App Store launch.</p></div>
+      <div class="pf-industry"><div class="pf-industry-icon"><svg viewBox="0 0 24 24"><rect x="2" y="5" width="20" height="14" rx="2"/><path d="M2 10h20"/></svg></div><div class="pf-industry-t">AI / ML</div><p class="pf-industry-d">OpenAI integrations, computer vision, predictive models, NLP pipelines, and recommendation engines for real business impact.</p></div>
+      <div class="pf-industry"><div class="pf-industry-icon"><svg viewBox="0 0 24 24"><polyline points="22 12 18 12 15 21 9 3 6 12 2 12"/></svg></div><div class="pf-industry-t">Blockchain &amp; Web3</div><p class="pf-industry-d">Smart contracts, DeFi protocols, NFT platforms, crypto exchanges, and token launches across 15+ blockchain networks.</p></div>
+      <div class="pf-industry"><div class="pf-industry-icon"><svg viewBox="0 0 24 24"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg></div><div class="pf-industry-t">Bots &amp; Automation</div><p class="pf-industry-d">Algo trading bots, web scrapers, Telegram bots, CRM automation, and Excel pipelines — saving time and scaling operations.</p></div>
+      <div class="pf-industry"><div class="pf-industry-icon"><svg viewBox="0 0 24 24"><path d="M21 16V8a2 2 0 00-1-1.73l-7-4a2 2 0 00-2 0l-7 4A2 2 0 003 8v8a2 2 0 001 1.73l7 4a2 2 0 002 0l7-4A2 2 0 0021 16z"/></svg></div><div class="pf-industry-t">E-Commerce &amp; CMS</div><p class="pf-industry-d">Shopify, WordPress, WooCommerce, Odoo ERP, and headless commerce — fast, SEO-optimized, and conversion-ready stores.</p></div>
+    </div>
+  </div>
+</section>
+
+<!-- RECOGNITION -->
+<section class="pf-section" style="background:#f5f6fa">
+  <div class="pf-container">
+    <div class="reveal" style="text-align:center;max-width:600px;margin:0 auto 0">
+      <div class="pf-label" style="justify-content:center">Recognition</div>
+      <h2 class="pf-h2" style="text-align:center">Recognized by Industry <em>Leaders.</em></h2>
+      <p style="font-size:15px;line-height:1.8;color:#4a5470;font-weight:300;text-align:center">Our certifications show we've earned our badge for quality.</p>
+    </div>
+    <div class="pf-recog reveal-stagger">
+      <div class="pf-recog-card">
+        <div style="width:48px;height:48px;margin:0 auto 14px;background:rgba(192,32,42,0.1);border-radius:10px;display:flex;align-items:center;justify-content:center">
+          <svg viewBox="0 0 24 24" fill="none" stroke="#c0202a" stroke-width="2" stroke-linecap="round" style="width:26px;height:26px"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/><path d="M9 12l2 2 4-4"/></svg>
+        </div>
+        <div class="pf-recog-t">Clean Code Guarantee</div><p class="pf-recog-d">Every project ships with documented, maintainable code, full test coverage, and a handover package.</p>
+      </div>
+      <div class="pf-recog-card">
+        <div style="width:48px;height:48px;margin:0 auto 14px;background:rgba(59,130,246,0.1);border-radius:10px;display:flex;align-items:center;justify-content:center">
+          <svg viewBox="0 0 24 24" fill="none" stroke="#3b82f6" stroke-width="2" stroke-linecap="round" style="width:26px;height:26px"><circle cx="12" cy="12" r="10"/><path d="M12 8v4l3 3"/></svg>
+        </div>
+        <div class="pf-recog-t">On-Time Delivery</div><p class="pf-recog-d">Fixed-price contracts with clear milestones — 95%+ of projects delivered on schedule.</p>
+      </div>
+      <div class="pf-recog-card">
+        <div style="width:48px;height:48px;margin:0 auto 14px;background:rgba(16,185,129,0.1);border-radius:10px;display:flex;align-items:center;justify-content:center">
+          <svg viewBox="0 0 24 24" fill="none" stroke="#10b981" stroke-width="2" stroke-linecap="round" style="width:26px;height:26px"><path d="M17 21v-2a4 4 0 00-4-4H5a4 4 0 00-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M23 21v-2a4 4 0 00-3-3.87M16 3.13a4 4 0 010 7.75"/></svg>
+        </div>
+        <div class="pf-recog-t">50+ Happy Clients</div><p class="pf-recog-d">Startups, scale-ups, and enterprises across 40+ countries trust PumaPulse as their engineering partner.</p>
+      </div>
+      <div class="pf-recog-card">
+        <div style="width:48px;height:48px;margin:0 auto 14px;background:rgba(167,139,250,0.1);border-radius:10px;display:flex;align-items:center;justify-content:center">
+          <svg viewBox="0 0 24 24" fill="none" stroke="#a78bfa" stroke-width="2" stroke-linecap="round" style="width:26px;height:26px"><path d="M12 2L2 7l10 5 10-5-10-5z"/><path d="M2 17l10 5 10-5"/><path d="M2 12l10 5 10-5"/></svg>
+        </div>
+        <div class="pf-recog-t">Full-Stack Certified</div><p class="pf-recog-d">Team certified across Full-Stack, Mobile, AI/ML, and Blockchain — 7+ years of hands-on experience.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- CTA -->
+<section class="pf-cta">
+  <div class="pf-container reveal">
+    <h2>Your Goals Deserve <em>Clarity.</em></h2>
+    <p>Join 50+ businesses that have scaled successfully with PumaPulse. Let's build your success story next.</p>
+    <div class="pf-cta-btns">
+      <a href="../contact/" class="pf-btn-red">Start Your Project</a>
+      <a href="../about/" class="pf-btn-outline">About PumaPulse &#8594;</a>
+    </div>
+  </div>
+</section>
+
+<div id="footer-placeholder"></div>
+<script src="../js/nav.js"></script>
+<script src="../js/main.js"></script>
+<script src="../js/animations.js"></script>
+</body>
+</html>

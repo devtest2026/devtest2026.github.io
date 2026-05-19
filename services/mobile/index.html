@@ -1,0 +1,266 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Mobile App Development — PumaPulse</title>
+  <meta name="description" content="Mobile app development by PumaPulse. React Native, Flutter, iOS (Swift), Android (Kotlin), and Expo — beautiful, high-performance cross-platform and native apps for every platform.">
+  <link rel="icon" href="../../img/icon.png" type="image/png">
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="../../css/style.css">
+  <link rel="stylesheet" href="../../css/theme.css">
+  <link rel="stylesheet" href="../../css/animations.css">
+  <style>
+    .service-detail-grid{display:grid;grid-template-columns:1fr 1fr;gap:80px;align-items:start}
+    .service-feature-list{display:flex;flex-direction:column;gap:16px}
+    .sfeat{display:flex;gap:16px;align-items:flex-start;padding:22px;background:var(--card);border:1px solid var(--border);border-radius:14px;transition:all 0.3s}
+    .sfeat:hover{border-color:var(--border2);transform:translateX(4px)}
+    .sfeat-icon{width:44px;height:44px;min-width:44px;border-radius:12px;display:flex;align-items:center;justify-content:center;flex-shrink:0}
+    .sfeat-icon svg{width:20px;height:20px}
+    .sfeat h4{margin-bottom:5px;font-size:0.97rem}
+    .sfeat p{font-size:0.86rem}
+    .use-case-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:18px}
+    .use-case{background:var(--card);border:1px solid var(--border);border-radius:14px;padding:24px;transition:all 0.3s}
+    .use-case:hover{border-color:var(--border2);transform:translateY(-4px)}
+    .use-case h4{font-size:0.95rem;margin-bottom:8px}
+    .use-case p{font-size:0.84rem}
+    @media(max-width:1024px){.service-detail-grid{grid-template-columns:1fr}.use-case-grid{grid-template-columns:repeat(2,1fr)}}
+    @media(max-width:768px){.use-case-grid{grid-template-columns:1fr}}
+  </style>
+</head>
+<body>
+<div id="nav-placeholder"></div>
+
+<section class="page-hero">
+  <div class="page-hero-bg"><img src="https://images.unsplash.com/photo-1512941937669-90a1b58e7e9c?w=1400&q=80" alt="Mobile App Development"></div>
+  <div class="container">
+    <div class="page-hero-content">
+      <span class="eyebrow" style="color:rgba(255,255,255,0.6)">Mobile Development</span>
+      <h1>Mobile Apps Built for <span class="grad-text">Every Platform</span></h1>
+      <p>From cross-platform React Native and Flutter apps to fully native iOS (Swift) and Android (Kotlin) — PumaPulse builds beautiful, high-performance mobile apps that users love and businesses rely on.</p>
+      <div style="display:flex;gap:14px;flex-wrap:wrap">
+        <a href="../../contact/" class="btn btn-accent btn-lg btn-magnetic">Start Your App</a>
+        <a href="#app-types" class="btn btn-ghost btn-lg">Explore Platforms</a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<div class="stats-row counter-section">
+  <div class="stat-cell"><div class="stat-num" data-target="40" data-suffix="+">40+</div><p>Mobile Apps Launched</p></div>
+  <div class="stat-cell"><div class="stat-num" data-target="5" data-suffix="M+">5M+</div><p>App Downloads</p></div>
+  <div class="stat-cell"><div class="stat-num" data-target="4.8" data-suffix="★" data-decimals="1">4.8★</div><p>Avg App Store Rating</p></div>
+  <div class="stat-cell"><div class="stat-num" data-target="6" data-suffix=" Platforms">6</div><p>Platforms Supported</p></div>
+</div>
+
+<section class="section" id="app-types">
+  <div class="container">
+    <div class="text-center reveal">
+      <span class="eyebrow">What We Build</span>
+      <h2>Full-Spectrum <span class="grad-text">Mobile Development</span></h2>
+      <div class="section-divider"></div>
+      <p class="section-desc" style="margin-top:16px">Whether you need a cross-platform MVP or a fully native app, our mobile engineers deliver fast, beautiful, and production-ready apps for iOS and Android.</p>
+    </div>
+    <div class="svc-grid reveal-stagger">
+
+      <div class="svc-card tilt-card glow-card">
+        <div class="svc-img"><img src="https://images.unsplash.com/photo-1512941937669-90a1b58e7e9c?w=700&q=80" alt="React Native" loading="lazy"><div class="svc-img-overlay"></div></div>
+        <div class="svc-body">
+          <h3>React Native Apps</h3>
+          <p>Cross-platform iOS and Android apps with React Native — single codebase, native performance, and rapid iteration. Includes React Navigation, Redux/Zustand state management, push notifications, offline support, biometric auth, and full App Store + Play Store deployment.</p>
+          <div style="display:flex;gap:6px;flex-wrap:wrap;margin:12px 0"><span class="tag-pill tag-green" style="font-size:0.68rem">React Native</span><span class="tag-pill tag-blue" style="font-size:0.68rem">Expo</span><span class="tag-pill tag-purple" style="font-size:0.68rem">TypeScript</span></div>
+          <a href="../../contact/" class="svc-link hover-underline">Get Started <svg viewBox="0 0 14 14" fill="none"><path d="M1 7h12M7 1l6 6-6 6" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg></a>
+        </div>
+      </div>
+
+      <div class="svc-card tilt-card glow-card">
+        <div class="svc-img"><img src="https://images.unsplash.com/photo-1551650975-87deedd944c3?w=700&q=80" alt="Flutter" loading="lazy"><div class="svc-img-overlay"></div></div>
+        <div class="svc-body">
+          <h3>Flutter Apps</h3>
+          <p>Beautiful, pixel-perfect cross-platform apps with Flutter — smooth 60fps animations, fast rendering, and one codebase for iOS, Android, and web. Includes BLoC/Riverpod state management, custom widgets, Firebase integration, and Material 3 / Cupertino design systems.</p>
+          <div style="display:flex;gap:6px;flex-wrap:wrap;margin:12px 0"><span class="tag-pill tag-green" style="font-size:0.68rem">Flutter</span><span class="tag-pill tag-blue" style="font-size:0.68rem">Dart</span><span class="tag-pill tag-purple" style="font-size:0.68rem">BLoC</span></div>
+          <a href="../../contact/" class="svc-link hover-underline">Get Started <svg viewBox="0 0 14 14" fill="none"><path d="M1 7h12M7 1l6 6-6 6" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg></a>
+        </div>
+      </div>
+
+      <div class="svc-card tilt-card glow-card">
+        <div class="svc-img"><img src="https://images.unsplash.com/photo-1611162617213-7d7a39e9b1d7?w=700&q=80" alt="iOS Swift" loading="lazy"><div class="svc-img-overlay"></div></div>
+        <div class="svc-body">
+          <h3>iOS (Swift) Development</h3>
+          <p>Native iPhone and iPad apps built with Swift and SwiftUI — optimized for Apple's ecosystem, App Store guidelines, and iOS performance. Includes Core Data, CloudKit, HealthKit, ARKit, StoreKit, and full App Store submission and ASO support.</p>
+          <div style="display:flex;gap:6px;flex-wrap:wrap;margin:12px 0"><span class="tag-pill tag-green" style="font-size:0.68rem">Swift</span><span class="tag-pill tag-blue" style="font-size:0.68rem">SwiftUI</span><span class="tag-pill tag-purple" style="font-size:0.68rem">Xcode</span></div>
+          <a href="../../contact/" class="svc-link hover-underline">Get Started <svg viewBox="0 0 14 14" fill="none"><path d="M1 7h12M7 1l6 6-6 6" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg></a>
+        </div>
+      </div>
+
+      <div class="svc-card tilt-card glow-card">
+        <div class="svc-img"><img src="https://images.unsplash.com/photo-1607252650355-f7fd0460ccdb?w=700&q=80" alt="Android Kotlin" loading="lazy"><div class="svc-img-overlay"></div></div>
+        <div class="svc-body">
+          <h3>Android (Kotlin) Development</h3>
+          <p>Native Android apps with Kotlin and Jetpack Compose — modern architecture, Material Design 3, and full Google Play Store deployment. Includes Room, Retrofit, Hilt DI, WorkManager, Google Pay, and Play Billing integration.</p>
+          <div style="display:flex;gap:6px;flex-wrap:wrap;margin:12px 0"><span class="tag-pill tag-green" style="font-size:0.68rem">Kotlin</span><span class="tag-pill tag-blue" style="font-size:0.68rem">Jetpack Compose</span><span class="tag-pill tag-purple" style="font-size:0.68rem">MVVM</span></div>
+          <a href="../../contact/" class="svc-link hover-underline">Get Started <svg viewBox="0 0 14 14" fill="none"><path d="M1 7h12M7 1l6 6-6 6" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg></a>
+        </div>
+      </div>
+
+      <div class="svc-card tilt-card glow-card">
+        <div class="svc-img"><img src="https://images.unsplash.com/photo-1526498460520-4c246339dccb?w=700&q=80" alt="Expo" loading="lazy"><div class="svc-img-overlay"></div></div>
+        <div class="svc-body">
+          <h3>Expo &amp; Cross-Platform</h3>
+          <p>Rapid mobile prototyping and production apps with Expo — OTA updates, push notifications, and seamless CI/CD. Expo Go for fast iteration, EAS Build for production — deploy to both stores from one codebase with minimal configuration.</p>
+          <div style="display:flex;gap:6px;flex-wrap:wrap;margin:12px 0"><span class="tag-pill tag-green" style="font-size:0.68rem">Expo</span><span class="tag-pill tag-blue" style="font-size:0.68rem">EAS Build</span><span class="tag-pill tag-purple" style="font-size:0.68rem">OTA Updates</span></div>
+          <a href="../../contact/" class="svc-link hover-underline">Get Started <svg viewBox="0 0 14 14" fill="none"><path d="M1 7h12M7 1l6 6-6 6" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg></a>
+        </div>
+      </div>
+
+      <div class="svc-card tilt-card glow-card">
+        <div class="svc-img"><img src="https://images.unsplash.com/photo-1561070791-2526d30994b5?w=700&q=80" alt="Mobile UI/UX" loading="lazy"><div class="svc-img-overlay"></div></div>
+        <div class="svc-body">
+          <h3>Mobile UI/UX Design</h3>
+          <p>Intuitive, accessible mobile interfaces designed for engagement — wireframes, interactive prototypes, and design systems in Figma. We follow Apple HIG for iOS and Material Design 3 for Android, ensuring every screen feels native and polished.</p>
+          <div style="display:flex;gap:6px;flex-wrap:wrap;margin:12px 0"><span class="tag-pill tag-green" style="font-size:0.68rem">Figma</span><span class="tag-pill tag-blue" style="font-size:0.68rem">HIG</span><span class="tag-pill tag-purple" style="font-size:0.68rem">Material Design</span></div>
+          <a href="../../contact/" class="svc-link hover-underline">Get Started <svg viewBox="0 0 14 14" fill="none"><path d="M1 7h12M7 1l6 6-6 6" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg></a>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<section class="section" style="background:var(--bg2)">
+  <div class="container">
+    <div class="service-detail-grid">
+      <div class="reveal-left">
+        <span class="eyebrow">Why Choose Us</span>
+        <h2>Performance-First <span class="grad-text">Mobile Engineering</span></h2>
+        <div class="section-divider" style="margin:0 0 24px"></div>
+        <p style="margin-bottom:28px">Mobile users are unforgiving. We build apps that are fast, smooth, and reliable — optimized for every screen size, OS version, and network condition from day one.</p>
+        <div class="service-feature-list">
+          <div class="sfeat">
+            <div class="sfeat-icon" style="background:rgba(16,185,129,0.12)"><svg viewBox="0 0 24 24" fill="none" stroke="#10b981" stroke-width="2" stroke-linecap="round"><path d="M13 2L3 14h9l-1 8 10-12h-9l1-8z"/></svg></div>
+            <div><h4>Native Performance</h4><p>60fps animations, sub-second load times, and optimized memory usage — we profile and optimize every screen before shipping.</p></div>
+          </div>
+          <div class="sfeat">
+            <div class="sfeat-icon" style="background:rgba(59,130,246,0.12)"><svg viewBox="0 0 24 24" fill="none" stroke="#3b82f6" stroke-width="2" stroke-linecap="round"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg></div>
+            <div><h4>Offline-First Architecture</h4><p>Apps that work without internet — local caching, background sync, and conflict resolution so users never lose data.</p></div>
+          </div>
+          <div class="sfeat">
+            <div class="sfeat-icon" style="background:rgba(167,139,250,0.12)"><svg viewBox="0 0 24 24" fill="none" stroke="#a78bfa" stroke-width="2" stroke-linecap="round"><rect x="2" y="3" width="20" height="14" rx="2"/><line x1="8" y1="21" x2="16" y2="21"/><line x1="12" y1="17" x2="12" y2="21"/></svg></div>
+            <div><h4>App Store Expertise</h4><p>We handle App Store and Google Play submission, review guidelines, metadata optimization, and screenshot design for maximum conversion.</p></div>
+          </div>
+          <div class="sfeat">
+            <div class="sfeat-icon" style="background:rgba(16,185,129,0.12)"><svg viewBox="0 0 24 24" fill="none" stroke="#10b981" stroke-width="2" stroke-linecap="round"><path d="M21 16V8a2 2 0 0 0-1-1.73l-7-4a2 2 0 0 0-2 0l-7 4A2 2 0 0 0 3 8v8a2 2 0 0 0 1 1.73l7 4a2 2 0 0 0 2 0l7-4A2 2 0 0 0 21 16z"/></svg></div>
+            <div><h4>CI/CD &amp; OTA Updates</h4><p>Automated build pipelines with Fastlane, EAS, and Bitrise — plus over-the-air updates with Expo or CodePush for instant fixes without App Store review.</p></div>
+          </div>
+        </div>
+      </div>
+      <div class="reveal-right">
+        <img src="https://images.unsplash.com/photo-1512941937669-90a1b58e7e9c?w=900&q=80" alt="Mobile App Engineering" style="width:100%;height:480px;object-fit:cover;border-radius:20px;margin-bottom:20px">
+        <div style="display:grid;grid-template-columns:1fr 1fr;gap:14px">
+          <div style="background:var(--card);border:1px solid var(--border);border-radius:14px;padding:20px;text-align:center">
+            <div style="font-size:1.8rem;font-weight:800;background:var(--grad);-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text">40+</div>
+            <p style="font-size:0.82rem;margin-top:6px">Apps Launched</p>
+          </div>
+          <div style="background:var(--card);border:1px solid var(--border);border-radius:14px;padding:20px;text-align:center">
+            <div style="font-size:1.8rem;font-weight:800;background:var(--grad2);-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text">5M+</div>
+            <p style="font-size:0.82rem;margin-top:6px">Downloads</p>
+          </div>
+          <div style="background:var(--card);border:1px solid var(--border);border-radius:14px;padding:20px;text-align:center">
+            <div style="font-size:1.8rem;font-weight:800;background:var(--grad3);-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text">4.8★</div>
+            <p style="font-size:0.82rem;margin-top:6px">Avg Rating</p>
+          </div>
+          <div style="background:var(--card);border:1px solid var(--border);border-radius:14px;padding:20px;text-align:center">
+            <div style="font-size:1.8rem;font-weight:800;background:var(--grad);-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text">6</div>
+            <p style="font-size:0.82rem;margin-top:6px">Platforms</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="section" style="background:var(--bg2)">
+  <div class="container">
+    <div class="text-center reveal">
+      <span class="eyebrow">Use Cases</span>
+      <h2>Mobile Apps We <span class="grad-text3">Ship</span></h2>
+      <div class="section-divider"></div>
+    </div>
+    <div class="use-case-grid reveal-stagger">
+      <div class="use-case"><h4>Social &amp; Community Apps</h4><p>Social networks, community platforms, and messaging apps with real-time feeds, push notifications, and media sharing.</p></div>
+      <div class="use-case"><h4>E-Commerce Mobile Apps</h4><p>Mobile storefronts with product catalogs, cart, checkout, payment integration, and order tracking for iOS and Android.</p></div>
+      <div class="use-case"><h4>Health &amp; Fitness Apps</h4><p>Workout trackers, nutrition apps, and wellness platforms with HealthKit/Google Fit integration and wearable support.</p></div>
+      <div class="use-case"><h4>On-Demand &amp; Marketplace</h4><p>Uber-style on-demand apps and two-sided marketplaces with real-time location, booking, payments, and ratings.</p></div>
+      <div class="use-case"><h4>Enterprise Mobile Apps</h4><p>Internal tools, field service apps, and enterprise mobility solutions with SSO, MDM support, and offline capability.</p></div>
+      <div class="use-case"><h4>EdTech &amp; Learning Apps</h4><p>Interactive learning apps, quiz platforms, and course delivery with video streaming, progress tracking, and gamification.</p></div>
+    </div>
+  </div>
+</section>
+
+<section class="section" style="background:var(--bg2)">
+  <div class="container">
+    <div class="text-center reveal">
+      <span class="eyebrow">Technology</span>
+      <h2>Our <span class="grad-text">Mobile Tech Stack</span></h2>
+      <div class="section-divider"></div>
+      <p class="section-desc" style="margin-top:16px">Battle-tested mobile frameworks and tools used to build high-performance apps across iOS, Android, and cross-platform.</p>
+    </div>
+    <div class="tech-showcase reveal-stagger">
+      <div class="tech-category-label">Cross-Platform Frameworks</div>
+      <div class="tech-logo-grid">
+        <div class="tech-logo-card featured">
+          <img src="https://cdn.simpleicons.org/react/61DAFB" alt="React Native">
+          <div><span class="tname">React Native</span><span class="tdesc">Cross-platform iOS &amp; Android — single codebase, native performance, Expo support</span></div>
+        </div>
+        <div class="tech-logo-card featured">
+          <img src="https://cdn.simpleicons.org/flutter/02569B" alt="Flutter">
+          <div><span class="tname">Flutter</span><span class="tdesc">Beautiful cross-platform apps with Dart — 60fps, custom widgets, BLoC/Riverpod</span></div>
+        </div>
+        <div class="tech-logo-card"><img src="https://cdn.simpleicons.org/expo/000020" alt="Expo" style="filter:invert(1)"><span class="tname">Expo</span><span class="tdesc">Rapid development &amp; OTA</span></div>
+        <div class="tech-logo-card"><img src="https://cdn.simpleicons.org/typescript/3178C6" alt="TypeScript"><span class="tname">TypeScript</span><span class="tdesc">Type-safe mobile code</span></div>
+      </div>
+      <div class="tech-category-label">Native Development</div>
+      <div class="tech-logo-grid">
+        <div class="tech-logo-card featured">
+          <img src="https://cdn.simpleicons.org/swift/F05138" alt="Swift">
+          <div><span class="tname">Swift / SwiftUI</span><span class="tdesc">Native iOS development — SwiftUI, UIKit, Core Data, HealthKit, ARKit, StoreKit</span></div>
+        </div>
+        <div class="tech-logo-card featured">
+          <img src="https://cdn.simpleicons.org/kotlin/7F52FF" alt="Kotlin">
+          <div><span class="tname">Kotlin / Jetpack Compose</span><span class="tdesc">Native Android — Compose UI, Room, Hilt, WorkManager, Google Pay, Play Billing</span></div>
+        </div>
+        <div class="tech-logo-card"><img src="https://cdn.simpleicons.org/android/3DDC84" alt="Android"><span class="tname">Android SDK</span><span class="tdesc">Full Android platform</span></div>
+        <div class="tech-logo-card"><img src="https://cdn.simpleicons.org/xcode/147EFB" alt="Xcode"><span class="tname">Xcode</span><span class="tdesc">iOS build &amp; deployment</span></div>
+      </div>
+      <div class="tech-category-label">Backend &amp; Cloud</div>
+      <div class="tech-logo-grid">
+        <div class="tech-logo-card"><img src="https://cdn.simpleicons.org/firebase/FFCA28" alt="Firebase"><span class="tname">Firebase</span><span class="tdesc">Auth, Firestore, FCM</span></div>
+        <div class="tech-logo-card"><img src="https://cdn.simpleicons.org/nodedotjs/339933" alt="Node.js"><span class="tname">Node.js</span><span class="tdesc">REST &amp; GraphQL APIs</span></div>
+        <div class="tech-logo-card"><img src="https://cdn.simpleicons.org/amazonaws/FF9900" alt="AWS"><span class="tname">AWS / GCP</span><span class="tdesc">Cloud infrastructure</span></div>
+        <div class="tech-logo-card"><img src="https://cdn.simpleicons.org/fastlane/00F200" alt="Fastlane"><span class="tname">Fastlane / EAS</span><span class="tdesc">CI/CD &amp; deployment</span></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="section-sm">
+  <div class="container">
+    <div class="cta-banner reveal">
+      <div class="cta-bg"><img src="https://images.unsplash.com/photo-1512941937669-90a1b58e7e9c?w=1600&q=80" alt="Mobile App CTA"></div>
+      <div class="cta-content">
+        <h2>Ready to Build Your <span class="grad-text">Mobile App?</span></h2>
+        <p>Tell us your idea. We'll design, build, and launch a mobile app that users love — on iOS, Android, or both.</p>
+        <div class="cta-btns">
+          <a href="../../contact/" class="btn btn-accent btn-lg btn-magnetic">Start Your App</a>
+          <a href="../../about/" class="btn btn-white btn-lg">About PumaPulse</a>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<div id="footer-placeholder"></div>
+<script src="../../js/nav.js"></script>
+<script src="../../js/main.js"></script>
+<script src="../../js/animations.js"></script>
+</body>
+</html>

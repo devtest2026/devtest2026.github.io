@@ -1,0 +1,602 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Careers at PumaPulse — Join Our Team</title>
+<meta name="description" content="Join PumaPulse and help build the financial infrastructure of tomorrow. We're hiring blockchain engineers, fintech developers, and product designers.">
+<link rel="icon" href="https://res.cloudinary.com/dtvnifa3t/image/upload/v1775203874/pumapulse/icon.png" type="image/png">
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="../css/style.css">
+<link rel="stylesheet" href="../css/theme.css">
+<link rel="stylesheet" href="../css/animations.css">
+<link rel="stylesheet" href="../css/mobile.css">
+<style>
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
+body{font-family:'Inter',sans-serif;background:#f5f6fa;color:#1a1e2e;overflow-x:hidden;line-height:1.6}
+/* ── HERO ── */
+.car-hero{min-height:90vh;position:relative;display:flex;align-items:center;overflow:hidden;background:#060a14}
+.car-hero-bg{position:absolute;inset:0;background:url('../img/about/Annotation%202026-04-04%20230240.jpg') center/cover no-repeat;opacity:.15}
+.car-hero-overlay{position:absolute;inset:0;background:linear-gradient(135deg,rgba(192,32,42,.18) 0%,transparent 55%),linear-gradient(to top,#060a14 0%,transparent 55%)}
+.car-hero-grid{position:absolute;inset:0;background-image:linear-gradient(rgba(255,255,255,.03) 1px,transparent 1px),linear-gradient(90deg,rgba(255,255,255,.03) 1px,transparent 1px);background-size:60px 60px}
+.car-hero-inner{position:relative;z-index:2;max-width:1200px;margin:0 auto;padding:140px 44px 80px;display:grid;grid-template-columns:1fr 1fr;gap:80px;align-items:center}
+.car-eyebrow{display:inline-flex;align-items:center;gap:10px;font-size:11px;font-weight:700;letter-spacing:.18em;text-transform:uppercase;color:rgba(192,32,42,.9);margin-bottom:22px}
+.car-eyebrow::before{content:'';width:24px;height:2px;background:#c0202a;border-radius:2px;flex-shrink:0}
+.car-hero h1{font-size:clamp(42px,5.5vw,72px);font-weight:900;line-height:1.0;letter-spacing:-.03em;color:#fff;margin-bottom:22px}
+.car-hero h1 em{color:#e0263a;font-style:normal}
+.car-hero-sub{font-size:16px;line-height:1.85;color:rgba(200,215,235,.7);font-weight:300;margin-bottom:36px;max-width:460px}
+.car-btns{display:flex;gap:12px;flex-wrap:wrap}
+.car-btn-red{display:inline-flex;align-items:center;gap:8px;background:#c0202a;color:#fff;padding:14px 28px;border-radius:50px;font-weight:700;font-size:14px;text-decoration:none;transition:background .2s,box-shadow .2s}
+.car-btn-red:hover{background:#e0263a;box-shadow:0 0 28px rgba(192,32,42,.5)}
+.car-btn-outline{display:inline-flex;align-items:center;gap:8px;background:rgba(255,255,255,.08);color:#fff;padding:14px 28px;border-radius:50px;font-weight:600;font-size:14px;text-decoration:none;border:1.5px solid rgba(255,255,255,.2);transition:all .2s}
+.car-btn-outline:hover{background:rgba(255,255,255,.14);border-color:rgba(255,255,255,.5)}
+.car-hero-stats{display:flex;gap:0;margin-top:52px;padding-top:36px;border-top:1px solid rgba(255,255,255,.1)}
+.car-stat{padding-right:32px;border-right:1px solid rgba(255,255,255,.1)}
+.car-stat:last-child{border-right:none;padding-left:32px;padding-right:0}
+.car-stat:not(:first-child){padding-left:32px}
+.car-stat-val{font-size:34px;font-weight:900;color:#fff;line-height:1;letter-spacing:-.02em}
+.car-stat-val span{color:#e0263a}
+.car-stat-lbl{font-size:10px;font-weight:600;letter-spacing:.12em;text-transform:uppercase;color:rgba(200,215,235,.45);margin-top:5px}
+/* Hero right - image collage */
+.car-hero-img{position:relative;height:480px}
+.car-hero-img-main{position:absolute;top:0;left:0;width:75%;height:360px;object-fit:cover;border-radius:4px}
+.car-hero-img-accent{position:absolute;bottom:0;right:0;width:55%;height:240px;object-fit:cover;border-radius:4px;border:4px solid #060a14}
+.car-hero-badge{position:absolute;top:50%;left:55%;transform:translate(-50%,-50%);background:rgba(6,10,20,.9);backdrop-filter:blur(16px);border:1px solid rgba(255,255,255,.12);padding:16px 20px;text-align:center;z-index:2;min-width:140px}
+.car-hero-badge-val{font-size:28px;font-weight:900;color:#fff;line-height:1}
+.car-hero-badge-val span{color:#e0263a}
+.car-hero-badge-lbl{font-size:9px;font-weight:700;letter-spacing:.12em;text-transform:uppercase;color:rgba(200,215,235,.45);margin-top:4px}
+/* ── SHARED ── */
+.car-section{padding:100px 0}
+.car-container{max-width:1200px;margin:0 auto;padding:0 44px}
+.car-label{display:inline-flex;align-items:center;gap:8px;font-size:11px;font-weight:700;letter-spacing:.18em;text-transform:uppercase;color:#c0202a;margin-bottom:16px}
+.car-label::before{content:'';width:20px;height:2px;background:#c0202a;border-radius:2px;flex-shrink:0}
+.car-h2{font-size:clamp(30px,4vw,50px);font-weight:900;line-height:1.05;letter-spacing:-.03em;color:#1a1e2e;margin-bottom:14px}
+.car-h2 em{color:#e0263a;font-style:normal}
+.car-h2-white{color:#fff}
+.car-p{font-size:15px;line-height:1.8;color:#4a5470;font-weight:300}
+.car-p-white{color:rgba(200,215,235,.7)}
+/* ── VALUES ── */
+.car-values-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:1px;background:#e0e4ef;border:1px solid #e0e4ef;margin-top:56px}
+.car-value{background:#fff;padding:40px 36px;position:relative;overflow:hidden;transition:background .2s}
+.car-value:hover{background:#fafafa}
+.car-value-num{position:absolute;top:12px;right:18px;font-size:72px;font-weight:900;color:rgba(192,32,42,0.35);line-height:1;letter-spacing:-.04em}
+.car-value-icon{width:44px;height:44px;background:rgba(192,32,42,.08);border-radius:10px;display:flex;align-items:center;justify-content:center;margin-bottom:18px}
+.car-value-icon svg{width:20px;height:20px;stroke:#c0202a;fill:none;stroke-width:2;stroke-linecap:round;stroke-linejoin:round}
+.car-value-t{font-size:16px;font-weight:800;color:#1a1e2e;margin-bottom:10px;letter-spacing:-.01em}
+.car-value-d{font-size:13px;line-height:1.75;color:#4a5470}
+/* ── PERKS ── */
+.car-perks-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:20px;margin-top:56px}
+.car-perk{background:#fff;border:1px solid #e0e4ef;overflow:hidden;transition:transform .2s,box-shadow .2s,border-color .2s}
+.car-perk:hover{transform:translateY(-4px);box-shadow:0 12px 40px rgba(192,32,42,.08);border-color:rgba(192,32,42,.2)}
+.car-perk-img{height:150px;overflow:hidden}
+.car-perk-img img{width:100%;height:100%;object-fit:cover;transition:transform .4s}
+.car-perk:hover .car-perk-img img{transform:scale(1.06)}
+.car-perk-body{padding:22px}
+.car-perk-t{font-size:15px;font-weight:800;color:#1a1e2e;margin-bottom:8px;letter-spacing:-.01em}
+.car-perk-d{font-size:13px;line-height:1.7;color:#4a5470}
+/* ── LIFE GRID ── */
+.car-life-grid{display:grid;grid-template-columns:repeat(3,1fr);grid-template-rows:220px 220px;gap:10px;margin-top:52px}
+.car-life-img{overflow:hidden;position:relative}
+.car-life-img img{width:100%;height:100%;object-fit:cover;display:block;transition:transform .5s}
+.car-life-img:hover img{transform:scale(1.05)}
+.car-life-img.tall{grid-row:span 2}
+/* ── JOBS ── */
+.car-jobs-wrap{margin-top:52px}
+.car-dept-label{font-size:10px;font-weight:800;letter-spacing:.18em;text-transform:uppercase;color:#e0263a;padding:24px 0 12px;border-bottom:2px solid rgba(192,32,42,.3);margin-bottom:0}
+.car-job{display:flex;align-items:center;justify-content:space-between;padding:20px 0;border-bottom:1px solid rgba(255,255,255,.08);gap:20px;transition:padding .15s}
+.car-job:hover{padding-left:10px}
+.car-job-title{font-size:15px;font-weight:700;color:#fff;margin-bottom:8px;letter-spacing:-.01em}
+.car-job-tags{display:flex;gap:6px;flex-wrap:wrap}
+.car-jtag{font-size:10px;font-weight:600;letter-spacing:.06em;text-transform:uppercase;padding:3px 10px;border-radius:3px}
+.car-jtag-dept{background:rgba(192,32,42,.15);color:#ff3b4e}
+.car-jtag-type{background:rgba(255,255,255,.08);color:rgba(200,215,235,.7)}
+.car-jtag-loc{background:rgba(255,255,255,.05);color:rgba(200,215,235,.5)}
+.car-job-btn{display:inline-flex;align-items:center;gap:6px;background:transparent;color:#fff;border:1px solid rgba(255,255,255,.2);padding:9px 18px;border-radius:50px;font-size:11px;font-weight:700;text-decoration:none;white-space:nowrap;transition:all .15s;letter-spacing:.06em;text-transform:uppercase;flex-shrink:0;margin-right:12px}
+.car-job-btn:hover{background:#c0202a;border-color:#c0202a}
+/* ── APPLY ── */
+.car-apply-grid{display:grid;grid-template-columns:1fr 1fr;gap:60px;align-items:start}
+.car-process{margin-top:28px;border:1px solid #e0e4ef}
+.car-step{display:flex;align-items:flex-start;gap:14px;padding:18px 20px;border-bottom:1px solid #e0e4ef}
+.car-step:last-child{border-bottom:none}
+.car-step-num{width:30px;height:30px;border-radius:50%;background:#c0202a;color:#fff;font-size:11px;font-weight:800;display:flex;align-items:center;justify-content:center;flex-shrink:0;margin-top:1px}
+.car-step-t{font-size:13px;font-weight:700;color:#1a1e2e;margin-bottom:2px}
+.car-step-d{font-size:12px;color:#8a93b0}
+.car-form-box{background:#fff;border:1px solid #e0e4ef;padding:40px}
+.car-form-box h3{font-size:22px;font-weight:900;color:#1a1e2e;margin-bottom:6px;letter-spacing:-.02em}
+.car-form-sub{font-size:13px;color:#8a93b0;margin-bottom:28px}
+.car-form-row{display:grid;grid-template-columns:1fr 1fr;gap:14px}
+.car-fg{margin-bottom:16px}
+.car-fg label{display:block;font-size:11px;font-weight:700;letter-spacing:.08em;text-transform:uppercase;color:#4a5470;margin-bottom:6px}
+.car-fg input,.car-fg select,.car-fg textarea{width:100%;padding:11px 14px;border:1.5px solid #e0e4ef;background:#f5f6fa;font-family:'Inter',sans-serif;font-size:14px;color:#1a1e2e;outline:none;transition:border-color .2s,background .2s;border-radius:0}
+.car-fg input:focus,.car-fg select:focus,.car-fg textarea:focus{border-color:#c0202a;background:#fff}
+.car-fg textarea{height:110px;resize:vertical}
+.car-upload{border:2px dashed #e0e4ef;padding:24px;text-align:center;cursor:pointer;transition:all .2s;background:#f5f6fa}
+.car-upload:hover{border-color:#c0202a;background:rgba(192,32,42,.03)}
+.car-upload-t{font-size:13px;font-weight:600;color:#1a1e2e;margin-bottom:3px}
+.car-upload-s{font-size:11px;color:#8a93b0}
+.car-submit{width:100%;padding:14px;background:#c0202a;color:#fff;border:none;font-family:'Inter',sans-serif;font-size:14px;font-weight:700;cursor:pointer;border-radius:50px;transition:background .2s,box-shadow .2s;margin-top:6px;letter-spacing:.02em}
+.car-submit:hover{background:#e0263a;box-shadow:0 0 28px rgba(192,32,42,.4)}
+/* ── ANIMATIONS ── */
+@keyframes car-fadeUp{from{opacity:0;transform:translateY(28px)}to{opacity:1;transform:translateY(0)}}
+@keyframes car-fadeLeft{from{opacity:0;transform:translateX(-28px)}to{opacity:1;transform:translateX(0)}}
+@keyframes car-fadeRight{from{opacity:0;transform:translateX(28px)}to{opacity:1;transform:translateX(0)}}
+@keyframes car-scaleIn{from{opacity:0;transform:scale(.92)}to{opacity:1;transform:scale(1)}}
+@keyframes car-float{0%,100%{transform:translateY(0)}50%{transform:translateY(-10px)}}
+@keyframes car-pulse-ring{0%{transform:scale(1);opacity:.6}100%{transform:scale(1.8);opacity:0}}
+@keyframes car-shimmer{0%{background-position:-200% center}100%{background-position:200% center}}
+@keyframes car-bar-fill{from{width:0}to{width:var(--w)}}
+@keyframes car-count{from{opacity:0;transform:translateY(10px)}to{opacity:1;transform:translateY(0)}}
+@keyframes car-orb{0%,100%{transform:translate(0,0) scale(1)}33%{transform:translate(30px,-20px) scale(1.1)}66%{transform:translate(-20px,15px) scale(.95)}}
+
+/* Scroll reveal base */
+.car-reveal{opacity:0;transform:translateY(24px);transition:opacity .65s cubic-bezier(.22,1,.36,1),transform .65s cubic-bezier(.22,1,.36,1)}
+.car-reveal.car-visible{opacity:1;transform:translateY(0)}
+.car-reveal-left{opacity:0;transform:translateX(-28px);transition:opacity .65s cubic-bezier(.22,1,.36,1),transform .65s cubic-bezier(.22,1,.36,1)}
+.car-reveal-left.car-visible{opacity:1;transform:translateX(0)}
+.car-reveal-right{opacity:0;transform:translateX(28px);transition:opacity .65s cubic-bezier(.22,1,.36,1),transform .65s cubic-bezier(.22,1,.36,1)}
+.car-reveal-right.car-visible{opacity:1;transform:translateX(0)}
+.car-reveal-scale{opacity:0;transform:scale(.92);transition:opacity .6s cubic-bezier(.22,1,.36,1),transform .6s cubic-bezier(.22,1,.36,1)}
+.car-reveal-scale.car-visible{opacity:1;transform:scale(1)}
+
+/* Hero entrance */
+.car-hero-inner > div:first-child .car-eyebrow{animation:car-fadeUp .7s .1s both}
+.car-hero-inner > div:first-child h1{animation:car-fadeUp .7s .22s both}
+.car-hero-inner > div:first-child .car-hero-sub{animation:car-fadeUp .7s .34s both}
+.car-hero-inner > div:first-child .car-btns{animation:car-fadeUp .7s .46s both}
+.car-hero-inner > div:first-child .car-hero-stats{animation:car-fadeUp .7s .58s both}
+.car-hero-img{animation:car-fadeRight .8s .3s both}
+
+/* Floating orbs in hero */
+.car-orb{position:absolute;border-radius:50%;filter:blur(60px);pointer-events:none;z-index:1}
+.car-orb-1{width:320px;height:320px;background:rgba(192,32,42,.12);top:-60px;right:10%;animation:car-orb 9s ease-in-out infinite}
+.car-orb-2{width:200px;height:200px;background:rgba(224,38,58,.08);bottom:10%;left:5%;animation:car-orb 12s ease-in-out infinite reverse}
+.car-orb-3{width:140px;height:140px;background:rgba(192,32,42,.07);top:40%;right:30%;animation:car-orb 7s ease-in-out infinite 2s}
+
+/* Value card hover lift */
+.car-value{transition:background .2s,transform .3s cubic-bezier(.22,1,.36,1),box-shadow .3s}
+.car-value:hover{background:#fafafa;transform:translateY(-4px);box-shadow:0 12px 36px rgba(192,32,42,.07)}
+.car-value-icon{transition:transform .3s,background .3s}
+.car-value:hover .car-value-icon{transform:scale(1.12) rotate(5deg);background:rgba(192,32,42,.14)}
+
+/* Job row pulse on hover */
+.car-job{transition:padding .2s,background .2s}
+.car-job:hover{padding-left:14px;background:rgba(255,255,255,.03)}
+
+/* Step number pulse */
+.car-step-num{position:relative}
+.car-step-num::after{content:'';position:absolute;inset:0;border-radius:50%;background:#c0202a;animation:car-pulse-ring 2s ease-out infinite;z-index:-1}
+
+/* Perk card stagger */
+.car-perks-grid .car-perk:nth-child(1){transition-delay:.05s}
+.car-perks-grid .car-perk:nth-child(2){transition-delay:.12s}
+.car-perks-grid .car-perk:nth-child(3){transition-delay:.19s}
+.car-perks-grid .car-perk:nth-child(4){transition-delay:.26s}
+.car-perks-grid .car-perk:nth-child(5){transition-delay:.33s}
+.car-perks-grid .car-perk:nth-child(6){transition-delay:.40s}
+
+/* Life photo overlay shimmer */
+.car-life-img::after{content:'';position:absolute;inset:0;background:linear-gradient(135deg,rgba(192,32,42,.0) 0%,rgba(192,32,42,.18) 100%);opacity:0;transition:opacity .4s}
+.car-life-img:hover::after{opacity:1}
+
+/* Stat counter animation */
+.car-stat-val{animation:car-count .6s both}
+.car-stat:nth-child(1) .car-stat-val{animation-delay:.6s}
+.car-stat:nth-child(2) .car-stat-val{animation-delay:.72s}
+.car-stat:nth-child(3) .car-stat-val{animation-delay:.84s}
+
+/* ── RESPONSIVE ── */
+@media(max-width:1024px){
+  .car-hero-inner{grid-template-columns:1fr;gap:40px;padding:120px 24px 60px}
+  .car-hero-img{display:none}
+  .car-values-grid{grid-template-columns:1fr}
+  .car-perks-grid{grid-template-columns:repeat(2,1fr)}
+  .car-apply-grid{grid-template-columns:1fr;gap:36px}
+  .car-container{padding:0 24px}
+}
+@media(max-width:768px){
+  .car-section{padding:64px 0}
+  .car-container{padding:0 16px}
+  .car-hero-stats{flex-wrap:wrap}
+  .car-stat{flex:0 0 50%;padding:14px 0;border-right:none;border-bottom:1px solid rgba(255,255,255,.1)}
+  .car-stat:nth-child(odd){border-right:1px solid rgba(255,255,255,.1)}
+  .car-stat:last-child,.car-stat:nth-last-child(2):nth-child(odd){border-bottom:none}
+  .car-perks-grid{grid-template-columns:1fr}
+  .car-life-grid{grid-template-columns:1fr 1fr;grid-template-rows:auto}
+  .car-life-img.tall{grid-row:span 1;height:200px}
+  .car-life-img{height:200px}
+  .car-form-row{grid-template-columns:1fr}
+  .car-form-box{padding:24px}
+  .car-btns{flex-direction:column}
+  .car-btn-red,.car-btn-outline{justify-content:center}
+}
+@media(max-width:480px){
+  .car-life-grid{grid-template-columns:1fr}
+  .car-life-img{height:200px}
+}
+</style>
+</head>
+<body>
+<div id="nav-placeholder"></div>
+
+
+<!-- ═══ HERO ═══ -->
+<section class="car-hero">
+  <div class="car-hero-bg"></div>
+  <div class="car-hero-overlay"></div>
+  <div class="car-hero-grid"></div>
+  <div class="car-orb car-orb-1"></div>
+  <div class="car-orb car-orb-2"></div>
+  <div class="car-orb car-orb-3"></div>
+  <div class="car-hero-inner">
+    <div>
+      <div class="car-eyebrow">Join Our Team</div>
+      <h1>Build the Future<br>of <em>Finance</em><br>With Us.</h1>
+      <p class="car-hero-sub">We're a team of engineers, designers, and strategists focused on building quality fintech products. If you love hard problems and high standards, you'll fit right in.</p>
+      <div class="car-btns">
+        <a href="#open-roles" class="car-btn-red">View Open Roles</a>
+        <a href="#culture" class="car-btn-outline">Our Culture &#8594;</a>
+      </div>
+      <div class="car-hero-stats">
+        <div class="car-stat"><div class="car-stat-val">18<span>+</span></div><div class="car-stat-lbl">Countries</div></div>
+        <div class="car-stat"><div class="car-stat-val">40<span>+</span></div><div class="car-stat-lbl">Team Members</div></div>
+        <div class="car-stat"><div class="car-stat-val">150<span>+</span></div><div class="car-stat-lbl">Projects Shipped</div></div>
+      </div>
+    </div>
+    <div class="car-hero-img">
+      <img class="car-hero-img-main" src="../img/about/programmer-colleague-office-training-machine-learning-algorithms.jpg" alt="PumaPulse Team">
+      <img class="car-hero-img-accent" src="https://images.unsplash.com/photo-1517245386807-bb43f82c33c4?w=600&q=80" alt="Team collaboration">
+      <div class="car-hero-badge">
+        <div class="car-hero-badge-val">100<span>%</span></div>
+        <div class="car-hero-badge-lbl">Remote First</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ═══ CULTURE / VALUES ═══ -->
+<section class="car-section" id="culture" style="background:#fff">
+  <div class="car-container">
+    <div style="max-width:600px">
+      <div class="car-label car-reveal">Life at PumaPulse</div>
+      <h2 class="car-h2 car-reveal">Where Great Work <em>Gets Done.</em></h2>
+      <p class="car-p car-reveal">We're a remote-first team spread across 18 countries, united by a shared obsession with building exceptional financial technology. We move fast, think deeply, and take care of each other.</p>
+    </div>
+    <div class="car-values-grid">
+      <div class="car-value car-reveal" style="transition-delay:.05s">
+        <div class="car-value-num">01</div>
+        <div class="car-value-icon"><svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="10"/><path d="M2 12h20M12 2a15 15 0 010 20M12 2a15 15 0 000 20"/></svg></div>
+        <div class="car-value-t">Remote-First Culture</div>
+        <p class="car-value-d">Work from anywhere in the world. We care about output, not office hours. $1,500 home office setup budget included.</p>
+      </div>
+      <div class="car-value car-reveal" style="transition-delay:.15s">
+        <div class="car-value-num">02</div>
+        <div class="car-value-icon"><svg viewBox="0 0 24 24"><path d="M13 2L3 14h9l-1 8 10-12h-9l1-8z"/></svg></div>
+        <div class="car-value-t">Rapid Career Growth</div>
+        <p class="car-value-d">Clear progression paths, mentorship, and real ownership from day one. No bureaucracy slowing you down.</p>
+      </div>
+      <div class="car-value car-reveal" style="transition-delay:.25s">
+        <div class="car-value-num">03</div>
+        <div class="car-value-icon"><svg viewBox="0 0 24 24"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg></div>
+        <div class="car-value-t">Real Impact</div>
+        <p class="car-value-d">Your work reaches clients across multiple countries. Every line of code matters at PumaPulse.</p>
+      </div>
+      <div class="car-value car-reveal" style="transition-delay:.35s">
+        <div class="car-value-num">04</div>
+        <div class="car-value-icon"><svg viewBox="0 0 24 24"><path d="M17 21v-2a4 4 0 00-4-4H5a4 4 0 00-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M23 21v-2a4 4 0 00-3-3.87M16 3.13a4 4 0 010 7.75"/></svg></div>
+        <div class="car-value-t">Diverse Global Team</div>
+        <p class="car-value-d">18 nationalities, one mission. We celebrate different perspectives and build better products because of it.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ═══ PERKS ═══ -->
+<section class="car-section" style="background:#f5f6fa">
+  <div class="car-container">
+    <div style="text-align:center;max-width:560px;margin:0 auto 0">
+      <div class="car-label car-reveal" style="justify-content:center">Benefits &amp; Perks</div>
+      <h2 class="car-h2 car-reveal" style="text-align:center">We Take Care of <em>Our People.</em></h2>
+      <p class="car-p car-reveal" style="text-align:center">Competitive compensation, great benefits, and a culture that actually lives its values.</p>
+    </div>
+    <div class="car-perks-grid">
+      <div class="car-perk car-reveal-scale">
+        <div class="car-perk-img"><img src="https://images.unsplash.com/photo-1521737604893-d14cc237f11d?w=600&q=80" alt="Remote Work" loading="lazy"></div>
+        <div class="car-perk-body">
+          <div class="car-perk-t"><svg viewBox="0 0 24 24" fill="none" stroke="#c0202a" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="width:16px;height:16px;vertical-align:middle;margin-right:7px"><path d="M3 9l9-7 9 7v11a2 2 0 01-2 2H5a2 2 0 01-2-2z"/><polyline points="9 22 9 12 15 12 15 22"/></svg>Remote-First</div>
+          <p class="car-perk-d">Work from anywhere. $1,500 home office setup budget provided on day one.</p>
+        </div>
+      </div>
+      <div class="car-perk car-reveal-scale">
+        <div class="car-perk-img"><img src="https://images.unsplash.com/photo-1559526324-4b87b5e36e44?w=600&q=80" alt="Compensation" loading="lazy"></div>
+        <div class="car-perk-body">
+          <div class="car-perk-t"><svg viewBox="0 0 24 24" fill="none" stroke="#c0202a" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="width:16px;height:16px;vertical-align:middle;margin-right:7px"><line x1="12" y1="1" x2="12" y2="23"/><path d="M17 5H9.5a3.5 3.5 0 000 7h5a3.5 3.5 0 010 7H6"/></svg>Top-Tier Pay</div>
+          <p class="car-perk-d">Salaries benchmarked to top-10% of market, plus equity and performance bonuses.</p>
+        </div>
+      </div>
+      <div class="car-perk car-reveal-scale">
+        <div class="car-perk-img"><img src="https://images.unsplash.com/photo-1571019613454-1cb2f99b2d8b?w=600&q=80" alt="Health" loading="lazy"></div>
+        <div class="car-perk-body">
+          <div class="car-perk-t"><svg viewBox="0 0 24 24" fill="none" stroke="#c0202a" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="width:16px;height:16px;vertical-align:middle;margin-right:7px"><path d="M22 12h-4l-3 9L9 3l-3 9H2"/></svg>Health &amp; Wellness</div>
+          <p class="car-perk-d">Full medical, dental, and vision. $100/month wellness stipend for gym or therapy.</p>
+        </div>
+      </div>
+      <div class="car-perk car-reveal-scale">
+        <div class="car-perk-img"><img src="https://images.unsplash.com/photo-1434030216411-0b793f4b4173?w=600&q=80" alt="Learning" loading="lazy"></div>
+        <div class="car-perk-body">
+          <div class="car-perk-t"><svg viewBox="0 0 24 24" fill="none" stroke="#c0202a" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="width:16px;height:16px;vertical-align:middle;margin-right:7px"><path d="M2 3h6a4 4 0 014 4v14a3 3 0 00-3-3H2z"/><path d="M22 3h-6a4 4 0 00-4 4v14a3 3 0 013-3h7z"/></svg>Learning Budget</div>
+          <p class="car-perk-d">$2,000/year for courses, conferences, books, and certifications.</p>
+        </div>
+      </div>
+      <div class="car-perk car-reveal-scale">
+        <div class="car-perk-img"><img src="https://images.unsplash.com/photo-1506905925346-21bda4d32df4?w=600&q=80" alt="Vacation" loading="lazy"></div>
+        <div class="car-perk-body">
+          <div class="car-perk-t"><svg viewBox="0 0 24 24" fill="none" stroke="#c0202a" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="width:16px;height:16px;vertical-align:middle;margin-right:7px"><rect x="3" y="4" width="18" height="18" rx="2" ry="2"/><line x1="16" y1="2" x2="16" y2="6"/><line x1="8" y1="2" x2="8" y2="6"/><line x1="3" y1="10" x2="21" y2="10"/></svg>Unlimited PTO</div>
+          <p class="car-perk-d">Take the time you need to recharge. We trust you to manage your time.</p>
+        </div>
+      </div>
+      <div class="car-perk car-reveal-scale">
+        <div class="car-perk-img"><img src="https://images.unsplash.com/photo-1529156069898-49953e39b3ac?w=600&q=80" alt="Retreats" loading="lazy"></div>
+        <div class="car-perk-body">
+          <div class="car-perk-t"><svg viewBox="0 0 24 24" fill="none" stroke="#c0202a" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="width:16px;height:16px;vertical-align:middle;margin-right:7px"><path d="M22 2L11 13"/><path d="M22 2L15 22l-4-9-9-4 20-7z"/></svg>Annual Retreats</div>
+          <p class="car-perk-d">We fly the whole team to an amazing destination once a year to connect and celebrate.</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ═══ OPEN ROLES ═══ -->
+<section class="car-section" id="open-roles" style="background:#0a0c12">
+  <div class="car-container">
+    <div style="max-width:600px;margin-bottom:52px">
+      <div class="car-label car-reveal">Open Positions</div>
+      <h2 class="car-h2 car-h2-white car-reveal">Find Your <em>Perfect Role.</em></h2>
+      <p class="car-p car-p-white car-reveal">We're growing fast and always looking for exceptional people. Don't see your role? Send us an open application.</p>
+    </div>
+    <div class="car-jobs-wrap car-reveal">
+      <div class="car-dept-label">Engineering</div>
+
+      <div class="car-job">
+        <div>
+          <div class="car-job-title">Software Engineer</div>
+          <div style="font-size:12px;color:rgba(200,215,235,0.55);margin:6px 0 8px">Node.js · Python · React · Next.js · PostgreSQL · Supabase · Redis · AWS · Docker · CI/CD</div>
+          <div style="font-size:12px;color:rgba(200,215,235,0.45);margin:0 0 10px;line-height:1.7">
+            You'll work on <strong style="color:rgba(200,215,235,0.7)">Tradex</strong>, our core platform powering trading infrastructure, exchange services, and internal operational tools. Tradex handles real-time market data, high-throughput workflows, and financial integrations.<br><br>
+            <span style="color:rgba(200,215,235,0.35)">Responsibilities:</span> Build backend services, design APIs and real-time features, integrate AI-assisted features, improve performance, reliability, and security.<br>
+            <span style="color:rgba(200,215,235,0.35)">Requirements:</span> 3+ years experience, strong problem-solving and communication skills, real-time systems experience.<br>
+            <span style="color:rgba(200,215,235,0.35)">Nice to Have:</span> Fintech, trading systems, order books, or AI/LLM experience.
+          </div>
+          <div class="car-job-tags"><span class="car-jtag car-jtag-dept">Engineering</span><span class="car-jtag car-jtag-type">Full-time · Remote</span><span class="car-jtag car-jtag-loc">$40–50/hr</span></div>
+        </div>
+        <button class="car-job-btn" onclick="openApply('Software Engineer')">Apply &#8594;</button>
+      </div>
+
+      <div class="car-job">
+        <div>
+          <div class="car-job-title">Trading Bot Developer</div>
+          <div style="font-size:12px;color:rgba(200,215,235,0.55);margin:6px 0 8px">Python · Node.js · Exchange APIs · Real-time Systems · Market Data Feeds</div>
+          <div style="font-size:12px;color:rgba(200,215,235,0.45);margin:0 0 10px;line-height:1.7">
+            Build and optimize automated trading bots that interact with financial markets. You'll integrate with exchange APIs, monitor bot performance.<br><br>
+            <span style="color:rgba(200,215,235,0.35)">Responsibilities:</span> Build and optimize trading bots, integrate exchange APIs, monitor performance and troubleshoot issues.<br>
+            <span style="color:rgba(200,215,235,0.35)">Requirements:</span> Python or Node.js experience, familiarity with trading platforms and API integrations.<br>
+            <span style="color:rgba(200,215,235,0.35)">Nice to Have:</span> Market data feeds, real-time systems, exchange API experience.
+          </div>
+          <div class="car-job-tags"><span class="car-jtag car-jtag-dept">Engineering</span><span class="car-jtag car-jtag-type">Full-time · Remote</span><span class="car-jtag car-jtag-loc">$40/hr</span></div>
+        </div>
+        <button class="car-job-btn" onclick="openApply('Trading Bot Developer')">Apply &#8594;</button>
+      </div>
+
+      <div class="car-dept-label" style="margin-top:8px">Blockchain</div>
+
+      <div class="car-job">
+        <div>
+          <div class="car-job-title">Blockchain Developer</div>
+          <div style="font-size:12px;color:rgba(200,215,235,0.55);margin:6px 0 8px">Solidity · Web3.js · Ethers.js · Node.js · Python · Ethereum-compatible chains</div>
+          <div style="font-size:12px;color:rgba(200,215,235,0.45);margin:0 0 10px;line-height:1.7">
+            Develop and integrate smart contracts and blockchain systems for our clients' trading, DeFi, and digital asset platforms. You'll work across the full stack from contract development to API integration.<br><br>
+            <span style="color:rgba(200,215,235,0.35)">Responsibilities:</span> Develop smart contracts, integrate blockchain APIs, ensure system security and performance.<br>
+            <span style="color:rgba(200,215,235,0.35)">Requirements:</span> 3+ years blockchain experience, strong smart contract and Web3 knowledge.<br>
+            <span style="color:rgba(200,215,235,0.35)">Nice to Have:</span> DeFi, trading platforms, or exchange systems experience.
+          </div>
+          <div class="car-job-tags"><span class="car-jtag car-jtag-dept">Blockchain</span><span class="car-jtag car-jtag-type">Full-time · Remote</span><span class="car-jtag car-jtag-loc">$50–80/hr</span></div>
+        </div>
+        <button class="car-job-btn" onclick="openApply('Blockchain Developer')">Apply &#8594;</button>
+      </div>
+
+      <div class="car-dept-label" style="margin-top:8px">Business &amp; Growth</div>
+
+      <div class="car-job">
+        <div>
+          <div class="car-job-title">Business Development Executive</div>
+          <div style="font-size:12px;color:rgba(200,215,235,0.55);margin:6px 0 8px">Client Outreach · Sales · Communication · Lead Generation</div>
+          <div style="font-size:12px;color:rgba(200,215,235,0.45);margin:0 0 10px;line-height:1.7">
+            Drive client acquisition and partnerships in the fintech and blockchain space. You'll identify leads, manage outreach, and help convert prospects into long-term clients.<br><br>
+            <span style="color:rgba(200,215,235,0.35)">Responsibilities:</span> Client outreach, lead generation, sales pipeline management, partnership development.<br>
+            <span style="color:rgba(200,215,235,0.35)">Requirements:</span> Strong communication skills, self-motivated, 0–1 year experience welcome.<br>
+            <span style="color:rgba(200,215,235,0.35)">Nice to Have:</span> Background in tech, fintech, or B2B sales.
+          </div>
+          <div class="car-job-tags"><span class="car-jtag car-jtag-dept">Business</span><span class="car-jtag car-jtag-type">Full-time · Hybrid</span><span class="car-jtag car-jtag-loc">Milan, Italy</span></div>
+        </div>
+        <button class="car-job-btn" onclick="openApply('Business Development Executive')">Apply &#8594;</button>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ═══ APPLY ═══ -->
+<section class="car-section" id="apply" style="background:#f5f6fa">
+  <div class="car-container">
+    <div class="car-apply-grid">
+      <div>
+        <div class="car-label car-reveal">Apply Now</div>
+        <h2 class="car-h2 car-reveal">Take the <em>First Step.</em></h2>
+        <p class="car-p car-reveal" style="margin-bottom:28px">Send us your application and we'll get back to you within 3 business days. We review every application personally — no automated rejections.</p>
+
+        <!-- Contact channels -->
+        <div style="display:flex;flex-direction:column;gap:0;border:1px solid #e0e4ef;margin-bottom:24px">
+          <div style="display:flex;align-items:center;gap:14px;padding:14px 18px;">
+            <div style="width:36px;height:36px;background:rgba(192,32,42,.08);border-radius:8px;display:flex;align-items:center;justify-content:center;flex-shrink:0"><svg viewBox="0 0 24 24" fill="none" stroke="#c0202a" stroke-width="2" stroke-linecap="round" style="width:16px;height:16px"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0118 0z"/><circle cx="12" cy="10" r="3"/></svg></div>
+            <div><div style="font-size:11px;font-weight:700;letter-spacing:.08em;text-transform:uppercase;color:#8a93b0;margin-bottom:2px">Office</div><div style="font-size:14px;font-weight:600;color:#1a1e2e">Via Monte Napoleone 8, Milan, 20121, Italy</div></div>
+          </div>
+        </div>
+        <div class="car-process">
+          <div class="car-step"><div class="car-step-num">1</div><div><div class="car-step-t">Application Review</div><div class="car-step-d">1–3 business days</div></div></div>
+          <div class="car-step"><div class="car-step-num">2</div><div><div class="car-step-t">30-min Intro Call</div><div class="car-step-d">Meet the team, ask questions</div></div></div>
+          <div class="car-step"><div class="car-step-num">3</div><div><div class="car-step-t">Technical Assessment</div><div class="car-step-d">1–2 hour task using our origin task</div></div></div>
+          <div class="car-step"><div class="car-step-num">4</div><div><div class="car-step-t">Team Interview &amp; Offer</div><div class="car-step-d">Meet your future colleagues</div></div></div>
+        </div>
+      </div>
+      <div class="car-form-box">
+        <h3>Submit Your Application</h3>
+        <p class="car-form-sub">Don't see the right role? Apply anyway — we hire for talent, not just open positions.</p>
+        <form id="careerForm">
+          <div class="car-form-row">
+            <div class="car-fg"><label>First Name *</label><input type="text" id="firstName" placeholder="Jane" required></div>
+            <div class="car-fg"><label>Last Name *</label><input type="text" id="lastName" placeholder="Smith" required></div>
+          </div>
+          <div class="car-fg"><label>Email Address *</label><input type="email" id="applicantEmail" placeholder="jane@example.com" required></div>
+          <div class="car-fg"><label>Phone Number *</label><input type="tel" id="applicantPhone" placeholder="+1 (555) 000-0000" required></div>
+          <div class="car-fg">
+            <label>Role You're Applying For *</label>
+            <select id="applicantPosition" required>
+              <option value="">Select a role...</option>
+              <option>Software Engineer</option>
+              <option>Trading Bot Developer</option>
+              <option>Blockchain Developer</option>
+              <option>Business Development Executive</option>
+              <option>Open Application</option>
+            </select>
+          </div>
+          <div class="car-fg"><label>Years of Experience *</label><textarea id="applicantExperience" placeholder="Briefly describe your experience and why you want to join PumaPulse..." required></textarea></div>
+          <div class="car-fg">
+            <label>Resume / CV (PDF only) *</label>
+            <div class="car-upload" onclick="document.getElementById('resumeFile').click()">
+              <div class="car-upload-t" id="uploadLabel">Click to upload your resume</div>
+              <div class="car-upload-s">PDF only — max 5MB</div>
+              <input type="file" id="resumeFile" accept=".pdf" style="display:none" onchange="document.getElementById('uploadLabel').textContent = this.files[0]?.name || 'Click to upload your resume'">
+            </div>
+          </div>
+          <button type="submit" class="car-submit" id="submitBtn">Submit Application &#8594;</button>
+          <div id="formMsg" style="margin-top:14px;font-size:13px;text-align:center;display:none"></div>
+        </form>
+      </div>
+    </div>
+  </div>
+</section>
+
+<div id="footer-placeholder"></div>
+<script src="../js/nav.js"></script>
+<script src="../js/main.js"></script>
+<script src="../js/animations.js"></script>
+<!-- EmailJS -->
+<script src="https://cdn.jsdelivr.net/npm/@emailjs/browser@4/dist/email.min.js"></script>
+<script>
+(function(){ emailjs.init('IbD_xKw-X-D5Dy5Rc'); })();
+
+// Pre-fill role when clicking Apply from job listing
+function openApply(role) {
+  document.getElementById('applicantPosition').value = role;
+  document.getElementById('apply').scrollIntoView({behavior:'smooth'});
+}
+
+// Upload resume to Cloudinary then send via EmailJS
+document.getElementById('careerForm').addEventListener('submit', function(e) {
+  e.preventDefault();
+
+  var firstName = document.getElementById('firstName').value.trim();
+  var lastName  = document.getElementById('lastName').value.trim();
+  var name      = firstName + ' ' + lastName;
+  var email     = document.getElementById('applicantEmail').value.trim();
+  var phone     = document.getElementById('applicantPhone').value.trim();
+  var position  = document.getElementById('applicantPosition').value.trim();
+  var experience= document.getElementById('applicantExperience').value.trim();
+  var resumeFile= document.getElementById('resumeFile').files[0];
+  var btn       = document.getElementById('submitBtn');
+  var msg       = document.getElementById('formMsg');
+
+  if (!name.trim() || !email || !phone || !position || !experience) {
+    showMsg('Please fill in all required fields.', 'red'); return;
+  }
+  if (!resumeFile) {
+    showMsg('Please upload your resume (PDF only).', 'red'); return;
+  }
+  if (resumeFile.type !== 'application/pdf') {
+    showMsg('Please upload a PDF file only.', 'red'); return;
+  }
+
+  btn.disabled = true;
+  btn.textContent = 'Uploading resume...';
+
+  // Upload to Cloudinary
+  var fd = new FormData();
+  fd.append('file', resumeFile);
+  fd.append('upload_preset', 'ml_default');
+  fd.append('resource_type', 'raw');
+
+  var xhr = new XMLHttpRequest();
+  xhr.open('POST', 'https://api.cloudinary.com/v1_1/dtvnifa3t/raw/upload');
+  xhr.upload.onprogress = function(ev) {
+    if (ev.lengthComputable) btn.textContent = 'Uploading... ' + Math.round(ev.loaded/ev.total*100) + '%';
+  };
+  xhr.onload = function() {
+    var res = JSON.parse(xhr.responseText);
+    if (xhr.status === 200 && res.secure_url) {
+      btn.textContent = 'Sending application...';
+      sendEmail(name, firstName, lastName, email, phone, position, experience, res.secure_url);
+    } else {
+      showMsg('Resume upload failed. Please try again.', 'red');
+      btn.disabled = false; btn.textContent = 'Submit Application →';
+    }
+  };
+  xhr.onerror = function() {
+    showMsg('Upload error. Please try again.', 'red');
+    btn.disabled = false; btn.textContent = 'Submit Application →';
+  };
+  xhr.send(fd);
+});
+
+function sendEmail(name, firstName, lastName, email, phone, position, experience, resumeUrl) {
+  var btn = document.getElementById('submitBtn');
+  emailjs.send('service_n03hir9', 'template_uhqzlgm', {
+    applicantName: name,
+    firstName: firstName,
+    lastName: lastName,
+    position: position,
+    email: email,
+    phone: phone,
+    experience: experience,
+    resumeUrl: resumeUrl,
+    submissionDate: new Date().toLocaleDateString()
+  }, 'IbD_xKw-X-D5Dy5Rc')
+  .then(function() {
+    showMsg('Application submitted! We will review it and get back to you within 3 business days.', 'green');
+    document.getElementById('careerForm').reset();
+    document.getElementById('uploadLabel').textContent = 'Click to upload your resume';
+    btn.disabled = false; btn.textContent = 'Submit Application →';
+  }, function(err) {
+    showMsg('Failed to send application. Please email us at hr@pumapulse.org', 'red');
+    btn.disabled = false; btn.textContent = 'Submit Application →';
+  });
+}
+
+function showMsg(text, color) {
+  var el = document.getElementById('formMsg');
+  el.textContent = text;
+  el.style.color = color === 'green' ? '#0da678' : '#e0263a';
+  el.style.display = 'block';
+}
+
+// ── Scroll reveal observer ──
+(function(){
+  var els = document.querySelectorAll('.car-reveal,.car-reveal-left,.car-reveal-right,.car-reveal-scale');
+  if(!els.length) return;
+  var io = new IntersectionObserver(function(entries){
+    entries.forEach(function(e){
+      if(e.isIntersecting){ e.target.classList.add('car-visible'); io.unobserve(e.target); }
+    });
+  },{threshold:0.12});
+  els.forEach(function(el){ io.observe(el); });
+})();
+</script>
+</body>
+</html>
